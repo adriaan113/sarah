@@ -1,3 +1,21 @@
+//-------------------------------------------//
+//-----------------VARIABLES-----------------//
+//-------------------------------------------//
+
+$bg-color-lightgrey:#F5F5F5;
+$bg-color-purple:#70609F;
+$bg-color-hover:#000000;
+
+$text-color-lightgrey: $bg-color-lightgrey;
+$text-color-purple: $bg-color-purple;
+$text-color-black: $bg-color-hover;
+
+
+
+//-------------------------------------------//
+//----------------MAIN STYLES----------------//
+//-------------------------------------------//
+
 *, *::before, *::after{
   box-sizing: border-box;
 }
@@ -12,7 +30,7 @@ body{
   padding: 0;
 }
 
-.wrapper{
+.main-wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,29 +38,3 @@ body{
   height: 100vh;
 }
 
-.menu{
-  background-color: lightblue;
-  ul{
-    display: flex;
-    justify-content: flex-start;
-    margin: 0 auto;
-    padding: 5rem;
-    list-style: none;
-    li{
-      margin: 1em;
-      cursor: pointer;
-      position: relative;
-      &:hover span img{
-        display: block;
-      }
-      span{
-        position: absolute;
-        }
-        img{
-          display: none;
-          width: 100px;
-          height: auto;
-        }
-      }
-    }
-}
