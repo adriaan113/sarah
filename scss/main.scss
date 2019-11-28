@@ -11,6 +11,17 @@ $text-color-purple: $bg-color-purple;
 $text-color-black: $bg-color-hover;
 
 
+@font-face {
+  font-family: 'ginto';
+  src: url('../fonts/ginto/gintonordtrial-medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'basic-grotesque';
+  src: url('../fonts/bgp/basisgrotesquepro-regular.ttf') format('ttf');
+}
+
+
 
 //-------------------------------------------//
 //----------------MAIN STYLES----------------//
@@ -28,13 +39,95 @@ html{
 body{
   margin: 0;
   padding: 0;
-}
-
-.main-wrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: $bg-color-lightgrey;
   width: 100%;
   height: 100vh;
 }
 
+h1,h2,h3,h4{
+  font-family: 'ginto',sans-serif;
+}
+
+p,body{
+  font-family: 'basic-grotesque',sans-serif;
+}
+
+
+.main-wrapper{
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: flex-start;
+  // width: 100%;
+  // height: 100vh;
+}
+
+.header-container{
+  display: block;
+  width: 100%;
+  nav{
+    ul{
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      padding: 0;
+      li{
+        padding: 0 1rem;
+      }
+      li:first-child{
+        margin-right: auto;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      li:last-child{
+        margin-right: 2rem; //needs to scale. i can do better than this
+      }
+    }
+    // ul::after{
+    //   content:'';
+    //   width: 20px;
+    //   height: 20px;
+    //   background: red;
+    //   border-radius: 50%;
+    // }
+  }
+}
+
+.intro-text{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  .bonjour{
+    color: $text-color-purple;
+    font-size: 3.5rem;
+  }
+  h3{
+    font-size: .9rem;
+    margin: 0 3rem 1.5rem;
+  }
+  // .arrow{
+   
+  // }
+}
+
+
+// .home-work{
+//   .grid{
+//     display: grid;
+
+//   }
+
+// }
+footer{
+  display: block;
+  width: 100%;
+  border-top: solid 3px $text-color-black;
+  .footer-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  }
+}
