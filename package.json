@@ -1,0 +1,20 @@
+{
+  "name": "sarah",
+  "version": "1.0.0",
+  "description": "website sarah",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adriaan113/sarah.git"
+  },
+  "author": "adriaan van der ploeg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adriaan113/sarah/issues"
+  },
+  "homepage": "https://github.com/adriaan113/sarah#readme",
+  "dependencies": {}
+}
