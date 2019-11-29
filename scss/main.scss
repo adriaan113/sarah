@@ -52,6 +52,9 @@ p,body{
   font-family: 'basic-grotesque',sans-serif;
 }
 
+//-------------------------------------------//
+//------------------LAYOUT-------------------//
+//-------------------------------------------//
 
 .main-wrapper{
   display: flex;
@@ -74,13 +77,8 @@ p,body{
       li{
         padding: 0 1rem;
       }
-      li:first-child{
-        margin-right: auto;
-        font-weight: bold;
-        text-decoration: underline;
-      }
-      li:last-child{
-        margin-right: 2rem; //needs to scale. i can do better than this
+      li:nth-child(1n+2){
+        display: none;
       }
     }
     // ul::after{
@@ -112,17 +110,66 @@ p,body{
 }
 
 
-// .home-work{
-//   .grid{
-//     display: grid;
+.home-work{
+  width: 100%;
+  //margin: 0 auto;
+  .grid{
+    // display: grid;
+    // grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
+    // grid-template-rows: auto;
+    // grid-gap: 20px;
+    // justify-items: center;
 
-//   }
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: calc(300px + 2rem);
+    margin: 0 auto;
 
-// }
+    list-style: none;
+    padding: 0;
+    li{
+      margin: 1rem;
+      a{
+        display: block;
+        width: 300px;
+        height: 200px;
+        background-color: $bg-color-purple;
+      }
+      p{
+        text-align: center;
+      }
+    }
+  }
+}
+
+.cta-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  .cta-work, .cta-about{
+    h4{
+      text-decoration: underline;
+    }
+  }
+  .cta-work{
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+  }
+  .cta-about{
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: flex-start;
+    align-items: center;
+  }
+}
+
 footer{
   display: block;
   width: 100%;
-  border-top: solid 3px $text-color-black;
+  border-top: solid 2px $text-color-black;
   .footer-container{
   display: flex;
   flex-direction: column;
@@ -130,4 +177,46 @@ footer{
   align-items: center;
   margin: 1rem;
   }
+}
+
+
+//-------------------------------------------//
+//---------------MEDIA QUERIES---------------//
+//-------------------------------------------//
+
+@media screen and(min-width: 810px){
+
+  .header-container{
+    nav{
+      ul{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 0;
+        li{
+          padding: 0 1rem;
+        }
+        li:first-child{
+          margin-right: auto;
+          font-weight: bold;
+          text-decoration: underline;
+        }
+        li:last-child{
+          margin-right: 2rem; //needs to scale. i can do better than this
+        }
+      }
+    }
+  }
+
+  .home-work{
+    .grid{
+      justify-content: flex-start;
+      max-width: calc(600px + 4rem);
+    }
+  }
+}
+
+
+@media screen and(min-width: 1600px){
+  
 }
