@@ -2,6 +2,13 @@
 //-----------------VARIABLES-----------------//
 //-------------------------------------------//
 
+:root {
+  --screen-width:     320px;
+  --screen-height:    560px;
+  --header-bg-color:  #673AB7;
+  --splash-bg-color:  #368887;
+}
+
 $bg-color-lightgrey:#F5F5F5;
 $bg-color-purple:#70609F;
 $bg-color-hover:#000000;
@@ -66,29 +73,37 @@ p,body{
 }
 
 .header-container{
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   width: 100%;
-  nav{
-    ul{
-      display: flex;
-      flex-direction: row;
-      list-style: none;
-      padding: 0;
-      li{
-        padding: 0 1rem;
-      }
-      li:nth-child(1n+2){
-        display: none;
-      }
-    }
-    // ul::after{
-    //   content:'';
-    //   width: 20px;
-    //   height: 20px;
-    //   background: red;
-    //   border-radius: 50%;
-    // }
+  .logo{
+    font-size: 1rem;
+    color: $text-color-black;
+    padding: .5rem 1rem;
+    margin: 0 auto;
   }
+
+@import 'navmenu';
+
+
+  // nav{
+  //   .mobile-menu{
+  //     ul{
+  //       list-style: none;
+  //       width: 40px;
+  //       height: 40px;
+  //       background-color: $bg-color-purple;
+  //       border-radius: 50%;
+  //       li{
+  //         display: none;
+  //       }
+  //     }
+  //   }
+  //   .desktop-menu{
+  //     display:none;
+  //   }
+  // }
 }
 
 .intro-text{
@@ -188,17 +203,12 @@ footer{
 
   .header-container{
     nav{
-      ul{
-        display: flex;
-        flex-direction: row;
-        list-style: none;
-        padding: 0;
-        li{
-          padding: 0 1rem;
+      ul{ 
+        li:nth-child(1n+2){
+          display: block;
         }
         li:first-child{
           margin-right: auto;
-          font-weight: bold;
           text-decoration: underline;
         }
         li:last-child{
@@ -206,6 +216,24 @@ footer{
         }
       }
     }
+
+
+    // .desktop-menu{
+    //   display: none;
+    //   flex-direction: row;
+    //   list-style: none;
+    //   padding: 0;
+    //   li{
+    //     padding: 0 1rem;
+    //   }
+    //   li:first-child{
+    //     margin-right: auto;
+    //     text-decoration: underline;
+    //   }
+    //   li:nth-child(1n+2){
+    //     display: none;
+    //   }
+    // }
   }
 
   .home-work{
