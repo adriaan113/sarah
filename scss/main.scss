@@ -13,6 +13,7 @@ $bg-color-lightgrey:#F5F5F5;
 $bg-color-purple:#70609F;
 $bg-color-hover:#000000;
 
+
 $text-color-lightgrey: $bg-color-lightgrey;
 $text-color-purple: $bg-color-purple;
 $text-color-black: $bg-color-hover;
@@ -84,7 +85,13 @@ p,body{
     margin: 0 auto;
   }
 
+  .logo-hidden{
+    display: none;
+  }
+
+
 @import 'navmenu';
+
 
 
   // nav{

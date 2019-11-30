@@ -8,17 +8,13 @@ let isMenuOpen = false;
 // TOGGLE MENU ACTIVE STATE
 menuToggle.addEventListener('click', e => {
   e.preventDefault();
+  logo.classList.toggle('logo-hidden');
   isMenuOpen = !isMenuOpen;
   
   // toggle a11y attributes and active class
   menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
   menu.hidden = !isMenuOpen;
   nav.classList.toggle('nav--open');
-  if(nav.className==='nav--open'){
-    logo.style.display= 'none';
-  }else{
-    logo.style.display= 'block';  
-  }
 });
 
 

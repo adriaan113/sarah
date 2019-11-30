@@ -1,3 +1,5 @@
+//$bg-color-purple:#70609F;
+
 .nav {
   
     // Toggle Button
@@ -15,23 +17,24 @@
       border-radius:50%;
       transition:background-color .15s linear;
       
-      &:hover,
-      &:focus {
-        background-color:rgba(0,0,0,.5);
-      }
+    //   &:hover,
+    //   &:focus {
+    //     background-color:rgba(0,0,0,.5);
+    //   }
     }
     
     &__menu {
       display:flex;
       flex-direction:column;
       justify-content:center;
-      height:var(--screen-height);
+      //height:var(--screen-height);
       position:relative;
       z-index:5;
       visibility:hidden;
       list-style: none;
+      padding:0;
     }
-    
+
     
     &__item {
       opacity:0;
@@ -69,7 +72,7 @@
   .menuicon {
     display:block;
     cursor:pointer;
-    color: white;
+    color: $bg-color-purple;
     
     transform:rotate(0deg);
     transition: .3s cubic-bezier(0.165, 0.840, 0.440, 1.000); 
@@ -85,11 +88,14 @@
       transform: rotate(0deg);
       transform-origin:50% 50%;
       transition: transform .25s ease-in-out;
+      display: none;
     }
     &__circle {
-      transition: stroke-dashoffset .3s linear .1s;
-      stroke-dashoffset:circumference(23); // 23 is the <circle>'s radius
-      stroke-dasharray:circumference(23);
+      fill: $bg-color-purple;
+      stroke: $bg-color-purple;
+    //   transition: stroke-dashoffset .3s linear .1s;
+    //   stroke-dashoffset:circumference(23); // 23 is the <circle>'s radius
+    //   stroke-dasharray:circumference(23);
     }
   }
   
@@ -149,6 +155,10 @@
       
       &__circle {
         stroke-dashoffset:0;
+        display: none;
+      }
+      &__bar{
+          display: block;
       }
       &__bar:nth-child(1),
       &__bar:nth-child(4) {
