@@ -1,3 +1,7 @@
+//-------------------------------------------//
+//-----------------NAV MENU------------------//
+//-------------------------------------------//
+
 const nav = document.querySelector('#nav');
 const menu = document.querySelector('#menu');
 const menuToggle = document.querySelector('.nav__toggle');
@@ -48,3 +52,25 @@ nav.addEventListener('keydown', e => {
     }
   }
 });
+
+
+//-------------------------------------------//
+//-------------------TEST--------------------//
+//-------------------------------------------//
+
+// const body= document.querySelector('body');
+// const hello= document.querySelector('.bonjour');
+
+//const test= $('.intro-text').not('.bonjour').css('display', 'none');
+
+
+
+// window.onload= function(){
+//     body.style.display='none';
+//     hello.style.display= 'block';
+//     setTimeout(() => {
+//     body.style.display='block';   
+//     }, 2000);
+
+    
+// }
