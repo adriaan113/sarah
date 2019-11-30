@@ -29,7 +29,7 @@
         
         <!-- MENU TOGGLE BUTTON -->
         <a href="#nav" class="nav__toggle" role="button" aria-expanded="false" aria-controls="menu">
-          <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+          <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50">
             <title>Toggle Menu</title>
             <g>
               <line class="menuicon__bar" x1="13" y1="16.5" x2="37" y2="16.5"/>
@@ -45,26 +45,6 @@
         <div class="splash"></div>
         
       </nav>
-
-
-     <!-- <nav>
-
-       <div class="mobile-menu">
-         <ul>
-            <li>Sarah Louise Lancelin</li>
-            <li>Work</li>
-            <li>About/Contact</li>
-         </ul>
-       </div>
-
-       <ul class="desktop-menu">
-         <li>Sarah Louise Lancelin</li>
-         <li>Work</li>
-         <li>About/Contact</li>
-       </ul>
-
-     </nav> -->
-
 
    </header>
 
@@ -130,6 +110,23 @@
    </footer>
   </div> <!--end of .main-wrapper-->
 
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <script src="js/jquery.sticky.js"></script>
+
 <script src="js/main.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $(".header-container").sticky({
+      topSpacing:0,
+    });
+  });
+</script>
+
+
 </body>
 </html>

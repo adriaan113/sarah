@@ -9,7 +9,15 @@ let isMenuOpen = false;
 menuToggle.addEventListener('click', e => {
   e.preventDefault();
   logo.classList.toggle('logo-hidden');
+  menu.classList.toggle('test');
+  //menu.style.display='flex';
   isMenuOpen = !isMenuOpen;
+
+//   if(logo.className==='logo-hidden'){
+//     menu.style.display='flex';
+//   }else{
+//     menu.style.display='none';
+//   }
   
   // toggle a11y attributes and active class
   menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
