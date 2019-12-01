@@ -58,19 +58,19 @@ nav.addEventListener('keydown', e => {
 //-------------------TEST--------------------//
 //-------------------------------------------//
 
-// const body= document.querySelector('body');
-// const hello= document.querySelector('.bonjour');
+const hello= $('.bonjour');
+const aside= $('.intro-text');
 
-//const test= $('.intro-text').not('.bonjour').css('display', 'none');
+const test= $('.header-container,.menuicon,.intro-text-p,svg, .home-work,footer').not('.bonjour').css('display', 'none');
 
 
 
-// window.onload= function(){
-//     body.style.display='none';
-//     hello.style.display= 'block';
-//     setTimeout(() => {
-//     body.style.display='block';   
-//     }, 2000);
+window.onload= function(){
+    aside.css('margin', '0 auto');
+    hello.css('margin', '1em auto').show();
+    setTimeout(() => {
+    test.fadeIn();
+    }, 1500);
 
     
-// }
+}
