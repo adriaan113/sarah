@@ -64,6 +64,9 @@ p,body{
 //------------------LAYOUT-------------------//
 //-------------------------------------------//
 
+
+//--------HOME PAGE--------//
+
 .main-wrapper{
   display: flex;
   flex-direction: column;
@@ -88,7 +91,6 @@ p,body{
     display: none;
   }
 
-
 @import 'navmenu';
 
 }
@@ -107,21 +109,12 @@ p,body{
     font-size: .9rem;
     margin: 0 3rem 1.5rem;
   }
-  // .arrow{
-   
-  // }
 }
 
 .home-work{
   width: 100%;
-  //margin: 0 auto;
+ 
   .grid{
-    // display: grid;
-    // grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
-    // grid-template-rows: auto;
-    // grid-gap: 20px;
-    // justify-items: center;
-
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -168,6 +161,17 @@ p,body{
   }
 }
 
+
+//--------WORK PAGE--------//
+
+
+.work{
+  @extend .home-work;
+}
+
+
+//---------FOOTER---------//
+
 footer{
   display: block;
   width: 100%;
@@ -184,6 +188,12 @@ footer{
     color:red;
   }
 }
+
+//-------------------------------------------//
+//--------------PSEUDO ELEMENTS--------------//
+//-------------------------------------------//
+
+
 
 
 
