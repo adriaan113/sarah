@@ -1,3 +1,7 @@
+//-------------------------------------------//
+//--------------DATA STRUCTURES--------------//
+//-------------------------------------------//
+
 const workData=[
     {
         img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
@@ -11,11 +15,55 @@ const workData=[
     }
 ];
 
+//-------------------------------------------//
+//-----------------VARIABLES-----------------//
+//-------------------------------------------//
 
 const workGalleryItem=document.querySelectorAll('.work-gallery-item');
 
 const extraInfoContainer= document.createElement('div');
+
+//-------------------------------------------//
+//-----------------FUNCTIONS-----------------//
+//-------------------------------------------//
+
+function addContent(){
+
+    extraInfoContainer.innerHTML=`
+    
+    <div class="extra-info">
+        <h4>sjaak magazine</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ut!</p>
+        <div class="show-more">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus est nemo, cupiditate reprehenderit recusandae eius quidem ipsam! Tempora praesentium inventore velit quaerat earum vitae facilis cupiditate reiciendis at quasi, aspernatur vero repudiandae eaque assumenda iusto quibusdam reprehenderit! Nobis quibusdam, aperiam reiciendis animi asperiores quae temporibus id iusto quo, quam voluptate!</p>
+        </div>
+        <button>show more</button>
+    </div>
+    
+    <div class="cisy">
+        <div class="client">
+            <p>client</p>
+            <p>leger des heils</p>
+        </div>
+        <div class="industry">
+            <p>non-profit</p>
+        </div>
+        <div class="services">
+            <p>concept,design,art direction,photography</p>
+        </div>
+        <div class="year">
+            <p>2018-2019 at DailyMilk</p>
+        </div>
+    </div>
+    `;
+    workGalleryItem[0].appendChild(extraInfoContainer);
+    }
+
+
+
 extraInfoContainer.classList.add('extra-info-container');
+
+//workGalleryItem[0].insertBefore(extraInfoContainer,workGalleryItem[0])
 
 
 //LOOP OVER WORKGALLERYITEMS AND CHANGE THE TITLE
@@ -29,10 +77,10 @@ workGallery.addEventListener('click',(e)=>{
    
     if(e.target.tagName==='A'){
         //console.log('satan');
-        addcontent();
+        addContent();
     }else if(e.target.tagName==='P'){
         //console.log('dit is een P element');
-        addcontent();
+        addContent();
     }else{
         //console.log('dit moet dan wel de UL zijn toch?');
     }   
@@ -42,33 +90,3 @@ workGallery.addEventListener('click',(e)=>{
 
 
 
-function addcontent(){
-
-extraInfoContainer.innerHTML=`
-
-<div class="extra-info">
-    <h4>sjaak magazine</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ut!</p>
-    <div class="show-more">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus est nemo, cupiditate reprehenderit recusandae eius quidem ipsam! Tempora praesentium inventore velit quaerat earum vitae facilis cupiditate reiciendis at quasi, aspernatur vero repudiandae eaque assumenda iusto quibusdam reprehenderit! Nobis quibusdam, aperiam reiciendis animi asperiores quae temporibus id iusto quo, quam voluptate!</p>
-    </div>
-    <button>show more</button>
-</div>
-
-<div class="cisy">
-    <div class="client">
-        <p>client</p>
-        <p>leger des heils</p>
-    </div>
-    <div class="industry">
-        <p>non-profit</p>
-    </div>
-    <div class="services">
-        <p>concept,design,art direction,photography</p>
-    </div>
-    <div class="year">
-        <p>2018-2019 at DailyMilk</p>
-    </div>
-</div>
-`;
-}
