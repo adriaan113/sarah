@@ -1,4 +1,47 @@
 //-------------------------------------------//
+//-----------------VARIABLES-----------------//
+//-------------------------------------------//
+
+//---------SASS COLORS---------//
+
+const lightGrey = '#F5F5F5';
+const purple    = '#70609F';
+const black     = '#000000';
+
+
+//-------------------------------------------//
+//-----------------FUNCTIONS-----------------//
+//-------------------------------------------//
+
+//CLOSE MENU ON CLICK
+function closeOnClick(){
+        nav.classList.toggle('nav--open');
+        menu.classList.toggle('test');
+        logo.classList.toggle('logo-hidden');
+        //isMenuOpen = !isMenuOpen;
+        //menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
+        //menu.hidden = !isMenuOpen;    
+}
+
+ //CHANGE CONTENT IN .MAIN-CONTAINER
+function changeContent(a,b,c,d){
+  introText.style.display=a;
+  introGallery.style.display=b;
+  info.style.display=c;
+  workGallery.style.display=d; 
+}
+
+ //STYLE HTML ELEMENTS 
+function styleElements(color1, color2){
+  mainContainer.style.backgroundColor= color1;
+  footer.style.backgroundColor= color1;
+  header.style.backgroundColor= color1;
+  mainWrapper.style.backgroundColor= color1;
+  menuIcon.style.fill= color2;
+}
+
+
+//-------------------------------------------//
 //-----------------NAV MENU------------------//
 //-------------------------------------------//
 
@@ -55,7 +98,7 @@ nav.addEventListener('keydown', e => {
 
 
 //-------------------------------------------//
-//-------------------TEST--------------------//
+//---------ANIMATE BONJOUR ON LOAD-----------//
 //-------------------------------------------//
 
 const hello= $('.bonjour');
@@ -74,3 +117,67 @@ window.onload= function(){
 
     
 }
+
+//--------------------------------------------------//
+//-----HIDE AND SHOW CONTENT IN .MAIN-CONTAINER-----//
+//--------------------------------------------------//
+
+const introText= document.querySelector('.intro-text');
+const mainContainer=document.querySelector('.main-container');
+const introGallery=document.querySelector('.intro-gallery');
+const info=document.querySelector('.info');
+const ctaContainer=document.querySelector('.cta-container');
+const footer=document.querySelector('footer');
+const header=document.querySelector('.header-container');
+const mainWrapper=document.querySelector('.main-wrapper');
+const workGallery=document.querySelector('.work-gallery');
+
+const navMenu= document.querySelector('.nav__menu');
+const menuBtn= document.querySelectorAll('.nav__link');
+const menuIcon=document.querySelector('.menuicon__circle');
+
+info.style.display= 'none';
+workGallery.style.display='none';
+
+
+navMenu.addEventListener('click',(e)=>{
+  
+  //ABOUT
+  if(e.target === menuBtn[2]){
+
+
+    // function changeContent(a,b,c,d){
+    //   introText.style.display=a;
+    //   introGallery.style.display=b;
+    //   info.style.display=c;
+    //   workGallery.style.display=d; 
+    // }
+
+    //CHANGE CONTENT IN .MAIN-CONTAINER
+    changeContent('none', 'none', 'flex','none');
+
+
+    //STYLE HTML ELEMENTS 
+    styleElements(purple, lightGrey);
+
+    closeOnClick();
+
+
+  }else if(e.target === menuBtn[0]){
+
+    changeContent('flex', 'flex','none','none');
+
+    styleElements(lightGrey, purple);
+
+    closeOnClick();
+
+  }else if(e.target === menuBtn[1]){
+    changeContent('none','none','none','flex');
+    ctaContainer.children[0].style.display='none';
+    ctaContainer.children[1].style.color=purple;
+    ctaContainer.children[1].children[1].style.stroke=purple;//THIS DOES NOT WORK YET. ALSO NOT IN ABOUT SECTION
+    styleElements(lightGrey, purple);
+    closeOnClick();
+  }
+
+});

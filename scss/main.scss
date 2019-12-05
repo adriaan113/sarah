@@ -7,7 +7,7 @@
   --screen-height:    560px;
   --header-bg-color:  #673AB7;
   --splash-bg-color:  #368887;
-}
+}//DIT MOET SOWIESO WEG!!!
 
 $bg-color-lightgrey:#F5F5F5;
 $bg-color-purple:#70609F;
@@ -27,6 +27,28 @@ $text-color-black: $bg-color-hover;
 @font-face {
   font-family: 'basis-grotesque';
   src: url('../fonts/bgp/basisgrotesquepro-regular.ttf') format('truetype');
+}
+
+@mixin gallery{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: calc(300px + 2rem);
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  li{
+    margin: 1rem;
+    a{
+      display: block;
+      width: 300px;
+      height: 200px;
+      background-color: $bg-color-purple;
+    }
+    p{
+      text-align: center;
+    }
+  }
 }
 
 
@@ -80,11 +102,14 @@ p,body{
   justify-content: flex-start;
   width: 100% !important;
   background-color: $bg-color-lightgrey;
-  .logo{
-    font-size: 1rem;
-    color: $text-color-black;
-    padding: .5rem 1rem;
-    //margin: 0 auto;
+  a{
+    text-decoration: none;
+    .logo{
+      font-size: 1rem;
+      color: $text-color-black;
+      padding: .5rem 1rem;
+      //margin: 0 auto;
+    }
   }
 
   .logo-hidden{
@@ -111,30 +136,32 @@ p,body{
   }
 }
 
-.home-work{
+.main-container{
   width: 100%;
- 
-  .grid{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    max-width: calc(300px + 2rem);
-    margin: 0 auto;
 
-    list-style: none;
-    padding: 0;
-    li{
-      margin: 1rem;
-      a{
-        display: block;
-        width: 300px;
-        height: 200px;
-        background-color: $bg-color-purple;
-      }
-      p{
-        text-align: center;
-      }
-    }
+
+ 
+  .intro-gallery{
+    // display: flex;
+    // flex-flow: row wrap;
+    // justify-content: center;
+    // max-width: calc(300px + 2rem);
+    // margin: 0 auto;
+    // list-style: none;
+    // padding: 0;
+    @include gallery;
+    // li{
+    //   margin: 1rem;
+    //   a{
+    //     display: block;
+    //     width: 300px;
+    //     height: 200px;
+    //     background-color: $bg-color-purple;
+    //   }
+    //   p{
+    //     text-align: center;
+    //   }
+    // }
   }
 }
 
@@ -164,9 +191,64 @@ p,body{
 
 //--------WORK PAGE--------//
 
+.work-gallery{
+  @include gallery;
+}
 
-.work{
-  @extend .home-work;
+
+// .work{
+//   @extend .main-container;
+// }
+
+
+//-------ABOUT PAGE-------//
+
+.info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: calc(300px + 2rem);
+  margin: 0 auto;
+  padding: 0 1rem;
+  background-color: $bg-color-purple;
+  color: $text-color-lightgrey;
+  .about-me{
+    display:flex;
+    flex-direction: column;
+
+    h1{
+      font-size: 4rem;
+    }
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+    a{
+      margin: 2rem auto;
+      img{
+        width: 70px;
+        height: auto;
+      }
+    }
+  }
+  .whatido{
+    display:flex;
+    flex-direction: column;
+    a{
+      margin: 2rem auto;
+      img{
+        width: 70px;
+        height: auto;
+      }
+    }
+  }
+  .contact{
+    span{
+      display:block;
+    }
+  }
 }
 
 
