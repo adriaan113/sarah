@@ -146,13 +146,6 @@ navMenu.addEventListener('click',(e)=>{
   if(e.target === menuBtn[2]){
 
 
-    // function changeContent(a,b,c,d){
-    //   introText.style.display=a;
-    //   introGallery.style.display=b;
-    //   info.style.display=c;
-    //   workGallery.style.display=d; 
-    // }
-
     //CHANGE CONTENT IN .MAIN-CONTAINER
     changeContent('none', 'none', 'flex','none');
 

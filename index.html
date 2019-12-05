@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/main.min.css">
   <title>Sarah Lancelin</title>
 </head>
@@ -136,71 +137,68 @@
 
     <ul class="work-gallery">
       <li class="work-gallery-item">
-          <a href="#"></a>
-          <p>Lorem, ipsum dolor.</p>
+          <a href="#">
+            <img src="" alt="">
+            <p>%title</p>
+          </a>
 
           <!--IF IMG OR TITLE GET CLICKED, THIS WILL APPEAR-->
-          <div class="extra-info">
-            <h4>sjaak magazine</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ut!</p>
-            <div class="show-more">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus est nemo, cupiditate reprehenderit recusandae eius quidem ipsam! Tempora praesentium inventore velit quaerat earum vitae facilis cupiditate reiciendis at quasi, aspernatur vero repudiandae eaque assumenda iusto quibusdam reprehenderit! Nobis quibusdam, aperiam reiciendis animi asperiores quae temporibus id iusto quo, quam voluptate!</p>
-            </div>
-            <button>show more</button>
-          </div>
-
-          <div class="cisy">
-            <div class="client">
-              <p>client</p>
-              <p>leger des heils</p>
-            </div>
-            <div class="industry">
-              <p>non-profit</p>
-            </div>
-            <div class="services">
-              <p>concept,design,art direction,photography</p>
-            </div>
-            <div class="year">
-              <p>2018-2019 at DailyMilk</p>
-            </div>
-          </div>
+          <!--JS GENERATED HTML FOR EACH LI-->
 
       </li>
       <li class="work-gallery-item">
-          <a href="#"></a>
-          <p>Lorem, ipsum dolor.</p>
+          <a href="#">
+            <img src="" alt="">
+            <p>%title</p>
+          </a>
       </li>
       <li class="work-gallery-item">
-          <a href="#"></a>
-          <p>Lorem, ipsum dolor.</p>
+          <a href="#">
+            <img src="" alt="">
+            <p>%title</p>
+          </a>
       </li>
       <li class="work-gallery-item">
-          <a href="#"></a>
-          <p>Lorem, ipsum dolor.</p>
+          <a href="#">
+            <img src="" alt="">
+            <p>%title</p>
+          </a>
       </li>
       <li class="work-gallery-item">
-          <a href="#"></a>
-          <p>Lorem, ipsum dolor.</p>
+          <a href="#">
+            <img src="" alt="">
+            <p>%title</p>
+          </a>
       </li>
       <li class="work-gallery-item">
-          <a href="#"></a>
-          <p>Lorem, ipsum dolor.</p>
+          <a href="#">
+            <img src="" alt="">
+            <p>%title</p>
+          </a>
       </li>
       <li class="work-gallery-item">
-          <a href="#"></a>
-          <p>Lorem, ipsum dolor.</p>
+          <a href="#">
+            <img src="" alt="">
+            <p>%title</p>
+          </a>
       </li>
       <li class="work-gallery-item">
-          <a href="#"></a>
-          <p>Lorem, ipsum dolor.</p>
+          <a href="#">
+            <img src="" alt="">
+            <p>%title</p>
+          </a>
       </li>
       <li class="work-gallery-item">
-          <a href="#"></a>
-          <p>Lorem, ipsum dolor.</p>
+          <a href="#">
+            <img src="" alt="">
+            <p>%title</p>
+          </a>
       </li>
       <li class="work-gallery-item">
-          <a href="#"></a>
-          <p>Lorem, ipsum dolor.</p>
+          <a href="#">
+            <img src="" alt="">
+            <p>%title</p>
+          </a>
       </li>
     </ul>
 
@@ -238,12 +236,14 @@
 
   </div> <!--end of .main-wrapper-->
 
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
 
-  <script src="js/jquery.sticky.js"></script>
+<script src="js/slick.js"></script>
+
+<script src="js/jquery.sticky.js"></script>
 
 <script src="js/main.js"></script>
 <script src="js/work.js"></script>
@@ -253,6 +253,14 @@
     $(".header-container").sticky({
       topSpacing:0,
       zIndex: '9999'
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function(){
+    $('.work-gallery-item a ').slick({
+      
     });
   });
 </script>
