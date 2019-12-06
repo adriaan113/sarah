@@ -141,7 +141,7 @@ workGallery.addEventListener('click',(e)=>{
         if(e.target.tagName==='A'){
             //console.log('satan');
             if(e.target.parentNode.children.length < 2 ){
-                addContent();
+                addContent();         
             }else{
                 removeContent();
             }
@@ -163,7 +163,7 @@ workGallery.addEventListener('click',(e)=>{
         //     }
         }else{
             //console.log('dit moet dan wel de UL zijn toch?');
-            console.log(e.target);
+            //console.log(e.target);
         }   
         //console.log(e.target);
     
@@ -174,13 +174,16 @@ workGallery.addEventListener('click',(e)=>{
 
 // const showMoreBtn= document.querySelectorAll('.');
 
-//const satan=document.querySelector('button');
+
+const btn=document.querySelector('button');
 const extraInfo= document.querySelector('.extra-info');
 const showMore= document.querySelector('.show-more');
 
-window.addEventListener('click',(e)=>{
-    if(e.target.tagName === 'BUTTON'){
-        showMore.style.display='block';
+extraInfoContainer.addEventListener('click',(e)=>{
+    if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
+        //showMore.style.display='block';
         console.log(e.target);
+        btn.textContent='show less';
     }
 })
+
