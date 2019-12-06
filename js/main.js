@@ -101,6 +101,8 @@ nav.addEventListener('keydown', e => {
 //---------ANIMATE BONJOUR ON LOAD-----------//
 //-------------------------------------------//
 
+//BONJOUR GETS ANIMATED WITH ANIMATE.CSS. THIS PART ONLY ANIMATES ALL THE OTHER ELEMENTS.
+
 const hello= $('.bonjour');
 const aside= $('.intro-text');
 
@@ -113,10 +115,10 @@ window.onload= function(){
     hello.css('margin', '1em auto').show();
     setTimeout(() => {
     test.fadeIn();
-    }, 1500);
-
-    
+    }, 1500);  
 }
+
+
 
 //--------------------------------------------------//
 //-----HIDE AND SHOW CONTENT IN .MAIN-CONTAINER-----//

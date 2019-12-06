@@ -18,6 +18,8 @@ $text-color-lightgrey: $bg-color-lightgrey;
 $text-color-purple: $bg-color-purple;
 $text-color-black: $bg-color-hover;
 
+$border-line: solid 2px;
+
 
 @font-face {
   font-family: 'ginto';
@@ -33,7 +35,7 @@ $text-color-black: $bg-color-hover;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  max-width: calc(300px + 2rem);
+  max-width: calc(600px + 4rem);
   margin: 0 auto;
   list-style: none;
   padding: 0;
@@ -195,6 +197,58 @@ p,body{
   @include gallery;
 }
 
+.extra-info-container{
+  display: flex;
+  flex-direction: column;
+  .extra-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 1rem 2rem;
+    h2{
+      align-self: center;
+    }
+    &>p{
+      font-size: 1.2rem;
+      text-align: left;
+    }
+    .show-more{
+      display: none;
+      //text-align: left;
+    }
+    button{
+      display: inline-block;
+      background-color: $bg-color-lightgrey;
+      border: none;
+      text-decoration: underline; 
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+  }
+  .cisy{
+    border-top: $border-line;
+    border-bottom: $border-line; //NIET SUPER ELEGANT DIT
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    margin: 0 1rem;
+    .client, 
+    .industry,
+    .services,
+    .year{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      h3{
+        margin: .5rem 0 .2rem
+      }
+      p{
+        margin: 0 0 .5rem;
+        text-align: left;
+      }
+    }
+  }
+}
 
 // .work{
 //   @extend .main-container;
@@ -257,7 +311,7 @@ p,body{
 footer{
   display: block;
   width: 100%;
-  border-top: solid 2px $text-color-black;
+  border-top: $border-line;
   .footer-container{
   display: flex;
   flex-direction: column;
@@ -276,7 +330,9 @@ footer{
 //-------------------------------------------//
 
 
-
+button:focus{
+  outline: 0;
+}
 
 
 //-------------------------------------------//
