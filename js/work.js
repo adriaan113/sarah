@@ -87,7 +87,7 @@ function addContent(){
         <div class="show-more">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus est nemo, cupiditate reprehenderit recusandae eius quidem ipsam! Tempora praesentium inventore velit quaerat earum vitae facilis cupiditate reiciendis at quasi, aspernatur vero repudiandae eaque assumenda iusto quibusdam reprehenderit! Nobis quibusdam, aperiam reiciendis animi asperiores quae temporibus id iusto quo, quam voluptate!</p>
         </div>
-        <button>show more</button>
+        <button class="show-more-btn">show more</button>
     </div>
     
     <div class="cisy">
@@ -111,12 +111,29 @@ function addContent(){
     `;
     workGalleryItem[0].appendChild(extraInfoContainer); //NU DOET HET HET ALLEEN BIJ DE EERSTE. HIER MOET DUS NOG EEN LOOP KOMEN.
     extraInfoContainer.classList.add('animated','fadeIn');
+
+    showContent();
+
 }
 
 
 function removeContent(){
 
     workGalleryItem[0].removeChild(extraInfoContainer);
+}
+
+function showContent(){
+
+    const btn=document.querySelector('.show-more-btn');
+    const extraInfo= document.querySelector('.extra-info');
+    const showMore= document.querySelector('.show-more');
+
+    extraInfoContainer.addEventListener('click',(e)=>{
+        if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
+            showMore.style.display='block';
+            btn.innerHTML='show less';
+        }
+    })
 }
 
 
@@ -175,15 +192,5 @@ workGallery.addEventListener('click',(e)=>{
 // const showMoreBtn= document.querySelectorAll('.');
 
 
-const btn=document.querySelector('button');
-const extraInfo= document.querySelector('.extra-info');
-const showMore= document.querySelector('.show-more');
 
-extraInfoContainer.addEventListener('click',(e)=>{
-    if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
-        //showMore.style.display='block';
-        console.log(e.target);
-        btn.textContent='show less';
-    }
-})
 

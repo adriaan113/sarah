@@ -48,7 +48,7 @@ $border-line: solid 2px;
       background-color: $bg-color-purple;
     }
     p{
-      text-align: center;
+      //text-align: center; //WAAR HAD IK DIT OOK ALWEER VOOR BEDACHT??
     }
   }
 }
@@ -210,7 +210,7 @@ p,body{
     }
     &>p{
       font-size: 1.2rem;
-      text-align: left;
+      text-align: left; //HEB IK AL DEZE TEXT-ALIGN NOG WEL NODIG??
     }
     .show-more{
       display: none;
@@ -218,6 +218,7 @@ p,body{
     }
     button{
       display: inline-block;
+      padding: 0;
       background-color: $bg-color-lightgrey;
       border: none;
       text-decoration: underline; 
