@@ -112,7 +112,7 @@ function addContent(){
     workGalleryItem[0].appendChild(extraInfoContainer); //NU DOET HET HET ALLEEN BIJ DE EERSTE. HIER MOET DUS NOG EEN LOOP KOMEN.
     extraInfoContainer.classList.add('animated','fadeIn');
 
-    showContent();
+    showHideContent();
 
 }
 
@@ -122,7 +122,7 @@ function removeContent(){
     workGalleryItem[0].removeChild(extraInfoContainer);
 }
 
-function showContent(){
+function showHideContent(){
 
     const btn=document.querySelector('.show-more-btn');
     const extraInfo= document.querySelector('.extra-info');
@@ -132,6 +132,9 @@ function showContent(){
         if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
             showMore.style.display='block';
             btn.innerHTML='show less';
+        }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
+            showMore.style.display='none';
+            btn.innerHTML='show more';
         }
     })
 }
