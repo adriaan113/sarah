@@ -101,50 +101,108 @@ function generateWorkLI(){
     }
 }
 
- generateWorkLI();
+generateWorkLI();
 
 
 
-function addContent(){
+function addContent(e){
 
-    const div= document.createElement('div');
-    div.classList.add('extra-info-container','animated','fadeIn');
+    const li=document.querySelectorAll('.work-gallery-item');
 
-    const li= document.querySelector('.work-gallery-item');
+   
 
-    li.appendChild(div);
-
-
-    div.innerHTML=`
     
-    <div class="extra-info">
-        <h2>sjaak magazine</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ut!</p>
-        <div class="show-more">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus est nemo, cupiditate reprehenderit recusandae eius quidem ipsam! Tempora praesentium inventore velit quaerat earum vitae facilis cupiditate reiciendis at quasi, aspernatur vero repudiandae eaque assumenda iusto quibusdam reprehenderit! Nobis quibusdam, aperiam reiciendis animi asperiores quae temporibus id iusto quo, quam voluptate!</p>
-        </div>
-        <button class="show-more-btn">show more</button>
-    </div>
+
+    if(e.target.tagName==='A'){
+
+        switch(e.target.parentNode){
+            case li[0]:
+                innerContent(0,workData[0].title,workData[0].intro,workData[0].extraInfo,workData[0].client,workData[0].industry,workData[0].services,workData[0].year);
+                break;
+            case li[1]:
+                innerContent(1,workData[1].title,workData[1].intro,workData[1].extraInfo,workData[1].client,workData[1].industry,workData[1].services,workData[1].year);
+                break;
+            case li[2]:
+                innerContent(2,workData[2].title,workData[2].intro,workData[2].extraInfo,workData[2].client,workData[2].industry,workData[2].services,workData[2].year);
+                break;
+            case li[3]:
+                innerContent(3,workData[3].title,workData[3].intro,workData[3].extraInfo,workData[3].client,workData[3].industry,workData[3].services,workData[3].year);
+                break;
+            case li[4]:
+                innerContent(4,workData[4].title,workData[4].intro,workData[4].extraInfo,workData[4].client,workData[4].industry,workData[4].services,workData[4].year);
+                break;
+            case li[5]:
+                innerContent(5,workData[5].title,workData[5].intro,workData[5].extraInfo,workData[5].client,workData[5].industry,workData[5].services,workData[5].year);
+                break;
+        }
+
+    }else if(e.target.tagName==='IMG' || e.target.tagName=== 'P'){
+
+        switch(e.target.parentNode.parentNode){
+            case li[0]:
+                innerContent(0,workData[0].title,workData[0].intro,workData[0].extraInfo,workData[0].client,workData[0].industry,workData[0].services,workData[0].year);
+                break;
+            case li[1]:
+                innerContent(1,workData[1].title,workData[1].intro,workData[1].extraInfo,workData[1].client,workData[1].industry,workData[1].services,workData[1].year);
+                break;
+            case li[2]:
+                innerContent(2,workData[2].title,workData[2].intro,workData[2].extraInfo,workData[2].client,workData[2].industry,workData[2].services,workData[2].year);
+                break;
+            case li[3]:
+                innerContent(3,workData[3].title,workData[3].intro,workData[3].extraInfo,workData[3].client,workData[3].industry,workData[3].services,workData[3].year);
+                break;
+            case li[4]:
+                innerContent(4,workData[4].title,workData[4].intro,workData[4].extraInfo,workData[4].client,workData[4].industry,workData[4].services,workData[4].year);
+                break;
+            case li[5]:
+                innerContent(5,workData[5].title,workData[5].intro,workData[5].extraInfo,workData[5].client,workData[5].industry,workData[5].services,workData[5].year);
+                break;
+        }
+    }
+
+
+
+    // const div= document.createElement('div');
+    // div.classList.add('extra-info-container','animated','fadeIn');
+
+    // const li= document.querySelector('.work-gallery-item');
+
+    // li.appendChild(div);
+
+
+    // div.innerHTML=`
     
-    <div class="cisy">
-        <div class="client">
-            <h3>client</h3>
-            <p>leger des heils</p>
-        </div>
-        <div class="industry">
-            <h3>industry</h3>
-            <p>non-profit</p>
-        </div>
-        <div class="services">
-            <h3>services</h3>
-            <p>concept,design,art direction,photography</p>
-        </div>
-        <div class="year">
-            <h3>year</h3>
-            <p>2018-2019 at DailyMilk</p>
-        </div>
-    </div>
-    `;
+    // <div class="extra-info">
+    //     <h2>sjaak magazine</h2>
+    //     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ut!</p>
+    //     <div class="show-more">
+    //         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus est nemo, cupiditate reprehenderit recusandae eius quidem ipsam! Tempora praesentium inventore velit quaerat earum vitae facilis cupiditate reiciendis at quasi, aspernatur vero repudiandae eaque assumenda iusto quibusdam reprehenderit! Nobis quibusdam, aperiam reiciendis animi asperiores quae temporibus id iusto quo, quam voluptate!</p>
+    //     </div>
+    //     <button class="show-more-btn">show more</button>
+    // </div>
+    
+    // <div class="cisy">
+    //     <div class="client">
+    //         <h3>client</h3>
+    //         <p>leger des heils</p>
+    //     </div>
+    //     <div class="industry">
+    //         <h3>industry</h3>
+    //         <p>non-profit</p>
+    //     </div>
+    //     <div class="services">
+    //         <h3>services</h3>
+    //         <p>concept,design,art direction,photography</p>
+    //     </div>
+    //     <div class="year">
+    //         <h3>year</h3>
+    //         <p>2018-2019 at DailyMilk</p>
+    //     </div>
+    // </div>
+    // `;
+
+
+
     //workGalleryItem[0].appendChild(extraInfoContainer); //NU DOET HET HET ALLEEN BIJ DE EERSTE. HIER MOET DUS NOG EEN LOOP KOMEN.
     //extraInfoContainer.classList.add('animated','fadeIn');
 
@@ -153,9 +211,56 @@ function addContent(){
 }
 
 
+function innerContent(num,title,intro,extraInfo,client,industry,services,year){
+
+
+    const div= document.createElement('div');
+    div.classList.add('extra-info-container','animated','fadeIn');
+
+    const li= document.querySelectorAll('.work-gallery-item');
+
+    li[num].appendChild(div);
+    
+    div.innerHTML=`
+    
+    <div class="extra-info">
+        <h2>${title}</h2>
+        <p>${intro}</p>
+        <div class="show-more">
+            <p>${extraInfo}</p>
+        </div>
+        <button class="show-more-btn">show more</button>
+    </div>
+    
+    <div class="cisy">
+        <div class="client">
+            <h3>client</h3>
+            <p>${client}</p>
+        </div>
+        <div class="industry">
+            <h3>industry</h3>
+            <p>${industry}</p>
+        </div>
+        <div class="services">
+            <h3>services</h3>
+            <p>${services}</p>
+        </div>
+        <div class="year">
+            <h3>year</h3>
+            <p>${year}</p>
+        </div>
+    </div>
+    `;
+}
+
+
 function removeContent(){
-    //workGalleryItem[0].removeChild(extraInfoContainer);
-    console.log('hahahaha');
+    
+    // const div= document.querySelector('.extra-info-container');
+    // const li= document.querySelector('.work-gallery-item');
+
+    // li.removeChild(div);
+    
 }
 
 //SHOW AND HIDE THE EXTRA CONTENT WHEN CLICKED ON BUTTON
@@ -186,21 +291,21 @@ workGallery.addEventListener('click',(e)=>{
         if(e.target.tagName==='A'){
           
             if(e.target.parentNode.children.length < 2 ){
-                //addContent();    
-                console.log('add');     
+                addContent(e);    
+                //console.log('add');     
             }else{
-                //removeContent();
-                console.log('remove');
+                removeContent(e);
+                //console.log('remove');
             }
             
         }else if(e.target.tagName==='IMG' || e.target.tagName=== 'P'){
             
             if(e.target.parentNode.parentNode.children.length < 2){
-                //addContent();
-                console.log('add');   
+                addContent(e);
+                //console.log('add');   
             }else{
-                //removeContent();
-                console.log('remove');
+                removeContent(e);
+                //console.log('remove');
             }
             
         }else{
