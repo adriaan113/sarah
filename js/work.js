@@ -109,55 +109,66 @@ function addContent(e){
 
     const li=document.querySelectorAll('.work-gallery-item');
 
-   
-
-    
 
     if(e.target.tagName==='A'){
 
-        switch(e.target.parentNode){
-            case li[0]:
-                innerContent(0,workData[0].title,workData[0].intro,workData[0].extraInfo,workData[0].client,workData[0].industry,workData[0].services,workData[0].year);
-                break;
-            case li[1]:
-                innerContent(1,workData[1].title,workData[1].intro,workData[1].extraInfo,workData[1].client,workData[1].industry,workData[1].services,workData[1].year);
-                break;
-            case li[2]:
-                innerContent(2,workData[2].title,workData[2].intro,workData[2].extraInfo,workData[2].client,workData[2].industry,workData[2].services,workData[2].year);
-                break;
-            case li[3]:
-                innerContent(3,workData[3].title,workData[3].intro,workData[3].extraInfo,workData[3].client,workData[3].industry,workData[3].services,workData[3].year);
-                break;
-            case li[4]:
-                innerContent(4,workData[4].title,workData[4].intro,workData[4].extraInfo,workData[4].client,workData[4].industry,workData[4].services,workData[4].year);
-                break;
-            case li[5]:
-                innerContent(5,workData[5].title,workData[5].intro,workData[5].extraInfo,workData[5].client,workData[5].industry,workData[5].services,workData[5].year);
-                break;
+        for(let i=0;i<li.length;i++){
+
+            if(e.target.parentNode===li[i]){
+                innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
+            }
+
+            // case li[0]:
+            //     innerContent(0,workData[0].title,workData[0].intro,workData[0].extraInfo,workData[0].client,workData[0].industry,workData[0].services,workData[0].year);
+            //     break;
+            // case li[1]:
+            //     innerContent(1,workData[1].title,workData[1].intro,workData[1].extraInfo,workData[1].client,workData[1].industry,workData[1].services,workData[1].year);
+            //     break;
+            // case li[2]:
+            //     innerContent(2,workData[2].title,workData[2].intro,workData[2].extraInfo,workData[2].client,workData[2].industry,workData[2].services,workData[2].year);
+            //     break;
+            // case li[3]:
+            //     innerContent(3,workData[3].title,workData[3].intro,workData[3].extraInfo,workData[3].client,workData[3].industry,workData[3].services,workData[3].year);
+            //     break;
+            // case li[4]:
+            //     innerContent(4,workData[4].title,workData[4].intro,workData[4].extraInfo,workData[4].client,workData[4].industry,workData[4].services,workData[4].year);
+            //     break;
+            // case li[5]:
+            //     innerContent(5,workData[5].title,workData[5].intro,workData[5].extraInfo,workData[5].client,workData[5].industry,workData[5].services,workData[5].year);
+            //     break;
         }
 
     }else if(e.target.tagName==='IMG' || e.target.tagName=== 'P'){
 
-        switch(e.target.parentNode.parentNode){
-            case li[0]:
-                innerContent(0,workData[0].title,workData[0].intro,workData[0].extraInfo,workData[0].client,workData[0].industry,workData[0].services,workData[0].year);
-                break;
-            case li[1]:
-                innerContent(1,workData[1].title,workData[1].intro,workData[1].extraInfo,workData[1].client,workData[1].industry,workData[1].services,workData[1].year);
-                break;
-            case li[2]:
-                innerContent(2,workData[2].title,workData[2].intro,workData[2].extraInfo,workData[2].client,workData[2].industry,workData[2].services,workData[2].year);
-                break;
-            case li[3]:
-                innerContent(3,workData[3].title,workData[3].intro,workData[3].extraInfo,workData[3].client,workData[3].industry,workData[3].services,workData[3].year);
-                break;
-            case li[4]:
-                innerContent(4,workData[4].title,workData[4].intro,workData[4].extraInfo,workData[4].client,workData[4].industry,workData[4].services,workData[4].year);
-                break;
-            case li[5]:
-                innerContent(5,workData[5].title,workData[5].intro,workData[5].extraInfo,workData[5].client,workData[5].industry,workData[5].services,workData[5].year);
-                break;
+
+        for(let i=0;i<li.length;i++){
+
+            if(e.target.parentNode.parentNode===li[i]){
+                innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
+            }
+
         }
+
+        // switch(e.target.parentNode.parentNode){
+        //     case li[0]:
+        //         innerContent(0,workData[0].title,workData[0].intro,workData[0].extraInfo,workData[0].client,workData[0].industry,workData[0].services,workData[0].year);
+        //         break;
+        //     case li[1]:
+        //         innerContent(1,workData[1].title,workData[1].intro,workData[1].extraInfo,workData[1].client,workData[1].industry,workData[1].services,workData[1].year);
+        //         break;
+        //     case li[2]:
+        //         innerContent(2,workData[2].title,workData[2].intro,workData[2].extraInfo,workData[2].client,workData[2].industry,workData[2].services,workData[2].year);
+        //         break;
+        //     case li[3]:
+        //         innerContent(3,workData[3].title,workData[3].intro,workData[3].extraInfo,workData[3].client,workData[3].industry,workData[3].services,workData[3].year);
+        //         break;
+        //     case li[4]:
+        //         innerContent(4,workData[4].title,workData[4].intro,workData[4].extraInfo,workData[4].client,workData[4].industry,workData[4].services,workData[4].year);
+        //         break;
+        //     case li[5]:
+        //         innerContent(5,workData[5].title,workData[5].intro,workData[5].extraInfo,workData[5].client,workData[5].industry,workData[5].services,workData[5].year);
+        //         break;
+        // }
     }
 
 
@@ -254,14 +265,15 @@ function innerContent(num,title,intro,extraInfo,client,industry,services,year){
 }
 
 
-function removeContent(){
+// function removeContent(){
     
-    // const div= document.querySelector('.extra-info-container');
-    // const li= document.querySelector('.work-gallery-item');
+//     const div= document.querySelector('.extra-info-container');
+//     const li= document.querySelector('.work-gallery-item');
 
-    // li.removeChild(div);
+
+//     li.removeChild(div); 
     
-}
+// }
 
 //SHOW AND HIDE THE EXTRA CONTENT WHEN CLICKED ON BUTTON
 // function showHideContent(){
