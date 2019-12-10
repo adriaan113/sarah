@@ -46,10 +46,14 @@ $border-line: solid 2px;
       width: 300px;
       height: 200px;
       background-color: $bg-color-purple;
+      img{
+        width: 100%;
+        height: auto;
+      }
     }
-    p{
-      //text-align: center; //WAAR HAD IK DIT OOK ALWEER VOOR BEDACHT??
-    }
+    // p{
+    //   //text-align: center; //WAAR HAD IK DIT OOK ALWEER VOOR BEDACHT??
+    // }
   }
 }
 

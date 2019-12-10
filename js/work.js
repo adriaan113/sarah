@@ -70,6 +70,7 @@ const workData=[
 //-------------------------------------------//
 
 const workGalleryItem=document.querySelectorAll('.work-gallery-item');
+//let workGalleryItem;
 
 const extraInfoContainer= document.createElement('div');
 
@@ -77,9 +78,44 @@ const extraInfoContainer= document.createElement('div');
 //-----------------FUNCTIONS-----------------//
 //-------------------------------------------//
 
+function generateWorkLI(){
+
+    for(let i=0; i< workData.length; i++){
+
+        const li=document.createElement('li')
+        li.classList.add('work-gallery-item');
+    
+        const link= document.createElement('a');
+        const img=document.createElement('img');
+        const p=document.createElement('p');
+
+
+        img.src= workData[i].img[0];
+        p.textContent=workData[i].title;
+
+        link.appendChild(p);
+        link.appendChild(img);
+        li.appendChild(link);
+        //li.appendChild(div);
+        workGallery.appendChild(li);
+    }
+}
+
+ generateWorkLI();
+
+
+
 function addContent(){
 
-    extraInfoContainer.innerHTML=`
+    const div= document.createElement('div');
+    div.classList.add('extra-info-container','animated','fadeIn');
+
+    const li= document.querySelector('.work-gallery-item');
+
+    li.appendChild(div);
+
+
+    div.innerHTML=`
     
     <div class="extra-info">
         <h2>sjaak magazine</h2>
@@ -109,90 +145,71 @@ function addContent(){
         </div>
     </div>
     `;
-    workGalleryItem[0].appendChild(extraInfoContainer); //NU DOET HET HET ALLEEN BIJ DE EERSTE. HIER MOET DUS NOG EEN LOOP KOMEN.
-    extraInfoContainer.classList.add('animated','fadeIn');
+    //workGalleryItem[0].appendChild(extraInfoContainer); //NU DOET HET HET ALLEEN BIJ DE EERSTE. HIER MOET DUS NOG EEN LOOP KOMEN.
+    //extraInfoContainer.classList.add('animated','fadeIn');
 
-    showHideContent();
+    //showHideContent();
 
 }
 
 
 function removeContent(){
-
-    workGalleryItem[0].removeChild(extraInfoContainer);
+    //workGalleryItem[0].removeChild(extraInfoContainer);
+    console.log('hahahaha');
 }
 
-function showHideContent(){
+//SHOW AND HIDE THE EXTRA CONTENT WHEN CLICKED ON BUTTON
+// function showHideContent(){
 
-    const btn=document.querySelector('.show-more-btn');
-    const extraInfo= document.querySelector('.extra-info');
-    const showMore= document.querySelector('.show-more');
+//     const btn=document.querySelector('.show-more-btn');
+//     const extraInfo= document.querySelector('.extra-info');
+//     const showMore= document.querySelector('.show-more');
 
-    extraInfoContainer.addEventListener('click',(e)=>{
-        if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
-            showMore.style.display='block';
-            btn.innerHTML='show less';
-        }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
-            showMore.style.display='none';
-            btn.innerHTML='show more';
-        }
-    })
-}
-
-
-
-extraInfoContainer.classList.add('extra-info-container');
-
-//workGalleryItem[0].insertBefore(extraInfoContainer,workGalleryItem[0])
+//     extraInfoContainer.addEventListener('click',(e)=>{
+//         if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
+//             showMore.style.display='block';
+//             btn.innerHTML='show less';
+//         }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
+//             showMore.style.display='none';
+//             btn.innerHTML='show more';
+//         }
+//     })
+// }
 
 
-//LOOP OVER WORKGALLERYITEMS AND CHANGE THE TITLE
-for(i of workGalleryItem){
-    const x= i.children[0].children[1].innerHTML;
-    const title= x.replace("%title",workData[0].title);
-    i.children[0].children[1].innerHTML=title;
-    // i.children[0].src= workData[0].img[0];
-}
+
 
 workGallery.addEventListener('click',(e)=>{
 
     //if(e.target.parentNode.children.length < 2 || ){
 
         if(e.target.tagName==='A'){
-            //console.log('satan');
+          
             if(e.target.parentNode.children.length < 2 ){
-                addContent();         
+                //addContent();    
+                console.log('add');     
             }else{
-                removeContent();
+                //removeContent();
+                console.log('remove');
             }
             
-        }else if(e.target.tagName==='DIV'){
-            //console.log('dit is een P element');
+        }else if(e.target.tagName==='IMG' || e.target.tagName=== 'P'){
+            
             if(e.target.parentNode.parentNode.children.length < 2){
-                addContent();
+                //addContent();
+                console.log('add');   
             }else{
-                removeContent();
+                //removeContent();
+                console.log('remove');
             }
             
-        // }else if(e.target.tagName==='P'){
-
-        //     if(e.target.parentNode.parentNode.parentNode.parentNode.children.length < 2){
-        //         addContent();
-        //     }else{
-        //         removeContent();
-        //     }
         }else{
-            //console.log('dit moet dan wel de UL zijn toch?');
-            //console.log(e.target);
         }   
-        //console.log(e.target);
+       
     
-    // else{
-    //     console.log(e.target.parentNode.children.length);
-    // }
+    
 });
 
-// const showMoreBtn= document.querySelectorAll('.');
 
 
 
