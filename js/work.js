@@ -114,7 +114,7 @@ function addContent(e){
         for(let i=0;i<li.length;i++){
 
             if(e.target.parentNode===li[i]){
-                innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
+                innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
             }
         }
 
@@ -172,6 +172,9 @@ function innerContent(num,title,intro,extraInfo,client,industry,services,year){
         </div>
     </div>
     `;
+
+    showHideContent();
+    
 }
 
 
@@ -191,22 +194,29 @@ function removeContent(e){
 }
 
 //SHOW AND HIDE THE EXTRA CONTENT WHEN CLICKED ON BUTTON
-// function showHideContent(){
+function showHideContent(){
 
-//     const btn=document.querySelector('.show-more-btn');
-//     const extraInfo= document.querySelector('.extra-info');
-//     const showMore= document.querySelector('.show-more');
+    const btn=document.querySelector('.show-more-btn');
+    const extraInfo= document.querySelectorAll('.extra-info');
+    const showMore= document.querySelector('.show-more');
 
-//     extraInfoContainer.addEventListener('click',(e)=>{
-//         if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
-//             showMore.style.display='block';
-//             btn.innerHTML='show less';
-//         }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
-//             showMore.style.display='none';
-//             btn.innerHTML='show more';
-//         }
-//     })
-// }
+//for(let i=0; i<extraInfo.length;i++){
+
+    workGallery.addEventListener('click',(e)=>{
+        if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
+            showMore.style.display='block';
+            btn.innerHTML='show less';
+        }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
+            showMore.style.display='none';
+            btn.innerHTML='show more';
+        }
+       
+    })
+
+    
+
+    //}
+}
 
 
 
@@ -216,7 +226,7 @@ workGallery.addEventListener('click',(e)=>{
 
         if(e.target.tagName==='A'){
           
-            if(e.target.parentNode.children.length < 2 ){
+            if(e.target.parentNode.children.length < 2 ){ // HIER KLOPPEN DINGEN NIET. IS DIT ALLEMAAL NOG WEL NODIG???
                 addContent(e);    
                    
             }else{
