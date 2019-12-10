@@ -265,15 +265,18 @@ function innerContent(num,title,intro,extraInfo,client,industry,services,year){
 }
 
 
-// function removeContent(){
+function removeContent(e){
     
-//     const div= document.querySelector('.extra-info-container');
-//     const li= document.querySelector('.work-gallery-item');
+    const div= document.querySelectorAll('.extra-info-container');
+    const li= document.querySelectorAll('.work-gallery-item');
 
-
-//     li.removeChild(div); 
+        if(e.target.parentNode.length<3){
+            console.log('lalala');
+        }
+    // for(let i=0; i<li.length;i++)
+    // li[i].removeChild(div[i]); 
     
-// }
+}
 
 //SHOW AND HIDE THE EXTRA CONTENT WHEN CLICKED ON BUTTON
 // function showHideContent(){
@@ -304,20 +307,20 @@ workGallery.addEventListener('click',(e)=>{
           
             if(e.target.parentNode.children.length < 2 ){
                 addContent(e);    
-                //console.log('add');     
+                   
             }else{
                 removeContent(e);
-                //console.log('remove');
+               
             }
             
         }else if(e.target.tagName==='IMG' || e.target.tagName=== 'P'){
             
             if(e.target.parentNode.parentNode.children.length < 2){
                 addContent(e);
-                //console.log('add');   
+                
             }else{
                 removeContent(e);
-                //console.log('remove');
+                
             }
             
         }else{
