@@ -86,15 +86,29 @@ function generateWorkLI(){
         li.classList.add('work-gallery-item');
     
         const link= document.createElement('a');
-        const img=document.createElement('img');
+        //const img=document.createElement('img');
         const p=document.createElement('p');
 
+        // for(let j=0;j<workData[i].img.length;j++){
+        //     const img=document.createElement('img')[j];
+        //     img[j].src= workData[i].img[j];
+        // }
 
-        img.src= workData[i].img[0];
+        const img1=document.createElement('img');
+        const img2=document.createElement('img');
+        const img3=document.createElement('img');
+
+        img1.src= workData[0].img[0];
+        img2.src= workData[0].img[1];
+        img3.src= workData[0].img[2];
+        
         p.textContent=workData[i].title;
 
         link.appendChild(p);
-        link.appendChild(img);
+        //link.appendChild(img);
+        link.appendChild(img1);
+        link.appendChild(img2);
+        link.appendChild(img3);
         li.appendChild(link);
         workGallery.appendChild(li);
     }
@@ -208,7 +222,7 @@ for(let i=0; i<extraInfo.length;i++){
             btn[i].innerHTML='show less';
         }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
             showMore[i].style.display='none';
-            btn[i].innerHTML[i]='show more';
+            btn[i].innerHTML='show more';
         }
        
     })
