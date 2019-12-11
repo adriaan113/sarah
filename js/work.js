@@ -54,7 +54,7 @@ const workData=[
         year:'2018 - 2019 at Dailymilk'
     },
     {
-        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
+        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg','img/test1.jpg'],
         title:'nummer 6',
         intro: 'nummer 6 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         extraInfo:'nummer 6 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
@@ -89,26 +89,16 @@ function generateWorkLI(){
         //const img=document.createElement('img');
         const p=document.createElement('p');
 
-        // for(let j=0;j<workData[i].img.length;j++){
-        //     const img=document.createElement('img')[j];
-        //     img[j].src= workData[i].img[j];
-        // }
-
-        const img1=document.createElement('img');
-        const img2=document.createElement('img');
-        const img3=document.createElement('img');
-
-        img1.src= workData[0].img[0];
-        img2.src= workData[0].img[1];
-        img3.src= workData[0].img[2];
+        for(let j=0;j<workData[i].img.length;j++){
+            const img=document.createElement('img');
+            img.src=workData[i].img[j];
+            link.appendChild(img);
+        }
         
         p.textContent=workData[i].title;
 
         link.appendChild(p);
         //link.appendChild(img);
-        link.appendChild(img1);
-        link.appendChild(img2);
-        link.appendChild(img3);
         li.appendChild(link);
         workGallery.appendChild(li);
     }
