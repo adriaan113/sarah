@@ -196,26 +196,26 @@ function removeContent(e){
 //SHOW AND HIDE THE EXTRA CONTENT WHEN CLICKED ON BUTTON
 function showHideContent(){
 
-    const btn=document.querySelector('.show-more-btn');
+    const btn=document.querySelectorAll('.show-more-btn');
     const extraInfo= document.querySelectorAll('.extra-info');
-    const showMore= document.querySelector('.show-more');
+    const showMore= document.querySelectorAll('.show-more');
 
-//for(let i=0; i<extraInfo.length;i++){
+for(let i=0; i<extraInfo.length;i++){
 
     workGallery.addEventListener('click',(e)=>{
         if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
-            showMore.style.display='block';
-            btn.innerHTML='show less';
+            showMore[i].style.display='block';
+            btn[i].innerHTML='show less';
         }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
-            showMore.style.display='none';
-            btn.innerHTML='show more';
+            showMore[i].style.display='none';
+            btn[i].innerHTML[i]='show more';
         }
        
     })
 
     
 
-    //}
+    }
 }
 
 
