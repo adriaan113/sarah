@@ -123,7 +123,7 @@ function addContent(e){
         }
 
     }
-    else if(e.target.tagName==='IMG'){
+    else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
 
         //e.target.tagName=== 'P'
 
@@ -235,7 +235,7 @@ workGallery.addEventListener('click',(e)=>{
 
 
     console.log(e.target.tagName);
-    console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length);
+    console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
 
         if(e.target.tagName==='A'){
           
@@ -252,16 +252,16 @@ workGallery.addEventListener('click',(e)=>{
             }else{
                 removeContent(e);     
             }   
-        }else if(e.target.tagName==='IMG'){
+        }else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
 
 
             
             if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length < 2){
                 addContent(e);    
-                console.log('ahahaha');
+                //console.log('ahahaha');
             }else{
                 removeContent(e);     
-                console.log('nee joh niet doen hoor');
+                //console.log('nee joh niet doen hoor');
             }  
         }   
 });
