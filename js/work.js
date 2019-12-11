@@ -122,12 +122,14 @@ function addContent(e){
             }
         }
 
-    }else if(e.target.tagName==='IMG' || e.target.tagName=== 'P'){
+    }
+    else if(e.target.tagName==='IMG'){
 
+        //e.target.tagName=== 'P'
 
         for(let i=0;i<li.length;i++){
 
-            if(e.target.parentNode.parentNode===li[i]){
+            if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
                 innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
             }
 
@@ -192,9 +194,13 @@ function removeContent(e){
         e.target.parentNode.removeChild(e.target.parentNode.children[1]);
         
         
-    }else if(e.target.parentNode.parentNode.tagName==='LI'){
-        e.target.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.children[1]);
-    }   
+    }
+    // else if(e.target.parentNode.parentNode.tagName==='LI'){
+    //     e.target.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.children[1]);
+    // }   
+    else if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.tagName==='LI'){
+        e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[1]);
+    } 
 }
 
 //SHOW AND HIDE THE EXTRA CONTENT WHEN CLICKED ON BUTTON
@@ -228,6 +234,9 @@ for(let i=0; i<extraInfo.length;i++){
 workGallery.addEventListener('click',(e)=>{
 
 
+    console.log(e.target.tagName);
+    console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length);
+
         if(e.target.tagName==='A'){
           
             if(e.target.parentNode.children.length < 2 ){ // HIER KLOPPEN DINGEN NIET. IS DIT ALLEMAAL NOG WEL NODIG???
@@ -236,17 +245,27 @@ workGallery.addEventListener('click',(e)=>{
             }else{
                 removeContent(e);   
             }  
-        }else if(e.target.tagName==='IMG' || e.target.tagName=== 'P'){
+        }else if(e.target.tagName=== 'DIV'){
 
             if(e.target.parentNode.parentNode.children.length < 2){
                 addContent(e);    
             }else{
                 removeContent(e);     
             }   
-        }else{
+        }else if(e.target.tagName==='IMG'){
+
+
+            
+            if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length < 2){
+                addContent(e);    
+                console.log('ahahaha');
+            }else{
+                removeContent(e);     
+                console.log('nee joh niet doen hoor');
+            }  
         }   
 });
 
 
-
+//|| e.target.tagName=== 'P')
 
