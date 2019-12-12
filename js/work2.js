@@ -78,209 +78,207 @@ const workData=[
 //-----------------FUNCTIONS-----------------//
 //-------------------------------------------//
 
-function generateWorkLI(){
+// function generateWorkLI(){
 
-    for(let i=0; i< workData.length; i++){
+//     for(let i=0; i< workData.length; i++){
 
-        const li=document.createElement('li')
-        li.classList.add('work-gallery-item');
-        
+//         const li=document.createElement('li')
+//         li.classList.add('work-gallery-item');
     
-        const link= document.createElement('a');
-        //link.classList.add('glider-track');
-        
-        const p=document.createElement('p');
-        p.textContent=workData[i].title;
+//         const link= document.createElement('a');
+//         const p=document.createElement('p');
 
+//         p.textContent=workData[i].title;
 
-        //const img=document.createElement('img');
-        //img.classList.add('glide__slide');
-        //img.src=workData[1].img[1];
+//         link.appendChild(p);
+//         li.appendChild(link);
+//         workGallery.appendChild(li);
 
-        for(let j=0;j<workData[i].img.length;j++){
+    
+//         for(let j=0;j<workData[i].img.length;j++){
 
-            const img=document.createElement('img');
-            img.src=workData[i].img[j];
-            //img.classList.add('glider-slide');
-            link.appendChild(img);
-        }
-
-
-        
-
-        link.appendChild(p);
-
-         //link.appendChild(img);
-
-        li.appendChild(link);
-        workGallery.appendChild(li);
-      
+//             const img=document.createElement('img');
+//             img.src=workData[i].img[j];
+//             link.appendChild(img);
+//         }
         
        
-    }
-}
+//     }
+// }
 
-generateWorkLI();
-
-
-
-function addContent(e){
-
-    const li=document.querySelectorAll('.work-gallery-item');
+// generateWorkLI();
 
 
-    if(e.target.tagName==='A'){
 
-        for(let i=0;i<li.length;i++){
+// function addContent(e){
 
-            if(e.target.parentNode===li[i]){
-                innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
-            }
-        }
-
-    }
-    else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
-
-        //e.target.tagName=== 'P'
-
-        for(let i=0;i<li.length;i++){
-
-            if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
-                innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
-            }
-
-        }
-    }
-}
+//     const li=document.querySelectorAll('.work-gallery-item');
 
 
-function innerContent(num,title,intro,extraInfo,client,industry,services,year){
+//     if(e.target.tagName==='A'){
+
+//         for(let i=0;i<li.length;i++){
+
+//             if(e.target.parentNode===li[i]){
+//                 innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
+//             }
+//         }
+
+//     }
+//     else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
+
+//         //e.target.tagName=== 'P'
+
+//         for(let i=0;i<li.length;i++){
+
+//             if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
+//                 innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
+//             }
+
+//         }
+//     }
+// }
 
 
-    const div= document.createElement('div');
-    div.classList.add('extra-info-container','animated','fadeIn');
+// function innerContent(num,title,intro,extraInfo,client,industry,services,year){
 
-    const li= document.querySelectorAll('.work-gallery-item');
 
-    li[num].appendChild(div);
+//     const div= document.createElement('div');
+//     div.classList.add('extra-info-container','animated','fadeIn');
+
+//     const li= document.querySelectorAll('.work-gallery-item');
+
+//     li[num].appendChild(div);
     
-    div.innerHTML=`
-        <div class="extra-info">
-            <h2>${title}</h2>
-            <p>${intro}</p>
-            <div class="show-more">
-                <p>${extraInfo}</p>
-            </div>
-            <button class="show-more-btn">show more</button>
-        </div>
+//     div.innerHTML=`
+//         <div class="extra-info">
+//             <h2>${title}</h2>
+//             <p>${intro}</p>
+//             <div class="show-more">
+//                 <p>${extraInfo}</p>
+//             </div>
+//             <button class="show-more-btn">show more</button>
+//         </div>
         
-        <div class="cisy">
-            <div class="client">
-                <h3>client</h3>
-                <p>${client}</p>
-            </div>
-            <div class="industry">
-                <h3>industry</h3>
-                <p>${industry}</p>
-            </div>
-            <div class="services">
-                <h3>services</h3>
-                <p>${services}</p>
-            </div>
-            <div class="year">
-                <h3>year</h3>
-                <p>${year}</p>
-            </div>
-        </div>
-    `;
+//         <div class="cisy">
+//             <div class="client">
+//                 <h3>client</h3>
+//                 <p>${client}</p>
+//             </div>
+//             <div class="industry">
+//                 <h3>industry</h3>
+//                 <p>${industry}</p>
+//             </div>
+//             <div class="services">
+//                 <h3>services</h3>
+//                 <p>${services}</p>
+//             </div>
+//             <div class="year">
+//                 <h3>year</h3>
+//                 <p>${year}</p>
+//             </div>
+//         </div>
+//     `;
 
-    showHideContent();
+//     showHideContent();
     
-}
+// }
 
 
-function removeContent(e){
+// function removeContent(e){
     
-    const div= document.querySelectorAll('.extra-info-container');
-    const li= document.querySelectorAll('.work-gallery-item');
+//     const div= document.querySelectorAll('.extra-info-container');
+//     const li= document.querySelectorAll('.work-gallery-item');
 
-    if(e.target.parentNode.tagName==='LI'){
+//     if(e.target.parentNode.tagName==='LI'){
 
-        e.target.parentNode.removeChild(e.target.parentNode.children[1]);
+//         e.target.parentNode.removeChild(e.target.parentNode.children[1]);
         
         
-    }
-    // else if(e.target.parentNode.parentNode.tagName==='LI'){
-    //     e.target.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.children[1]);
-    // }   
-    else if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.tagName==='LI'){
-        e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[1]);
-    } 
-}
+//     }
+//     // else if(e.target.parentNode.parentNode.tagName==='LI'){
+//     //     e.target.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.children[1]);
+//     // }   
+//     else if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.tagName==='LI'){
+//         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[1]);
+//     } 
+// }
 
-//SHOW AND HIDE THE EXTRA CONTENT WHEN CLICKED ON BUTTON
-function showHideContent(){
+// //SHOW AND HIDE THE EXTRA CONTENT WHEN CLICKED ON BUTTON
+// function showHideContent(){
 
-    const btn=document.querySelectorAll('.show-more-btn');
-    const extraInfo= document.querySelectorAll('.extra-info');
-    const showMore= document.querySelectorAll('.show-more');
+//     const btn=document.querySelectorAll('.show-more-btn');
+//     const extraInfo= document.querySelectorAll('.extra-info');
+//     const showMore= document.querySelectorAll('.show-more');
 
-for(let i=0; i<extraInfo.length;i++){
+// for(let i=0; i<extraInfo.length;i++){
 
-    workGallery.addEventListener('click',(e)=>{
-        if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
-            showMore[i].style.display='block';
-            btn[i].innerHTML='show less';
-        }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
-            showMore[i].style.display='none';
-            btn[i].innerHTML='show more';
-        }
+//     workGallery.addEventListener('click',(e)=>{
+//         if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
+//             showMore[i].style.display='block';
+//             btn[i].innerHTML='show less';
+//         }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
+//             showMore[i].style.display='none';
+//             btn[i].innerHTML='show more';
+//         }
        
-    })
+//     })
 
     
 
-    }
-}
+//     }
+// }
 
 
+
+
+// workGallery.addEventListener('click',(e)=>{
+
+
+//     console.log(e.target.tagName);
+//     console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
+
+//         if(e.target.tagName==='A'){
+          
+//             if(e.target.parentNode.children.length < 2 ){ // HIER KLOPPEN DINGEN NIET. IS DIT ALLEMAAL NOG WEL NODIG???
+//                 addContent(e);    
+                   
+//             }else{
+//                 removeContent(e);   
+//             }  
+//         }else if(e.target.tagName=== 'DIV'){
+
+//             if(e.target.parentNode.parentNode.children.length < 2){
+//                 addContent(e);    
+//             }else{
+//                 removeContent(e);     
+//             }   
+//         }else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
+
+
+            
+//             if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length < 2){
+//                 addContent(e);    
+//                 //console.log('ahahaha');
+//             }else{
+//                 removeContent(e);     
+//                 //console.log('nee joh niet doen hoor');
+//             }  
+//         }   
+// });
+
+
+//|| e.target.tagName=== 'P')
+
+
+
+
+const workGalleryItem= document.querySelectorAll('.work-gallery-item');
+const title= document.querySelectorAll('.work-gallery-item a p');
 
 
 workGallery.addEventListener('click',(e)=>{
 
-
-    console.log(e.target.tagName);
-    console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
-
-        if(e.target.tagName==='A'){
-          
-            if(e.target.parentNode.children.length < 2 ){ // HIER KLOPPEN DINGEN NIET. IS DIT ALLEMAAL NOG WEL NODIG???
-                addContent(e);    
-                   
-            }else{
-                removeContent(e);   
-            }  
-        }else if(e.target.tagName=== 'DIV'){
-
-            if(e.target.parentNode.parentNode.children.length < 2){
-                addContent(e);    
-            }else{
-                removeContent(e);     
-            }   
-        }else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
-
-
-            
-            if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length < 2){
-                addContent(e);    
-                //console.log('ahahaha');
-            }else{
-                removeContent(e);     
-                //console.log('nee joh niet doen hoor');
-            }  
-        }   
+    //console.log(e.target);
 });
-
-
-//|| e.target.tagName=== 'P')
 
