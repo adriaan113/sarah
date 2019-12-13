@@ -84,19 +84,13 @@ function generateWorkLI(){
 
         const li=document.createElement('li')
         li.classList.add('work-gallery-item');
-        //li.style.height= '200px';
         
     
         const link= document.createElement('div');
-        //link.classList.add('glider-track');
+        link.classList.add('glider');
         
         const p=document.createElement('p');
         p.textContent=workData[i].title;
-
-
-        //const img=document.createElement('img');
-        //img.classList.add('glide__slide');
-        //img.src=workData[1].img[1];
 
         for(let j=0;j<workData[i].img.length;j++){
 
@@ -106,13 +100,7 @@ function generateWorkLI(){
             link.appendChild(img);
         }
 
-
-        
-
         link.appendChild(p);
-
-         //link.appendChild(img);
-
         li.appendChild(link);
         workGallery.appendChild(li);
       

@@ -4,6 +4,8 @@
 
 .nav {
   
+    z-index: 9999;// BEETJE LOMP MAAR IT GETS THE JOB DONE
+    
     // Toggle Button
     &__toggle {
       display:inline-block;
