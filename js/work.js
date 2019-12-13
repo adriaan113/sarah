@@ -100,6 +100,7 @@ function generateWorkLI(){
         //link.appendChild(p);
         li.appendChild(p);
         li.appendChild(link);
+        li.insertBefore(link,p);
         workGallery.appendChild(li);
     }
 }
@@ -108,30 +109,64 @@ generateWorkLI();
 
 
 
+// function addContent(e){
+
+//     const li=document.querySelectorAll('.work-gallery-item');
+
+
+//     if(e.target.tagName==='DIV'){
+
+//         for(let i=0;i<li.length;i++){
+
+//             if(e.target.parentNode===li[i]){
+//                 innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
+//             }
+//         }
+//     }
+//     else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
+
+//         for(let i=0;i<li.length;i++){
+
+//             if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
+//                 innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
+//             }
+//         }
+//     }
+// }
+
 function addContent(e){
 
     const li=document.querySelectorAll('.work-gallery-item');
 
+        if(e.target.tagName==='IMG'){
+            for(let i=0;i<li.length;i++){
 
-    if(e.target.tagName==='DIV'){
-
-        for(let i=0;i<li.length;i++){
-
-            if(e.target.parentNode===li[i]){
-                innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
+                if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
+                    innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
+                }
             }
-        }
-    }
-    else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
 
-        for(let i=0;i<li.length;i++){
+        }else if(e.target.tagName==='P'){
 
-            if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
-                innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
-            }
+            for(let i=0;i<li.length;i++){
+
+                if(e.target.parentNode===li[i]){
+                    innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
+                }
+            }  
         }
+        
     }
-}
+    // else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
+
+    //     for(let i=0;i<li.length;i++){
+
+    //         if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
+    //             innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
+    //         }
+    //     }
+    // }
+
 
 
 function innerContent(num,title,intro,extraInfo,client,industry,services,year){
@@ -186,9 +221,12 @@ function removeContent(e){
 
     if(e.target.parentNode.tagName==='LI'){
 
-        e.target.parentNode.removeChild(e.target.parentNode.children[1]); 
+        e.target.parentNode.removeChild(e.target.parentNode.children[1]);
         
-    }else if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.tagName==='LI'){
+        
+    }
+
+    else if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.tagName==='LI'){
         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[1]);
     } 
 }
@@ -221,35 +259,48 @@ workGallery.addEventListener('click',(e)=>{
 
 
     console.log(e.target.tagName);
-    console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
+    console.log(e.target.parentNode);
+    //console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length);
+        
+    
+    if(e.target.tagName==='IMG'){
+        console.log('oelala');
 
-        if(e.target.tagName==='DIV'){
+        addContent(e);
+
+    }else if(e.target.tagName==='P'){
+        // console.log('nee joh');
+         addContent(e);
+    }
+    
+    
+    // if(e.target.tagName==='DIV'){
           
-            if(e.target.parentNode.children.length < 2 ){ // HIER KLOPPEN DINGEN NIET. IS DIT ALLEMAAL NOG WEL NODIG???
-                addContent(e);    
+        //     if(e.target.parentNode.children.length < 2 ){ // HIER KLOPPEN DINGEN NIET. IS DIT ALLEMAAL NOG WEL NODIG???
+        //         addContent(e);    
                    
-            }else{
-                removeContent(e);   
-            }  
-        }else if(e.target.tagName=== 'DIV'){
+        //     }else{
+        //         removeContent(e);   
+        //     }  
+        // }else if(e.target.tagName=== 'DIV'){
 
-            if(e.target.parentNode.parentNode.children.length < 2){
-                addContent(e);    
-            }else{
-                removeContent(e);     
-            }   
-        }else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
+        //     if(e.target.parentNode.parentNode.children.length < 2){
+        //         addContent(e);    
+        //     }else{
+        //         removeContent(e);     
+        //     }   
+        // }else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
 
 
             
-            if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length < 2){
-                addContent(e);    
-                //console.log('ahahaha');
-            }else{
-                removeContent(e);     
-                //console.log('nee joh niet doen hoor');
-            }  
-        }   
+        //     if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length < 2){
+        //         addContent(e);    
+        //         //console.log('ahahaha');
+        //     }else{
+        //         removeContent(e);     
+        //         //console.log('nee joh niet doen hoor');
+        //     }  
+        // }   
 });
 
 
