@@ -91,6 +91,13 @@ p,body{
   font-family: 'basis-grotesque',sans-serif;
 }
 
+
+//WITHOUT THIS RULE THE PREV-ARROW IS INVISIBLE. IT SHOULDN'T BE HERE BUT FOR DEVELOPMENT PURPOSES I KEEP IT HERE. SHOULD FIND THE UNDERLYING PROBLEM THOUGH.
+.slick-prev,
+.slick-next{
+  z-index: 1;
+}
+
 //-------------------------------------------//
 //------------------LAYOUT-------------------//
 //-------------------------------------------//

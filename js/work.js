@@ -85,27 +85,22 @@ function generateWorkLI(){
         const li=document.createElement('li')
         li.classList.add('work-gallery-item');
         
-    
         const link= document.createElement('div');
-        link.classList.add('glider');
         
         const p=document.createElement('p');
         p.textContent=workData[i].title;
 
         for(let j=0;j<workData[i].img.length;j++){
-
             const img=document.createElement('img');
+            img.classList.add('work-img');
             img.src=workData[i].img[j];
-            //img.classList.add('');
             link.appendChild(img);
         }
 
-        link.appendChild(p);
+        //link.appendChild(p);
+        li.appendChild(p);
         li.appendChild(link);
         workGallery.appendChild(li);
-      
-        
-       
     }
 }
 
@@ -126,18 +121,14 @@ function addContent(e){
                 innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
             }
         }
-
     }
     else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
-
-        //e.target.tagName=== 'P'
 
         for(let i=0;i<li.length;i++){
 
             if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
                 innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
             }
-
         }
     }
 }
@@ -195,14 +186,9 @@ function removeContent(e){
 
     if(e.target.parentNode.tagName==='LI'){
 
-        e.target.parentNode.removeChild(e.target.parentNode.children[1]);
+        e.target.parentNode.removeChild(e.target.parentNode.children[1]); 
         
-        
-    }
-    // else if(e.target.parentNode.parentNode.tagName==='LI'){
-    //     e.target.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.children[1]);
-    // }   
-    else if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.tagName==='LI'){
+    }else if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.tagName==='LI'){
         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[1]);
     } 
 }
@@ -223,12 +209,8 @@ for(let i=0; i<extraInfo.length;i++){
         }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
             showMore[i].style.display='none';
             btn[i].innerHTML='show more';
-        }
-       
+        }     
     })
-
-    
-
     }
 }
 
@@ -274,6 +256,8 @@ workGallery.addEventListener('click',(e)=>{
 
 
 
+
+//EIGENLIJK MOET DIT DEZELFDE FUNCTIE ZIJN ALS DE GENERATEWORKLI
 function generateIntroLI(){
 
     for(let i=0; i<3; i++){
