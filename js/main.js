@@ -9,9 +9,30 @@ const purple    = '#70609F';
 const black     = '#000000';
 
 
+
+
+const introText= document.querySelector('.intro-text');
+const mainContainer=document.querySelector('.main-container');
+const introGallery=document.querySelector('.intro-gallery');
+const info=document.querySelector('.info');
+const ctaContainer=document.querySelector('.cta-container');
+const footer=document.querySelector('footer');
+const header=document.querySelector('.header-container');
+const mainWrapper=document.querySelector('.main-wrapper');
+const workGallery=document.querySelector('.work-gallery');
+
+const navMenu= document.querySelector('.nav__menu');
+const menuBtn= document.querySelectorAll('.nav__link');
+const menuIcon=document.querySelector('.menuicon__circle');
+
+info.style.display= 'none';
+workGallery.style.display='none';
+
+
 //-------------------------------------------//
 //-----------------FUNCTIONS-----------------//
 //-------------------------------------------//
+
 
 //CLOSE MENU ON CLICK
 function closeOnClick(){
@@ -58,6 +79,7 @@ menuToggle.addEventListener('click', e => {
   logo.classList.toggle('logo-hidden');
   menu.classList.toggle('test');
   //menu.style.display='flex';
+  //menu.style.backgroundColor=purple;
   isMenuOpen = !isMenuOpen;
 
 //   if(logo.className==='logo-hidden'){
@@ -70,6 +92,19 @@ menuToggle.addEventListener('click', e => {
   menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
   menu.hidden = !isMenuOpen;
   nav.classList.toggle('nav--open');
+
+  // if( workGallery.style.display!='none'){
+  //   //console.log('hahahah');
+  //   for(i of workGallery.children){
+  //     i.style.display='none';
+  //   }
+  // }else{
+  //   for(i of workGallery.children){
+  //     i.style.display='flex';
+  //   }
+  // }
+
+  
 });
 
 
@@ -124,22 +159,7 @@ window.onload= function(){
 //-----HIDE AND SHOW CONTENT IN .MAIN-CONTAINER-----//
 //--------------------------------------------------//
 
-const introText= document.querySelector('.intro-text');
-const mainContainer=document.querySelector('.main-container');
-const introGallery=document.querySelector('.intro-gallery');
-const info=document.querySelector('.info');
-const ctaContainer=document.querySelector('.cta-container');
-const footer=document.querySelector('footer');
-const header=document.querySelector('.header-container');
-const mainWrapper=document.querySelector('.main-wrapper');
-const workGallery=document.querySelector('.work-gallery');
 
-const navMenu= document.querySelector('.nav__menu');
-const menuBtn= document.querySelectorAll('.nav__link');
-const menuIcon=document.querySelector('.menuicon__circle');
-
-info.style.display= 'none';
-workGallery.style.display='none';
 
 
 navMenu.addEventListener('click',(e)=>{

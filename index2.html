@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="css/normalize.css">
   <!-- ANIMATE.CSS LIBRARY -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/slick-theme.css">
+  <!-- <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/slick-theme.css"> -->
+  <link rel="stylesheet" href="css/glider.css">
     <!-- CAN BOTH BE MINIFIED VERSIONS -->
   <link rel="stylesheet" href="css/main.min.css"> 
   <title>Sarah Lancelin</title>
@@ -138,67 +139,71 @@
 
      </div>
 
-    <ul class="work-gallery">
-      <li class="work-gallery-item">
-          <a href="#">
-            <img src="img/test1.jpg" alt="">
-            <img src="img/test2.jpg" alt="">
-            <img src="img/test3.jpg" alt="">
-          </a>
+    <ul class="work-gallery ">
+      <li class="work-gallery-item glider-contain">
+          <div class="glider">
+            <img  src="img/test1.jpg" alt="">
+            <img  src="img/test2.jpg" alt="">
+            <img  src="img/test3.jpg" alt="">
+          </div>
           <p>sjaak magazine</p>
+          <button role="button" aria-label="Previous" class="glider-prev">«</button>
+          <button role="button" aria-label="Next" class="glider-next">»</button>
+          <div role="tablist" class="dots"></div>
+        </div>
       </li>
       <li class="work-gallery-item">
-          <a href="#">
+          <div>
             <img src="" alt="">
-          </a>
+          </div>
           <p>titel van iets anders</p>
       </li>
       <li class="work-gallery-item">
-          <a href="#">
+          <div>
             <img src="" alt="">
-          </a>
+          </div>
           <p>nike</p>
       </li>
       <li class="work-gallery-item">
-          <a href="#">
+          <div>
             <img src="" alt="">
-          </a>
+          </div>
           <p>Volkskrant magazine</p>
       </li>
       <li class="work-gallery-item">
-          <a href="#">
+          <div>
             <img src="" alt="">
-          </a>
+          </div>
           <p>KFC</p>
       </li>
       <li class="work-gallery-item">
-          <a href="#">
+          <div>
             <img src="" alt="">
-          </a>
+          </div>
           <p>ditdatzuszo</p>
       </li>
       <li class="work-gallery-item">
-          <a href="#">
+          <div>
             <img src="" alt="">
-          </a>
+          </div>
           <p>nog een titel</p>
       </li>
       <li class="work-gallery-item">
-          <a href="#">
+          <div>
             <img src="" alt="">
-          </a>
+          </div>
           <p>NTC</p>
       </li>
       <li class="work-gallery-item">
-          <a href="#">
+          <div>
             <img src="" alt="">
-          </a>
+          </div>
           <p>Trouw</p>
       </li>
       <li class="work-gallery-item">
-          <a href="#">
+          <div>
             <img src="" alt="">
-          </a>
+          </div>
           <p>dailymilk</p>
       </li>
     </ul>
@@ -244,6 +249,7 @@ integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script src="js/jquery.sticky.js"></script>
+<script src="js/glider.js"></script>
 <script src="js/main2.js"></script>
 <script src="js/work2.js"></script>
 
@@ -258,15 +264,22 @@ crossorigin="anonymous"></script>
 </script>
 
 <!-- INITIANLIZE SLICK.JS -- FOR IMG CAROUSSEL -->
-<script>
+<!-- <script>
   $(document).ready(function(){
     $('.work-gallery-item a').slick({
       // mobileFirst: true,
       lazyLoad:'progressive'
     });
  });
-</script>
+</script> -->
 
+
+<script>
+new Glider(document.querySelector('.glider'), {
+  slidesToShow: 1,
+
+});
+</script>
 
 </body>
 </html>

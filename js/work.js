@@ -84,9 +84,10 @@ function generateWorkLI(){
 
         const li=document.createElement('li')
         li.classList.add('work-gallery-item');
+        //li.style.height= '200px';
         
     
-        const link= document.createElement('a');
+        const link= document.createElement('div');
         //link.classList.add('glider-track');
         
         const p=document.createElement('p');
@@ -101,7 +102,7 @@ function generateWorkLI(){
 
             const img=document.createElement('img');
             img.src=workData[i].img[j];
-            //img.classList.add('glider-slide');
+            //img.classList.add('');
             link.appendChild(img);
         }
 
@@ -129,7 +130,7 @@ function addContent(e){
     const li=document.querySelectorAll('.work-gallery-item');
 
 
-    if(e.target.tagName==='A'){
+    if(e.target.tagName==='DIV'){
 
         for(let i=0;i<li.length;i++){
 
@@ -252,7 +253,7 @@ workGallery.addEventListener('click',(e)=>{
     console.log(e.target.tagName);
     console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
 
-        if(e.target.tagName==='A'){
+        if(e.target.tagName==='DIV'){
           
             if(e.target.parentNode.children.length < 2 ){ // HIER KLOPPEN DINGEN NIET. IS DIT ALLEMAAL NOG WEL NODIG???
                 addContent(e);    
@@ -282,5 +283,32 @@ workGallery.addEventListener('click',(e)=>{
 });
 
 
-//|| e.target.tagName=== 'P')
 
+
+
+function generateIntroLI(){
+
+    for(let i=0; i<3; i++){
+
+        const li=document.createElement('li')
+        li.classList.add('intro-gallery-item');
+    
+        const link= document.createElement('div');
+        
+        const p=document.createElement('p');
+        p.textContent=workData[i].title;
+
+        for(let j=0;j<workData[i].img.length;j++){
+
+            const img=document.createElement('img');
+            img.src=workData[i].img[j];
+            //img.classList.add('');
+            link.appendChild(img);
+        }
+        link.appendChild(p);
+        li.appendChild(link);
+        introGallery.appendChild(li);
+    }
+}
+
+ generateIntroLI();

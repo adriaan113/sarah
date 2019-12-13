@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <!-- ANIMATE.CSS LIBRARY -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
- 
+  <!-- <link rel="stylesheet" href="css/bulma.css"> -->
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/slick-theme.css">
 
@@ -76,7 +76,7 @@
    <main class="main-container" id="mc">
 
      <ul class="intro-gallery">
-       <li>
+       <!-- <li>
          <a href="#"></a>
          <p>Lorem, ipsum dolor.</p>
        </li>
@@ -95,7 +95,7 @@
        <li>
          <a href="#"></a>
          <p>Lorem, ipsum dolor.</p>
-       </li>
+       </li> -->
      </ul>
 
      <div class="info">
@@ -267,8 +267,16 @@ crossorigin="anonymous"></script>
 <!-- INITIANLIZE SLICK.JS -- FOR IMG CAROUSSEL -->
 <script>
   $(document).ready(function(){
-    $('.work-gallery-item a').slick({
+    $('.work-gallery-item div').slick({
       // mobileFirst: true,
+    });
+ });
+</script>
+
+<script>
+  $(document).ready(function(){
+    $('.intro-gallery-item div').slick({
+      
     });
  });
 </script>
