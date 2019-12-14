@@ -107,33 +107,6 @@ function generateWorkLI(){
 
 generateWorkLI();
 
-
-
-// function addContent(e){
-
-//     const li=document.querySelectorAll('.work-gallery-item');
-
-
-//     if(e.target.tagName==='DIV'){
-
-//         for(let i=0;i<li.length;i++){
-
-//             if(e.target.parentNode===li[i]){
-//                 innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
-//             }
-//         }
-//     }
-//     else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
-
-//         for(let i=0;i<li.length;i++){
-
-//             if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
-//                 innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
-//             }
-//         }
-//     }
-// }
-
 function addContent(e){
 
     const li=document.querySelectorAll('.work-gallery-item');
@@ -157,15 +130,7 @@ function addContent(e){
         }
         
     }
-    // else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
 
-    //     for(let i=0;i<li.length;i++){
-
-    //         if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
-    //             innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);  
-    //         }
-    //     }
-    // }
 
 
 
@@ -214,23 +179,6 @@ function innerContent(num,title,intro,extraInfo,client,industry,services,year){
 }
 
 
-// function removeContent(e){
-    
-//     const div= document.querySelectorAll('.extra-info-container');
-//     const li= document.querySelectorAll('.work-gallery-item');
-
-//     if(e.target.parentNode.tagName==='LI'){
-
-//         e.target.parentNode.removeChild(e.target.parentNode.children[1]);
-        
-        
-//     }
-
-//     else if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.tagName==='LI'){
-//         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[1]);
-//     } 
-// }
-
 
 function removeContent(e){
     
@@ -239,7 +187,6 @@ function removeContent(e){
 
     if(e.target.tagName==='IMG'){
 
-        //e.target.parentNode.removeChild(e.target.parentNode.children[1]);
         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[2]);
         
     }
@@ -289,76 +236,172 @@ workGallery.addEventListener('click',(e)=>{
             removeContent(e)
         }
        
-
     }else if(e.target.tagName==='P'){
         // console.log('nee joh');
         if(e.target.parentNode.children.length<=2){
             addContent(e);
         }else{
-            removeContent(e)//HIER WAS IK. IK MOET DEZE FUNCTION AANPASSEN
+            removeContent(e);
         }
          
-    }
-    
-    
-    // if(e.target.tagName==='DIV'){
-          
-        //     if(e.target.parentNode.children.length < 2 ){ // HIER KLOPPEN DINGEN NIET. IS DIT ALLEMAAL NOG WEL NODIG???
-        //         addContent(e);    
-                   
-        //     }else{
-        //         removeContent(e);   
-        //     }  
-        // }else if(e.target.tagName=== 'DIV'){
-
-        //     if(e.target.parentNode.parentNode.children.length < 2){
-        //         addContent(e);    
-        //     }else{
-        //         removeContent(e);     
-        //     }   
-        // }else if(e.target.tagName==='IMG' || e.target.tagName==='P'){
-
-
-            
-        //     if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length < 2){
-        //         addContent(e);    
-        //         //console.log('ahahaha');
-        //     }else{
-        //         removeContent(e);     
-        //         //console.log('nee joh niet doen hoor');
-        //     }  
-        // }   
+    } 
 });
 
-
-
-
-
-
-//EIGENLIJK MOET DIT DEZELFDE FUNCTIE ZIJN ALS DE GENERATEWORKLI
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+//ALLES WAT HIERONDER STAAT IS ZIJN DUBBELE FUNCTIES DIE ZIJN AANGEPAST VOOR DE INTROGALLERY.
+//DE FUNCTIIES HIERBOVEN MOETEN WORDEN AANGEPAST ZODAT ZE ARGUMENTS ACCEPTEREN ZODAT IK KAN 
+//SWITCHEN TUSSEN INTRO EN WORK
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
 function generateIntroLI(){
-
-    for(let i=0; i<3; i++){
+    for(let i=0; i< 3; i++){
 
         const li=document.createElement('li')
         li.classList.add('intro-gallery-item');
-    
+        
         const link= document.createElement('div');
         
         const p=document.createElement('p');
         p.textContent=workData[i].title;
 
         for(let j=0;j<workData[i].img.length;j++){
-
             const img=document.createElement('img');
+            img.classList.add('work-img');
             img.src=workData[i].img[j];
-            //img.classList.add('');
             link.appendChild(img);
         }
-        link.appendChild(p);
+
+        //link.appendChild(p);
+        li.appendChild(p);
         li.appendChild(link);
+        li.insertBefore(link,p);
         introGallery.appendChild(li);
     }
 }
 
- generateIntroLI();
+generateIntroLI();
+
+
+
+introGallery.addEventListener('click',(e)=>{
+
+   // console.log(e.target.tagName);
+    console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
+    //console.log(e.target.parentNode);
+
+
+    if(e.target.tagName==='IMG'){
+            // console.log('oelala');
+            if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length<=2){
+                addIntroContent(e);
+            }else{
+                removeContent(e)
+            }
+       
+    }else if(e.target.tagName==='P'){
+        // console.log('nee joh');
+        if(e.target.parentNode.children.length<=2){
+            addIntroContent(e);
+        }else{
+            removeContent(e);
+        }
+         
+    } 
+})
+
+
+function addIntroContent(e){
+
+    const li=document.querySelectorAll('.intro-gallery-item');
+
+        if(e.target.tagName==='IMG'){
+            for(let i=0;i<li.length;i++){
+
+                if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
+                    innerIntroContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
+                }
+            }
+
+        }else if(e.target.tagName==='P'){
+
+            for(let i=0;i<li.length;i++){
+
+                if(e.target.parentNode===li[i]){
+                    innerIntroContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
+                }
+            }  
+        }
+      
+}
+
+
+function innerIntroContent(num,title,intro,extraInfo,client,industry,services,year){
+
+
+    const div= document.createElement('div');
+    div.classList.add('extra-info-container','animated','fadeIn');
+
+    const li= document.querySelectorAll('.intro-gallery-item');
+
+    li[num].appendChild(div);
+    
+    div.innerHTML=`
+        <div class="extra-info">
+            <h2>${title}</h2>
+            <p>${intro}</p>
+            <div class="show-more">
+                <p>${extraInfo}</p>
+            </div>
+            <button class="show-more-btn">show more</button>
+        </div>
+        
+        <div class="cisy">
+            <div class="client">
+                <h3>client</h3>
+                <p>${client}</p>
+            </div>
+            <div class="industry">
+                <h3>industry</h3>
+                <p>${industry}</p>
+            </div>
+            <div class="services">
+                <h3>services</h3>
+                <p>${services}</p>
+            </div>
+            <div class="year">
+                <h3>year</h3>
+                <p>${year}</p>
+            </div>
+        </div>
+    `;
+
+    showHideIntroContent();
+    
+}
+
+
+
+function showHideIntroContent(){
+
+    const btn=document.querySelectorAll('.show-more-btn');
+    const extraInfo= document.querySelectorAll('.extra-info');
+    const showMore= document.querySelectorAll('.show-more');
+
+for(let i=0; i<extraInfo.length;i++){
+
+    introGallery.addEventListener('click',(e)=>{
+        if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
+            showMore[i].style.display='block';
+            btn[i].innerHTML='show less';
+        }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
+            showMore[i].style.display='none';
+            btn[i].innerHTML='show more';
+        }     
+    })
+    }
+}

@@ -211,6 +211,17 @@ p,body{
   @include gallery;
 }
 
+.work-gallery-item,
+.intro-gallery-item{//EXTEND GEBRUIKEN?
+  img{
+    cursor: pointer;
+  }
+  p{
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
 //HIER BEN IK NOG BEZIG
 // .work-gallery-item{
 //   position: relative;
@@ -238,6 +249,7 @@ p,body{
     &>p{
       font-size: 1.2rem;
       text-align: left; //HEB IK AL DEZE TEXT-ALIGN NOG WEL NODIG??
+      cursor: text;
     }
     .show-more{
       display: none;
