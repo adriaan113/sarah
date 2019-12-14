@@ -214,20 +214,38 @@ function innerContent(num,title,intro,extraInfo,client,industry,services,year){
 }
 
 
+// function removeContent(e){
+    
+//     const div= document.querySelectorAll('.extra-info-container');
+//     const li= document.querySelectorAll('.work-gallery-item');
+
+//     if(e.target.parentNode.tagName==='LI'){
+
+//         e.target.parentNode.removeChild(e.target.parentNode.children[1]);
+        
+        
+//     }
+
+//     else if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.tagName==='LI'){
+//         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[1]);
+//     } 
+// }
+
+
 function removeContent(e){
     
     const div= document.querySelectorAll('.extra-info-container');
     const li= document.querySelectorAll('.work-gallery-item');
 
-    if(e.target.parentNode.tagName==='LI'){
+    if(e.target.tagName==='IMG'){
 
-        e.target.parentNode.removeChild(e.target.parentNode.children[1]);
-        
+        //e.target.parentNode.removeChild(e.target.parentNode.children[1]);
+        e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[2]);
         
     }
 
-    else if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.tagName==='LI'){
-        e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[1]);
+    else if(e.target.tagName==='P'){
+        e.target.parentNode.removeChild(e.target.parentNode.children[2]);
     } 
 }
 
@@ -259,18 +277,27 @@ workGallery.addEventListener('click',(e)=>{
 
 
     console.log(e.target.tagName);
-    console.log(e.target.parentNode);
+    console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
     //console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length);
-        
-    
-    if(e.target.tagName==='IMG'){
-        console.log('oelala');
+    console.log(e.target.parentNode); 
 
-        addContent(e);
+    if(e.target.tagName==='IMG'){
+        //console.log('oelala');
+        if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length<=2){
+            addContent(e);
+        }else{
+            removeContent(e)
+        }
+       
 
     }else if(e.target.tagName==='P'){
         // console.log('nee joh');
-         addContent(e);
+        if(e.target.parentNode.children.length<=2){
+            addContent(e);
+        }else{
+            removeContent(e)//HIER WAS IK. IK MOET DEZE FUNCTION AANPASSEN
+        }
+         
     }
     
     
