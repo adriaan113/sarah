@@ -15,7 +15,11 @@ const introText= document.querySelector('.intro-text');
 const mainContainer=document.querySelector('.main-container');
 const introGallery=document.querySelector('.intro-gallery');
 const info=document.querySelector('.info');
+
 const ctaContainer=document.querySelector('.cta-container');
+const ctaWork=document.querySelector('.cta-work');
+const ctaAbout=document.querySelector('.cta-about');
+
 const footer=document.querySelector('footer');
 const header=document.querySelector('.header-container');
 const mainWrapper=document.querySelector('.main-wrapper');
@@ -196,3 +200,19 @@ navMenu.addEventListener('click',(e)=>{
   }
 
 });
+
+ctaWork.addEventListener('click',()=>{
+  //console.log('lalalal');
+
+  //HIER MOET EEN IF STATEMENT KOMEN. ALS JE VANAF HOME KOMT,DAN DIT. ANDERS: ALS JE VAN WERK KOMT DAN EEN LOAD NAAR MEER WERK.
+  changeContent('none','none','none','flex');
+
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+})
+
+ctaAbout.addEventListener('click',()=>{
+  changeContent('none', 'none', 'flex','none');
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+})

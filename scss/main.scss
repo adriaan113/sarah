@@ -187,6 +187,7 @@ p,body{
   align-items: center;
   margin-bottom: 2rem;
   .cta-work, .cta-about{
+    cursor: pointer;
     h4{
       text-decoration: underline;
     }
