@@ -29,6 +29,8 @@ const navMenu= document.querySelector('.nav__menu');
 const menuBtn= document.querySelectorAll('.nav__link');
 const menuIcon=document.querySelector('.menuicon__circle');
 
+const sticky=document.querySelector('.is-sticky');
+
 info.style.display= 'none';
 workGallery.style.display='none';
 
@@ -136,35 +138,6 @@ nav.addEventListener('keydown', e => {
 });
 
 
-//-------------------------------------------//
-//---------ANIMATE BONJOUR ON LOAD-----------//
-//-------------------------------------------//
-
-//BONJOUR GETS ANIMATED WITH ANIMATE.CSS. THIS PART ONLY ANIMATES ALL THE OTHER ELEMENTS.
-
-const hello= $('.bonjour');
-const aside= $('.intro-text');
-
-const test= $('.header-container,.menuicon,.intro-text-p,svg, .home-work,footer').not('.bonjour').css('display', 'none');
-
-
-
-window.onload= function(){
-    aside.css('margin', '0 auto');
-    hello.css('margin', '1em auto').show();
-    setTimeout(() => {
-    test.fadeIn();
-    }, 1500);  
-}
-
-
-
-//--------------------------------------------------//
-//-----HIDE AND SHOW CONTENT IN .MAIN-CONTAINER-----//
-//--------------------------------------------------//
-
-
-
 
 navMenu.addEventListener('click',(e)=>{
   
@@ -178,6 +151,7 @@ navMenu.addEventListener('click',(e)=>{
 
     //STYLE HTML ELEMENTS 
     styleElements(purple, lightGrey);
+    //ctaContainer.style.display='none';
 
     closeOnClick();
 
@@ -206,6 +180,8 @@ ctaWork.addEventListener('click',()=>{
 
   //HIER MOET EEN IF STATEMENT KOMEN. ALS JE VANAF HOME KOMT,DAN DIT. ANDERS: ALS JE VAN WERK KOMT DAN EEN LOAD NAAR MEER WERK.
   changeContent('none','none','none','flex');
+  styleElements(lightGrey, purple);
+  //ctaContainer.style.display='flex';
 
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -216,3 +192,137 @@ ctaAbout.addEventListener('click',()=>{
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 })
+
+//DE CTA BUTTONS WERKEN NOG NIET CONSISTENT. NOG AFHANKELIJK VAN CONTEXT.
+
+
+
+
+//BONJOUR ON LOAD AT 810PX
+
+
+// if(){
+//   mainWrapper
+// }
+
+
+
+
+//-------------------------------------------//
+//---------ANIMATE BONJOUR ON LOAD-----------//
+//-------------------------------------------//
+
+//BONJOUR GETS ANIMATED WITH ANIMATE.CSS. THIS PART ONLY ANIMATES ALL THE OTHER ELEMENTS.
+
+// window.onload= function(){
+//     aside.css('margin', '0 auto');
+//     hello.show();
+//     setTimeout(() => {
+//     test.fadeIn();
+//     }, 1500);  
+// }
+//css('margin', '1em auto')
+
+
+
+const hello= $('.bonjour');
+const bon= $('.bon');
+const jour= $('.jour');
+const aside= $('.intro-text');
+
+const test= $('.header-container,.menuicon,.intro-text-p,svg, .home-work,footer').not('.bonjour').css('display', 'none');
+
+
+const mq810 = window.matchMedia("(min-width: 810px)");
+
+//HIER WAS IK. DE HELE BONJOUR HANDEL MOET HIERIN. DE BONJOUR TEXT OPDELEN
+//VOOR DE MQ810 EN ANIMEREN
+
+function listenForMq(mq) {
+  if (mq.matches) { 
+
+    document.body.style.backgroundColor= purple;
+
+    ctaContainer.style.display='none';
+    introGallery.style.display='none';
+    // sticky.style.height='0px';
+    // mainWrapper.style.height='100vh';
+    // mainWrapper.style.width="100%";
+    
+
+
+    window.onload= function(){
+      aside.css('margin', '0 auto');
+
+      bon.addClass('animated').addClass('bounceIn');
+
+      bon.css({
+        'font-size':'40vh',
+        'display':'block',
+        'margin':'0 auto',
+      });
+
+      bon.show();
+      
+      jour.addClass('animated').addClass('fadeInRight');
+      jour.css({
+        'font-size':'40vh',
+        'display':'block',
+        'margin':'0 auto',
+      });
+      jour.show();
+
+      setTimeout(() => {
+      test.fadeIn();
+      document.body.style.backgroundColor= lightGrey;
+      introGallery.style.display='flex';
+      bon.css({
+        'font-size':'3.5rem',
+        'display':'inline',
+        'color': purple,
+        //'margin':'0 auto',
+      })
+      jour.css({
+        'font-size':'3.5rem',
+        'display':'inline',
+        'color': purple,
+      })
+      }, 2000);  
+  }
+
+
+
+  }else{
+
+    document.body.style.backgroundColor= lightGrey;
+
+    window.onload= function(){
+      aside.css('margin', '0 auto');
+      hello.addClass('animated').addClass('bounceInLeft');
+      hello.show();
+      setTimeout(() => {
+      test.fadeIn();
+      }, 1500);  
+  }
+
+  }
+}
+
+
+
+listenForMq(mq810);
+mq810.addListener(listenForMq);
+
+
+//--------------------------------------------------//
+//-----HIDE AND SHOW CONTENT IN .MAIN-CONTAINER-----//
+//--------------------------------------------------//
+
+//const logo= document.querySelector('.logo');
+
+logo.addEventListener('click',()=>{
+  changeContent('flex','flex','none','none');
+  styleElements(lightGrey, purple);
+
+});
+

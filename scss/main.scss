@@ -145,6 +145,11 @@ p,body{
   .bonjour{
     color: $text-color-purple;
     font-size: 3.5rem;
+    // animation-iteration-count:1;
+  }
+  // .bon,
+  // .jour{
+  //   animation-iteration-count:1;
   }
   h3{
     font-size: .9rem;
@@ -362,8 +367,8 @@ footer{
   margin: 1rem;
   }
   span{
-    font-weight: bolder;
-    color:red;
+    font-family:'ginto',sans-serif ;
+    //color:red;
   }
 }
 
@@ -383,35 +388,121 @@ button:focus{
 
 @media screen and(min-width: 810px){
 
+  .sticky-wrapper{ //IS DIT HET BESTE?
+    width: 100%;
+    max-width: calc(600px + 4rem);
+    margin: 0 auto;
+  }
+
+  .header-container{
+    flex-direction: row;
+    justify-content: space-between;
+    //padding: 0 3rem;
+    max-width: calc(600px + 4rem);
+    margin: 0 auto;
+    a{
+      text-decoration: none;
+      .logo{
+        font-size: 1rem;
+        color: $text-color-black;
+        padding: 1rem 1rem 0;
+        //margin: 0 auto;
+      }
+    }
+  
+  .logo-hidden{
+    display: none;
+  }
+  
+  .nav{
+
+  &__toggle{
+    display: none;
+  }
+
+  &__menu{
+    display: flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    height: auto;
+    //position:relative;
+    //z-index:5;
+    visibility:visible;
+    list-style: none;
+    padding:0;
+    &__item{
+     display: inline-block;
+    }
+    
+  }
+
+  &__link{
+    color: $text-color-black;
+    display:inline-block;
+    text-align: center;
+    text-transform:capitalize;
+    letter-spacing:5px;
+    font-size:1rem;
+    text-decoration:none;
+    padding:1rem;
+    }
+
+    &__item:nth-child(1){
+      display:none;
+    }
+  }  
+  }
+
+  .nav--open {
+    
+    > .splash::after {
+      display: none;// NIET HEEL CHIC
+    }
+  }
+ 
+  .logo{
+    display: block !important; // OOK NIET HEEL CHIC
+  }
+
+
+
     .main-container{
       max-width: 1000px;
-      height: calc(100vh - 170px);
+      //height: calc(100vh - 170px);//KLOPT DIT??
       margin: 0 auto;
+      padding: 0 3rem;
+
+      .intro-gallery{
+        justify-content: flex-start;
+
+      }
     }
 
     .intro-text{
       display:flex;
-      flex-flow: row nowrap;
-      justify-content: center;
+      flex-flow: row wrap;
+      justify-content: space-around;
       align-items: flex-start;
+      height: auto;
       .bonjour{
-        color: $text-color-purple;
+        color: $text-color-lightgrey;
         font-size: 3.5rem;
-        //margin: 3rem 0 0 1rem;
+        margin: 2rem 1rem 2rem 0;
       }
       h3{
         font-size: .9rem;
-        //margin: 3rem 3rem 0 1rem;
+        margin: 2rem 0;
         max-width: 200px;
       }
-      h3::after{
-        content:'';
-        width: 100%;
-      }
+      // h3::after{
+      //   content:'';
+      //   width: 100%;
+      // }
       .arrow{
-        margin: 0 auto;
+        margin: 0 100% 2rem;
       }
     }
+    
 }
 
 
