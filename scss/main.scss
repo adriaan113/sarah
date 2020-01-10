@@ -31,34 +31,34 @@ $border-line: solid 2px;
   src: url('../fonts/bgp/basisgrotesquepro-regular.ttf') format('truetype');
 }
 
-@mixin gallery{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  max-width: calc(600px + 4rem);
-  margin: 0 auto;
-  list-style: none;
-  padding: 0;
-  li{
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    div{
-      display: block;
-      width: 300px;
-      // height: auto;
-      //background-color: $bg-color-purple;
-      img{
-        width: 100%;
-        //max-width: 400px;
-        height: auto;
-      }
-    }
+// @mixin gallery{
+//   display: flex;
+//   flex-flow: row wrap;
+//   justify-content: center;
+//   max-width: calc(600px + 4rem);
+//   margin: 0 auto;
+//   list-style: none;
+//   padding: 0;
+//   li{
+//     display: flex;
+//     flex-direction: column;
+//     margin: 1rem;
+//     div{
+//       display: block;
+//       width: 300px;
+//       // height: auto;
+//       //background-color: $bg-color-purple;
+//       img{
+//         width: 100%;
+//         //max-width: 400px;
+//         height: auto;
+//       }
+//     }
     // p{
     //   //text-align: center; //WAAR HAD IK DIT OOK ALWEER VOOR BEDACHT??
     // }
-  }
-}
+//   }
+// }
 
 
 
@@ -145,11 +145,7 @@ p,body{
   .bonjour{
     color: $text-color-purple;
     font-size: 3.5rem;
-    // animation-iteration-count:1;
   }
-  // .bon,
-  // .jour{
-  //   animation-iteration-count:1;
   }
   h3{
     font-size: .9rem;
@@ -160,29 +156,26 @@ p,body{
 .main-container{
   width: 100%;
 
-
- 
-  .intro-gallery{
-    // display: flex;
-    // flex-flow: row wrap;
-    // justify-content: center;
-    // max-width: calc(300px + 2rem);
-    // margin: 0 auto;
-    // list-style: none;
-    // padding: 0;
-    @include gallery;
-    // li{
-    //   margin: 1rem;
-    //   a{
-    //     display: block;
-    //     width: 300px;
-    //     height: 200px;
-    //     background-color: $bg-color-purple;
-    //   }
-    //   p{
-    //     text-align: center;
-    //   }
-    // }
+  .intro-gallery,
+  .work-gallery{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    .intro-gallery--item,
+    .work-gallery--item{
+      img{
+        width: 100%;
+        height: auto;
+        max-width: 320px;
+        cursor: pointer;
+      }
+      p{
+        text-align: center;
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -211,97 +204,152 @@ p,body{
 }
 
 
-//--------WORK PAGE--------//
+//--------PROJECT PAGE--------//
 
-.work-gallery{
-  @include gallery;
-}
-
-.work-gallery-item,
-.intro-gallery-item{//EXTEND GEBRUIKEN?
-  img{
-    cursor: pointer;
-  }
-  p{
-    text-align: center;
-    cursor: pointer;
-  }
-}
-
-//HIER BEN IK NOG BEZIG
-// .work-gallery-item{
-//   position: relative;
-//   p{
-//     position: absolute;
-//     top: 100px;
-//     left: 100px;
-//     color:red;
-//   }
-// }
-
-.extra-info-container{
+.project{
   display: flex;
   flex-direction: column;
-  //padding: 1rem;
-  .extra-info{
+  width: 100%;
+  margin: 0 auto;
+  .hero{
+    position: relative;
+    img{
+      width: 100%;
+      height: auto;
+    }
+    .arrow-prev{
+      position: absolute;
+      top: 40%;
+      left: 40px;
+      width: 30px;
+      z-index: 999;
+    }
+    .arrow-next{
+      position: absolute;
+      top: 40%;
+      right: 40px;
+      width: 30px;
+      z-index: 999;
+    }
+  }
+
+  .project-info{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin: 0 0 2rem;
-    //padding: 1rem;
-    h2{
-      align-self: center;
+    align-items: center;
+    margin: 0 3rem;
+    &--title{
+      font-size: 1.5rem;
     }
-    &>p{
-      font-size: 1.2rem;
-      text-align: left; //HEB IK AL DEZE TEXT-ALIGN NOG WEL NODIG??
-      cursor: text;
+    &--text{
+      font-size: 1.3rem;
     }
-    .show-more{
-      display: none;
-      //text-align: left;
-      p{
-        text-align: left;
-      }
-    }
-    button{
+    .show-more-btn{
       display: inline-block;
+      align-self: flex-start;
       padding: 0;
+      margin-bottom: 2rem;
       background-color: $bg-color-lightgrey;
       border: none;
       text-decoration: underline; 
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       cursor: pointer;
     }
-  }
-  .cisy{
-    border-top: $border-line;
-    border-bottom: $border-line; //NIET SUPER ELEGANT DIT
-    display: flex;
-    flex-flow: wrap row;
-    justify-content: space-between;
-    //margin: 0 1rem;
-    padding: 0 1rem;
-    .client, 
-    .industry,
-    .services,
-    .year{
+    .show-more{
+      display: none;
+    }
+    .cisy{
+      border-top: $border-line;
+      border-bottom: $border-line; //NIET SUPER ELEGANT DIT
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      // h3{
-      //   //margin: .5rem 0 .2rem
-      // }
-      p{
-        //margin: 0 0 .5rem;
-        text-align: left;
+      flex-flow: wrap row;
+      justify-content: space-between;
+      .client, 
+      .industry,
+      .services,
+      .year{
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+        flex-basis: 50%;
+        margin: 0.7rem 0;
+        h3{
+          display: inline-block;
+          text-align: left;
+          margin: 0;
+        }
+        p{
+          display: inline-block;
+          text-align: left;
+          margin: 0;
+        }
       }
     }
   }
 }
 
-// .work{
-//   @extend .main-container;
+
+
+// .extra-info-container{
+//   display: flex;
+//   flex-direction: column;
+//   //padding: 1rem;
+//   .extra-info{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     margin: 0 0 2rem;
+//     //padding: 1rem;
+//     h2{
+//       align-self: center;
+//     }
+//     &>p{
+//       font-size: 1.2rem;
+//       text-align: left; //HEB IK AL DEZE TEXT-ALIGN NOG WEL NODIG??
+//       cursor: text;
+//     }
+//     .show-more{
+//       display: none;
+//       //text-align: left;
+//       p{
+//         text-align: left;
+//       }
+//     }
+//     button{
+//       display: inline-block;
+//       padding: 0;
+//       background-color: $bg-color-lightgrey;
+//       border: none;
+//       text-decoration: underline; 
+//       font-size: 1.4rem;
+//       cursor: pointer;
+//     }
+//   }
+//   .cisy{
+//     border-top: $border-line;
+//     border-bottom: $border-line; //NIET SUPER ELEGANT DIT
+//     display: flex;
+//     flex-flow: wrap row;
+//     justify-content: space-between;
+//     //margin: 0 1rem;
+//     padding: 0 1rem;
+//     .client, 
+//     .industry,
+//     .services,
+//     .year{
+//       display: flex;
+//       flex-direction: column;
+//       align-items: flex-start;
+//       // h3{
+//       //   //margin: .5rem 0 .2rem
+//       // }
+//       p{
+//         //margin: 0 0 .5rem;
+//         text-align: left;
+//       }
+//     }
+//   }
 // }
 
 

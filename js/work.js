@@ -1,407 +1,403 @@
-//-------------------------------------------//
-//--------------DATA STRUCTURES--------------//
-//-------------------------------------------//
+// //-------------------------------------------//
+// //--------------DATA STRUCTURES--------------//
+// //-------------------------------------------//
 
-const workData=[
-    {
-        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
-        title:'sjaak magazine',
-        intro: 'The magazine made for Rotterdammers with a small budget.',
-        extraInfo:'Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
-        client:['Leger des Heils, Voedselbank'],
-        industry:'non-profit',
-        services:['concept', 'design', 'art direction', 'photography'],
-        year:'2018 - 2019 at Dailymilk'
-    },
-    {
-        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
-        title:'nummer 2',
-        intro: 'nummer 2 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        extraInfo:'nummer 2 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
-        client:['satan'],
-        industry:'profit',
-        services:['concept', 'design'],
-        year:'2018'
-    },
-    {
-        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
-        title:'nummer 3',
-        intro: 'nummer 3 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        extraInfo:'nummer 3 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
-        client:['burger king'],
-        industry:'profit',
-        services:['concept'],
-        year:'2019'
-    },
-    {
-        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
-        title:'nummer 4',
-        intro: 'nummer 4 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        extraInfo:'nummer 4Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
-        client:['KFC'],
-        industry:'non-profit',
-        services:[ 'art direction', 'photography'],
-        year:'2020'
-    },
-    {
-        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
-        title:'nummer 5',
-        intro: 'nummer 5 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        extraInfo:'nummer 5 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
-        client:['mcDonalds'],
-        industry:'profit',
-        services:['concept', 'photography'],
-        year:'2018 - 2019 at Dailymilk'
-    },
-    {
-        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg','img/test1.jpg'],
-        title:'nummer 6',
-        intro: 'nummer 6 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        extraInfo:'nummer 6 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
-        client:['pizza hut'],
-        industry:'tralala',
-        services:['art direction', 'photography'],
-        year:'2020'
-    }
-];
+// const workData=[
+//     {
+//         img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
+//         title:'sjaak magazine',
+//         intro: 'The magazine made for Rotterdammers with a small budget.',
+//         extraInfo:'Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+//         client:['Leger des Heils, Voedselbank'],
+//         industry:'non-profit',
+//         services:['concept', 'design', 'art direction', 'photography'],
+//         year:'2018 - 2019 at Dailymilk'
+//     },
+//     {
+//         img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
+//         title:'nummer 2',
+//         intro: 'nummer 2 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+//         extraInfo:'nummer 2 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+//         client:['satan'],
+//         industry:'profit',
+//         services:['concept', 'design'],
+//         year:'2018'
+//     },
+//     {
+//         img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
+//         title:'nummer 3',
+//         intro: 'nummer 3 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+//         extraInfo:'nummer 3 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+//         client:['burger king'],
+//         industry:'profit',
+//         services:['concept'],
+//         year:'2019'
+//     },
+//     {
+//         img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
+//         title:'nummer 4',
+//         intro: 'nummer 4 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+//         extraInfo:'nummer 4Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+//         client:['KFC'],
+//         industry:'non-profit',
+//         services:[ 'art direction', 'photography'],
+//         year:'2020'
+//     },
+//     {
+//         img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
+//         title:'nummer 5',
+//         intro: 'nummer 5 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+//         extraInfo:'nummer 5 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+//         client:['mcDonalds'],
+//         industry:'profit',
+//         services:['concept', 'photography'],
+//         year:'2018 - 2019 at Dailymilk'
+//     },
+//     {
+//         img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg','img/test1.jpg'],
+//         title:'nummer 6',
+//         intro: 'nummer 6 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+//         extraInfo:'nummer 6 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+//         client:['pizza hut'],
+//         industry:'tralala',
+//         services:['art direction', 'photography'],
+//         year:'2020'
+//     }
+// ];
 
-//-------------------------------------------//
-//-----------------VARIABLES-----------------//
-//-------------------------------------------//
-
-// const workGalleryItem=document.querySelectorAll('.work-gallery-item');
+// //-------------------------------------------//
+// //-----------------VARIABLES-----------------//
+// //-------------------------------------------//
 
 
-// const extraInfoContainer= document.createElement('div');
+// //-------------------------------------------//
+// //-----------------FUNCTIONS-----------------//
+// //-------------------------------------------//
 
-//-------------------------------------------//
-//-----------------FUNCTIONS-----------------//
-//-------------------------------------------//
+// function generateWorkLI(){
 
-function generateWorkLI(){
+//     for(let i=0; i< workData.length; i++){
 
-    for(let i=0; i< workData.length; i++){
-
-        const li=document.createElement('li')
-        li.classList.add('work-gallery-item');
+//         const li=document.createElement('li')
+//         li.classList.add('work-gallery-item');
         
-        const link= document.createElement('div');
+//         const link= document.createElement('div');
         
-        const p=document.createElement('p');
-        p.textContent=workData[i].title;
+//         const p=document.createElement('p');
+//         p.textContent=workData[i].title;
 
-        for(let j=0;j<workData[i].img.length;j++){
-            const img=document.createElement('img');
-            img.classList.add('work-img');
-            img.src=workData[i].img[j];
-            link.appendChild(img);
-        }
+//         for(let j=0;j<workData[i].img.length;j++){
+//             const img=document.createElement('img');
+//             img.classList.add('work-img');
+//             img.src=workData[i].img[j];
+//             link.appendChild(img);
+//         }
 
-        //link.appendChild(p);
-        li.appendChild(p);
-        li.appendChild(link);
-        li.insertBefore(link,p);
-        workGallery.appendChild(li);
-    }
-}
+//         //link.appendChild(p);
+//         li.appendChild(p);
+//         li.appendChild(link);
+//         li.insertBefore(link,p);
+//         workGallery.appendChild(li);
+//     }
+// }
 
-generateWorkLI();
+// generateWorkLI();
 
-function addContent(e){
+// function addContent(e){
 
-    const li=document.querySelectorAll('.work-gallery-item');
+//     const li=document.querySelectorAll('.work-gallery-item');
 
-        if(e.target.tagName==='IMG'){
-            for(let i=0;i<li.length;i++){
+//         if(e.target.tagName==='IMG'){
+//             for(let i=0;i<li.length;i++){
 
-                if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
-                    innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
-                }
-            }
+//                 if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
+//                     innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
+//                 }
+//             }
 
-        }else if(e.target.tagName==='P'){
+//         }else if(e.target.tagName==='P'){
 
-            for(let i=0;i<li.length;i++){
+//             for(let i=0;i<li.length;i++){
 
-                if(e.target.parentNode===li[i]){
-                    innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
-                }
-            }  
-        }
+//                 if(e.target.parentNode===li[i]){
+//                     innerContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
+//                 }
+//             }  
+//         }
         
-    }
+//     }
 
 
 
 
-function innerContent(num,title,intro,extraInfo,client,industry,services,year){
+// function innerContent(num,title,intro,extraInfo,client,industry,services,year){
 
 
-    const div= document.createElement('div');
-    div.classList.add('extra-info-container','animated','fadeIn');
+//     const div= document.createElement('div');
+//     div.classList.add('extra-info-container','animated','fadeIn');
 
-    const li= document.querySelectorAll('.work-gallery-item');
+//     const li= document.querySelectorAll('.work-gallery-item');
 
-    li[num].appendChild(div);
+//     li[num].appendChild(div);
     
-    div.innerHTML=`
-        <div class="extra-info">
-            <h2>${title}</h2>
-            <p>${intro}</p>
-            <div class="show-more">
-                <p>${extraInfo}</p>
-            </div>
-            <button class="show-more-btn">show more</button>
-        </div>
+//     div.innerHTML=`
+//         <div class="extra-info">
+//             <h2>${title}</h2>
+//             <p>${intro}</p>
+//             <div class="show-more">
+//                 <p>${extraInfo}</p>
+//             </div>
+//             <button class="show-more-btn">show more</button>
+//         </div>
         
-        <div class="cisy">
-            <div class="client">
-                <h3>client</h3>
-                <p>${client}</p>
-            </div>
-            <div class="industry">
-                <h3>industry</h3>
-                <p>${industry}</p>
-            </div>
-            <div class="services">
-                <h3>services</h3>
-                <p>${services}</p>
-            </div>
-            <div class="year">
-                <h3>year</h3>
-                <p>${year}</p>
-            </div>
-        </div>
-    `;
+//         <div class="cisy">
+//             <div class="client">
+//                 <h3>client</h3>
+//                 <p>${client}</p>
+//             </div>
+//             <div class="industry">
+//                 <h3>industry</h3>
+//                 <p>${industry}</p>
+//             </div>
+//             <div class="services">
+//                 <h3>services</h3>
+//                 <p>${services}</p>
+//             </div>
+//             <div class="year">
+//                 <h3>year</h3>
+//                 <p>${year}</p>
+//             </div>
+//         </div>
+//     `;
 
-    showHideContent();
+//     showHideContent();
     
-}
+// }
 
 
 
-function removeContent(e){
+// function removeContent(e){
     
-    const div= document.querySelectorAll('.extra-info-container');
-    const li= document.querySelectorAll('.work-gallery-item');
+//     const div= document.querySelectorAll('.extra-info-container');
+//     const li= document.querySelectorAll('.work-gallery-item');
 
-    if(e.target.tagName==='IMG'){
+//     if(e.target.tagName==='IMG'){
 
-        e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[2]);
+//         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children[2]);
         
-    }
+//     }
 
-    else if(e.target.tagName==='P'){
-        e.target.parentNode.removeChild(e.target.parentNode.children[2]);
-    } 
-}
+//     else if(e.target.tagName==='P'){
+//         e.target.parentNode.removeChild(e.target.parentNode.children[2]);
+//     } 
+// }
 
-//SHOW AND HIDE THE EXTRA CONTENT WHEN CLICKED ON BUTTON
-function showHideContent(){
+// //SHOW AND HIDE THE EXTRA CONTENT WHEN CLICKED ON BUTTON
+// function showHideContent(){
 
-    const btn=document.querySelectorAll('.show-more-btn');
-    const extraInfo= document.querySelectorAll('.extra-info');
-    const showMore= document.querySelectorAll('.show-more');
+//     const btn=document.querySelectorAll('.show-more-btn');
+//     const extraInfo= document.querySelectorAll('.extra-info');
+//     const showMore= document.querySelectorAll('.show-more');
 
-for(let i=0; i<extraInfo.length;i++){
+// for(let i=0; i<extraInfo.length;i++){
 
-    workGallery.addEventListener('click',(e)=>{
-        if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
-            showMore[i].style.display='block';
-            btn[i].innerHTML='show less';
-        }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
-            showMore[i].style.display='none';
-            btn[i].innerHTML='show more';
-        }     
-    })
-    }
-}
-
-
+//     workGallery.addEventListener('click',(e)=>{
+//         if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
+//             showMore[i].style.display='block';
+//             btn[i].innerHTML='show less';
+//         }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
+//             showMore[i].style.display='none';
+//             btn[i].innerHTML='show more';
+//         }     
+//     })
+//     }
+// }
 
 
-workGallery.addEventListener('click',(e)=>{
 
 
-    console.log(e.target.tagName);
-    console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
-    //console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length);
-    console.log(e.target.parentNode); 
+// workGallery.addEventListener('click',(e)=>{
 
-    if(e.target.tagName==='IMG'){
-        //console.log('oelala');
-        if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length<=2){
-            addContent(e);
-        }else{
-            removeContent(e)
-        }
+
+//     console.log(e.target.tagName);
+//     console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
+//     //console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length);
+//     console.log(e.target.parentNode); 
+
+//     if(e.target.tagName==='IMG'){
+//         //console.log('oelala');
+//         if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length<=2){
+//             addContent(e);
+//         }else{
+//             removeContent(e)
+//         }
        
-    }else if(e.target.tagName==='P'){
-        // console.log('nee joh');
-        if(e.target.parentNode.children.length<=2){
-            addContent(e);
-        }else{
-            removeContent(e);
-        }
+//     }else if(e.target.tagName==='P'){
+//         // console.log('nee joh');
+//         if(e.target.parentNode.children.length<=2){
+//             addContent(e);
+//         }else{
+//             removeContent(e);
+//         }
          
-    } 
-});
+//     } 
+// });
 
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-//ALLES WAT HIERONDER STAAT IS ZIJN DUBBELE FUNCTIES DIE ZIJN AANGEPAST VOOR DE INTROGALLERY.
-//DE FUNCTIIES HIERBOVEN MOETEN WORDEN AANGEPAST ZODAT ZE ARGUMENTS ACCEPTEREN ZODAT IK KAN 
-//SWITCHEN TUSSEN INTRO EN WORK
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////
-function generateIntroLI(){
-    for(let i=0; i< 3; i++){
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// //ALLES WAT HIERONDER STAAT IS ZIJN DUBBELE FUNCTIES DIE ZIJN AANGEPAST VOOR DE INTROGALLERY.
+// //DE FUNCTIIES HIERBOVEN MOETEN WORDEN AANGEPAST ZODAT ZE ARGUMENTS ACCEPTEREN ZODAT IK KAN 
+// //SWITCHEN TUSSEN INTRO EN WORK
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////
+// function generateIntroLI(){
+//     for(let i=0; i< 3; i++){
 
-        const li=document.createElement('li')
-        li.classList.add('intro-gallery-item');
+//         const li=document.createElement('li')
+//         li.classList.add('intro-gallery-item');
         
-        const link= document.createElement('div');
+//         const link= document.createElement('div');
         
-        const p=document.createElement('p');
-        p.textContent=workData[i].title;
+//         const p=document.createElement('p');
+//         p.textContent=workData[i].title;
 
-        for(let j=0;j<workData[i].img.length;j++){
-            const img=document.createElement('img');
-            img.classList.add('work-img');
-            img.src=workData[i].img[j];
-            link.appendChild(img);
-        }
+//         for(let j=0;j<workData[i].img.length;j++){
+//             const img=document.createElement('img');
+//             img.classList.add('work-img');
+//             img.src=workData[i].img[j];
+//             link.appendChild(img);
+//         }
 
-        //link.appendChild(p);
-        li.appendChild(p);
-        li.appendChild(link);
-        li.insertBefore(link,p);
-        introGallery.appendChild(li);
-    }
-}
+//         //link.appendChild(p);
+//         li.appendChild(p);
+//         li.appendChild(link);
+//         li.insertBefore(link,p);
+//         introGallery.appendChild(li);
+//     }
+// }
 
-generateIntroLI();
-
-
-
-introGallery.addEventListener('click',(e)=>{
-
-   // console.log(e.target.tagName);
-    console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
-    //console.log(e.target.parentNode);
+// generateIntroLI();
 
 
-    if(e.target.tagName==='IMG'){
-            // console.log('oelala');
-            if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length<=2){
-                addIntroContent(e);
-            }else{
-                removeContent(e)
-            }
+
+// introGallery.addEventListener('click',(e)=>{
+
+//    // console.log(e.target.tagName);
+//     console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
+//     //console.log(e.target.parentNode);
+
+
+//     if(e.target.tagName==='IMG'){
+//             // console.log('oelala');
+//             if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.children.length<=2){
+//                 addIntroContent(e);
+//             }else{
+//                 removeContent(e)
+//             }
        
-    }else if(e.target.tagName==='P'){
-        // console.log('nee joh');
-        if(e.target.parentNode.children.length<=2){
-            addIntroContent(e);
-        }else{
-            removeContent(e);
-        }
+//     }else if(e.target.tagName==='P'){
+//         // console.log('nee joh');
+//         if(e.target.parentNode.children.length<=2){
+//             addIntroContent(e);
+//         }else{
+//             removeContent(e);
+//         }
          
-    } 
-})
+//     } 
+// })
 
 
-function addIntroContent(e){
+// function addIntroContent(e){
 
-    const li=document.querySelectorAll('.intro-gallery-item');
+//     const li=document.querySelectorAll('.intro-gallery-item');
 
-        if(e.target.tagName==='IMG'){
-            for(let i=0;i<li.length;i++){
+//         if(e.target.tagName==='IMG'){
+//             for(let i=0;i<li.length;i++){
 
-                if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
-                    innerIntroContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
-                }
-            }
+//                 if(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode===li[i]){
+//                     innerIntroContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
+//                 }
+//             }
 
-        }else if(e.target.tagName==='P'){
+//         }else if(e.target.tagName==='P'){
 
-            for(let i=0;i<li.length;i++){
+//             for(let i=0;i<li.length;i++){
 
-                if(e.target.parentNode===li[i]){
-                    innerIntroContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
-                }
-            }  
-        }
+//                 if(e.target.parentNode===li[i]){
+//                     innerIntroContent(i,workData[i].title,workData[i].intro,workData[i].extraInfo,workData[i].client,workData[i].industry,workData[i].services,workData[i].year);    
+//                 }
+//             }  
+//         }
       
-}
+// }
 
 
-function innerIntroContent(num,title,intro,extraInfo,client,industry,services,year){
+// function innerIntroContent(num,title,intro,extraInfo,client,industry,services,year){
 
 
-    const div= document.createElement('div');
-    div.classList.add('extra-info-container','animated','fadeIn');
+//     const div= document.createElement('div');
+//     div.classList.add('extra-info-container','animated','fadeIn');
 
-    const li= document.querySelectorAll('.intro-gallery-item');
+//     const li= document.querySelectorAll('.intro-gallery-item');
 
-    li[num].appendChild(div);
+//     li[num].appendChild(div);
     
-    div.innerHTML=`
-        <div class="extra-info">
-            <h2>${title}</h2>
-            <p>${intro}</p>
-            <div class="show-more">
-                <p>${extraInfo}</p>
-            </div>
-            <button class="show-more-btn">show more</button>
-        </div>
+//     div.innerHTML=`
+//         <div class="extra-info">
+//             <h2>${title}</h2>
+//             <p>${intro}</p>
+//             <div class="show-more">
+//                 <p>${extraInfo}</p>
+//             </div>
+//             <button class="show-more-btn">show more</button>
+//         </div>
         
-        <div class="cisy">
-            <div class="client">
-                <h3>client</h3>
-                <p>${client}</p>
-            </div>
-            <div class="industry">
-                <h3>industry</h3>
-                <p>${industry}</p>
-            </div>
-            <div class="services">
-                <h3>services</h3>
-                <p>${services}</p>
-            </div>
-            <div class="year">
-                <h3>year</h3>
-                <p>${year}</p>
-            </div>
-        </div>
-    `;
+//         <div class="cisy">
+//             <div class="client">
+//                 <h3>client</h3>
+//                 <p>${client}</p>
+//             </div>
+//             <div class="industry">
+//                 <h3>industry</h3>
+//                 <p>${industry}</p>
+//             </div>
+//             <div class="services">
+//                 <h3>services</h3>
+//                 <p>${services}</p>
+//             </div>
+//             <div class="year">
+//                 <h3>year</h3>
+//                 <p>${year}</p>
+//             </div>
+//         </div>
+//     `;
 
-    showHideIntroContent();
+//     showHideIntroContent();
     
-}
+// }
 
 
 
-function showHideIntroContent(){
+// function showHideIntroContent(){
 
-    const btn=document.querySelectorAll('.show-more-btn');
-    const extraInfo= document.querySelectorAll('.extra-info');
-    const showMore= document.querySelectorAll('.show-more');
+//     const btn=document.querySelectorAll('.show-more-btn');
+//     const extraInfo= document.querySelectorAll('.extra-info');
+//     const showMore= document.querySelectorAll('.show-more');
 
-for(let i=0; i<extraInfo.length;i++){
+// for(let i=0; i<extraInfo.length;i++){
 
-    introGallery.addEventListener('click',(e)=>{
-        if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
-            showMore[i].style.display='block';
-            btn[i].innerHTML='show less';
-        }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
-            showMore[i].style.display='none';
-            btn[i].innerHTML='show more';
-        }     
-    })
-    }
-}
+//     introGallery.addEventListener('click',(e)=>{
+//         if(e.target.tagName === 'BUTTON' && e.target.textContent==='show more'){
+//             showMore[i].style.display='block';
+//             btn[i].innerHTML='show less';
+//         }else if(e.target.tagName === 'BUTTON' && e.target.textContent ==='show less'){
+//             showMore[i].style.display='none';
+//             btn[i].innerHTML='show more';
+//         }     
+//     })
+//     }
+// }

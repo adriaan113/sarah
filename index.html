@@ -8,9 +8,6 @@
   <!-- ANIMATE.CSS LIBRARY -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <!-- <link rel="stylesheet" href="css/bulma.css"> -->
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/slick-theme.css">
-    <!-- CAN BOTH BE MINIFIED VERSIONS -->
   <link rel="stylesheet" href="css/main.min.css"> 
   <title>Sarah Lancelin</title>
 </head>
@@ -70,7 +67,22 @@
    <main class="main-container" id="mc">
 
      <ul class="intro-gallery">
-      <!-- JS GENERATED LI ITEMS WILL BE INSERTED HERE -->
+        <li class="intro-gallery--item">
+          <img src="img/test1.jpg" alt="">
+          <p>project01</p>
+        </li>
+        <li class="intro-gallery--item">
+          <img src="img/test1.jpg" alt="">
+          <p>project01</p>
+        </li>
+        <li class="intro-gallery--item">
+          <img src="img/test3.jpg" alt="">
+          <p>project01</p>
+        </li>
+        <li class="intro-gallery--item">
+          <img src="img/test3.jpg" alt="">
+          <p>project01</p>
+        </li> 
      </ul>
 
      <div class="info">
@@ -125,9 +137,102 @@
      </div>
 
     <ul class="work-gallery">
-      <!-- JS GENERATED LI ITEMS WILL BE INSERTED HERE -->
+      <li class="work-gallery--item">
+        <img src="img/test1.jpg" alt="">
+        <p>project01</p>
+      </li>
+      <li class="work-gallery--item">
+        <img src="img/test2.jpg" alt="">
+        <p>project02</p>
+      </li>
+      <li class="work-gallery--item">
+        <img src="img/test3.jpg" alt="">
+        <p>project03</p>
+      </li>
+      <li class="work-gallery--item">
+        <img src="img/test1.jpg" alt="">
+        <p>project04</p>
+      </li>
+      <li class="work-gallery--item">
+        <img src="img/test2.jpg" alt="">
+        <p>project05</p>
+      </li>
+      <li class="work-gallery--item">
+        <img src="img/test3.jpg" alt="">
+        <p>project06</p>
+      </li>
+      <li class="work-gallery--item">
+        <img src="img/test1.jpg" alt="">
+        <p>project07</p>
+      </li>
+      <li class="work-gallery--item">
+        <img src="img/test2.jpg" alt="">
+        <p>project08</p>
+      </li>
+      <li class="work-gallery--item">
+        <img src="img/test3.jpg" alt="">
+        <p>project09</p>
+      </li>
+      <li class="work-gallery--item">
+        <img src="img/test1.jpg" alt="">
+        <p>project10</p>
+      </li>
     </ul>
 
+    <!--PROJECT PAGES-->
+
+    <div class="project">
+
+      <div class="hero">
+        <img src="img/test1.jpg" alt="">
+        <a href="" class="arrow-prev">
+          <img src="img/left-arrow.svg" alt="">
+        </a>
+        <a href="" class="arrow-next">
+          <img src="img/right-arrow.svg" alt="">
+        </a>
+      </div>
+
+      <div class="project-info">
+        <h2 class="project-info--title">%title%</h2>
+        <p class="project-info--text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, quos!</p>
+        
+        <div class="show-more">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga excepturi vel, reiciendis dignissimos architecto labore dolor nemo dolore veniam quaerat asperiores pariatur et corrupti porro qui a odio consectetur doloribus, alias tempora deleniti. Aliquid ex accusantium blanditiis vitae nulla velit?</p>
+        </div>
+
+        <button class="show-more-btn">show more</button>
+        
+        <div class="cisy">
+          <div class="client">
+              <h3>client</h3>
+              <p>%client%</p>
+          </div>
+          <div class="industry">
+              <h3>industry</h3>
+              <p>%industry%</p>
+          </div>
+          <div class="services">
+              <h3>services</h3>
+              <p>%services%</p>
+          </div>
+          <div class="year">
+              <h3>year</h3>
+              <p>%year%</p>
+          </div>
+        </div>   
+      </div>
+
+      <ul class="project-images">
+        <!--LI WITH IMAGES GENERATED IN JS -->
+      </ul>
+
+    </div>
+
+
+
+
+      <!--CALL TO ACTION-->
 
      <div class="cta-container">
        <div class="cta-work">
@@ -167,7 +272,6 @@
 src="https://code.jquery.com/jquery-3.4.1.min.js"
 integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 crossorigin="anonymous"></script>
-<script src="js/slick.js"></script>
 <script src="js/jquery.sticky.js"></script>
 <script src="js/main.js"></script>
 <script src="js/work.js"></script>
@@ -182,22 +286,6 @@ crossorigin="anonymous"></script>
   });
 </script>
 
-<!-- INITIANLIZE SLICK.JS -- FOR IMG CAROUSSEL -->
-<script>
-  $(document).ready(function(){
-    $('.work-gallery-item div').slick({
-
-    });
- });
-</script>
-
-<script>
-  $(document).ready(function(){
-    $('.intro-gallery-item div').slick({
-     
-    });
- });
-</script>
 
 </body>
 </html>

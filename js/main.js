@@ -326,3 +326,22 @@ logo.addEventListener('click',()=>{
 
 });
 
+
+
+
+
+
+const projectBtn= document.querySelector('.show-more-btn');
+const showMore= document.querySelector('.show-more');
+
+projectBtn.addEventListener('click',()=>{
+
+  if(showMore.style.display==='none'){
+    showMore.style.display= 'flex';
+    projectBtn.innerHTML='show less';
+  }else{
+    showMore.style.display= 'none';
+    projectBtn.innerHTML='show more';
+  }
+ 
+})
