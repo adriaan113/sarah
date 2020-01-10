@@ -433,7 +433,6 @@ projectBtn.addEventListener('click',()=>{
 
 const projectTitle= document.querySelector('.project-info--title');
 const projectText= document.querySelector('.project-info--text');
-
 const projectImage= document.querySelector('.project-image');
 
 //CISY
@@ -445,6 +444,7 @@ const year=document.querySelector('.year');
 workGallery.addEventListener('click',(e)=>{
 
   for(let i=0;i<workGallery.children.length;i++){
+
     if(e.target.parentNode.children[1] === workGallery.children[i].children[1]){
       changeContent('none','none','none','none','flex');
       projectTitle.textContent= workData[i].title;
@@ -456,11 +456,8 @@ workGallery.addEventListener('click',(e)=>{
       services.children[1].textContent= workData[i].services;
       year.children[1].textContent= workData[i].year;
 
-
-
       const projectImageItems= document.createElement('li');
       projectImageItems.classList.add('project-image--item');
-      
       
       //ATTACH IMAGES TO THE SELECTED PROJECT
       for(let j=0;j<workData[i].img.length;j++){
@@ -472,6 +469,9 @@ workGallery.addEventListener('click',(e)=>{
       }
 
       projectImage.appendChild(projectImageItems);
+
+      //ctaWork.children[0].innerHTML='hahahah';
+      ctaAbout.children[0].textContent.replace("about me","hahahah");
       
     }
   }

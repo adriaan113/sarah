@@ -288,71 +288,21 @@ p,body{
       }
     }
   }
+  .project-image{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    &--item{
+      margin: 0 1rem;
+      img{
+        width: 100%;
+        height: auto;
+        margin: 0.5rem 0;
+      }
+    }
+  }
 }
-
-
-
-// .extra-info-container{
-//   display: flex;
-//   flex-direction: column;
-//   //padding: 1rem;
-//   .extra-info{
-//     display: flex;
-//     flex-direction: column;
-//     align-items: flex-start;
-//     margin: 0 0 2rem;
-//     //padding: 1rem;
-//     h2{
-//       align-self: center;
-//     }
-//     &>p{
-//       font-size: 1.2rem;
-//       text-align: left; //HEB IK AL DEZE TEXT-ALIGN NOG WEL NODIG??
-//       cursor: text;
-//     }
-//     .show-more{
-//       display: none;
-//       //text-align: left;
-//       p{
-//         text-align: left;
-//       }
-//     }
-//     button{
-//       display: inline-block;
-//       padding: 0;
-//       background-color: $bg-color-lightgrey;
-//       border: none;
-//       text-decoration: underline; 
-//       font-size: 1.4rem;
-//       cursor: pointer;
-//     }
-//   }
-//   .cisy{
-//     border-top: $border-line;
-//     border-bottom: $border-line; //NIET SUPER ELEGANT DIT
-//     display: flex;
-//     flex-flow: wrap row;
-//     justify-content: space-between;
-//     //margin: 0 1rem;
-//     padding: 0 1rem;
-//     .client, 
-//     .industry,
-//     .services,
-//     .year{
-//       display: flex;
-//       flex-direction: column;
-//       align-items: flex-start;
-//       // h3{
-//       //   //margin: .5rem 0 .2rem
-//       // }
-//       p{
-//         //margin: 0 0 .5rem;
-//         text-align: left;
-//       }
-//     }
-//   }
-// }
-
 
 //-------ABOUT PAGE-------//
 
