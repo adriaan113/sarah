@@ -35,9 +35,10 @@ const projectContainer= document.querySelector('.project');
 const projectBtn= document.querySelector('.show-more-btn');
 const showMore= document.querySelector('.show-more');
 
+
+
 info.style.display= 'none';
 workGallery.style.display='none';
-
 projectContainer.style.display='none';
 
 
@@ -404,7 +405,6 @@ const workData=[
 logo.addEventListener('click',()=>{
   changeContent('flex','flex','none','none','none');
   styleElements(lightGrey, purple);
-
 });
 
 
@@ -434,6 +434,14 @@ projectBtn.addEventListener('click',()=>{
 const projectTitle= document.querySelector('.project-info--title');
 const projectText= document.querySelector('.project-info--text');
 
+const projectImage= document.querySelector('.project-image');
+
+//CISY
+const client=document.querySelector('.client');
+const industry=document.querySelector('.industry');
+const services=document.querySelector('.services');
+const year=document.querySelector('.year');
+
 workGallery.addEventListener('click',(e)=>{
 
   for(let i=0;i<workGallery.children.length;i++){
@@ -442,36 +450,29 @@ workGallery.addEventListener('click',(e)=>{
       projectTitle.textContent= workData[i].title;
       projectText.textContent= workData[i].intro;
       showMore.textContent= workData[i].extraInfo;
+
+      client.children[1].textContent= workData[i].client;
+      industry.children[1].textContent= workData[i].industry;
+      services.children[1].textContent= workData[i].services;
+      year.children[1].textContent= workData[i].year;
+
+
+
+      const projectImageItems= document.createElement('li');
+      projectImageItems.classList.add('project-image--item');
+      
+      
+      //ATTACH IMAGES TO THE SELECTED PROJECT
+      for(let j=0;j<workData[i].img.length;j++){
+
+        const img= document.createElement('img');
+        img.classList.add('project-image--item--content');
+        img.src=workData[i].img[j];
+        projectImageItems.appendChild(img);
+      }
+
+      projectImage.appendChild(projectImageItems);
+      
     }
   }
-
-  // if(e.target.parentNode.children[1] === workGallery.children[0].children[1]){
-  //   changeContent('none','none','none','none','flex');
-  //   projectTitle.textContent= workData[0].title;
-  // }
-  // else if(e.target.parentNode.children[1] === workGallery.children[1].children[1]){
-  //   changeContent('none','none','none','none','flex');
-  //   projectTitle.textContent= workData[1].title;
-  // }else if(e.target.parentNode.children[1] === workGallery.children[2].children[1]){
-  //   changeContent('none','none','none','none','flex');
-  // }else if(e.target.parentNode.children[1] === workGallery.children[3].children[1]){
-  //   changeContent('none','none','none','none','flex');
-  // }else if(e.target.parentNode.children[1] === workGallery.children[4].children[1]){
-  //   changeContent('none','none','none','none','flex');
-  // }else if(e.target.parentNode.children[1] === workGallery.children[5].children[1]){
-  //   changeContent('none','none','none','none','flex');
-  // }else if(e.target.parentNode.children[1] === workGallery.children[6].children[1]){
-  //   changeContent('none','none','none','none','flex');
-  // }else if(e.target.parentNode.children[1] === workGallery.children[7].children[1]){
-  //   changeContent('none','none','none','none','flex');
-  // }else if(e.target.parentNode.children[1] === workGallery.children[8].children[1]){
-  //   changeContent('none','none','none','none','flex');
-  // }else if(e.target.parentNode.children[1] === workGallery.children[9].children[1]){
-  //   changeContent('none','none','none','none','flex');
-  // }
-
-  // console.log(e.target.src);
-  // console.log(e.target);
-  // console.log(e.target.parentNode.children[1]);
-  // console.log(workGallery.children[0].children[1]);
 })
