@@ -31,8 +31,14 @@ const menuIcon=document.querySelector('.menuicon__circle');
 
 const sticky=document.querySelector('.is-sticky');
 
+const projectContainer= document.querySelector('.project');
+const projectBtn= document.querySelector('.show-more-btn');
+const showMore= document.querySelector('.show-more');
+
 info.style.display= 'none';
 workGallery.style.display='none';
+
+projectContainer.style.display='none';
 
 
 //-------------------------------------------//
@@ -51,11 +57,12 @@ function closeOnClick(){
 }
 
  //CHANGE CONTENT IN .MAIN-CONTAINER
-function changeContent(a,b,c,d){
+function changeContent(a,b,c,d,e){
   introText.style.display=a;
   introGallery.style.display=b;
   info.style.display=c;
   workGallery.style.display=d; 
+  projectContainer.style.display=e;
 }
 
  //STYLE HTML ELEMENTS 
@@ -146,7 +153,7 @@ navMenu.addEventListener('click',(e)=>{
 
 
     //CHANGE CONTENT IN .MAIN-CONTAINER
-    changeContent('none', 'none', 'flex','none');
+    changeContent('none', 'none', 'flex','none','none');
 
 
     //STYLE HTML ELEMENTS 
@@ -158,14 +165,14 @@ navMenu.addEventListener('click',(e)=>{
 
   }else if(e.target === menuBtn[0]){
 
-    changeContent('flex', 'flex','none','none');
+    changeContent('flex', 'flex','none','none','none');
 
     styleElements(lightGrey, purple);
 
     closeOnClick();
 
   }else if(e.target === menuBtn[1]){
-    changeContent('none','none','none','flex');
+    changeContent('none','none','none','flex','none');
     ctaContainer.children[0].style.display='none';
     ctaContainer.children[1].style.color=purple;
     ctaContainer.children[1].children[1].style.stroke=purple;//THIS DOES NOT WORK YET. ALSO NOT IN ABOUT SECTION
@@ -179,7 +186,7 @@ ctaWork.addEventListener('click',()=>{
   //console.log('lalalal');
 
   //HIER MOET EEN IF STATEMENT KOMEN. ALS JE VANAF HOME KOMT,DAN DIT. ANDERS: ALS JE VAN WERK KOMT DAN EEN LOAD NAAR MEER WERK.
-  changeContent('none','none','none','flex');
+  changeContent('none','none','none','flex','none');
   styleElements(lightGrey, purple);
   //ctaContainer.style.display='flex';
 
@@ -188,7 +195,7 @@ ctaWork.addEventListener('click',()=>{
 })
 
 ctaAbout.addEventListener('click',()=>{
-  changeContent('none', 'none', 'flex','none');
+  changeContent('none', 'none', 'flex','none','none');
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 })
@@ -314,6 +321,80 @@ listenForMq(mq810);
 mq810.addListener(listenForMq);
 
 
+
+
+//-------------------------------------------//
+//--------------DATA STRUCTURES--------------//
+//-------------------------------------------//
+
+const workData=[
+    {
+        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
+        title:'sjaak magazine',
+        intro: 'The magazine made for Rotterdammers with a small budget.',
+        extraInfo:'Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+        client:['Leger des Heils, Voedselbank'],
+        industry:'non-profit',
+        services:['concept', 'design', 'art direction', 'photography'],
+        year:'2018 - 2019 at Dailymilk'
+    },
+    {
+        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
+        title:'nummer 2',
+        intro: 'nummer 2 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        extraInfo:'nummer 2 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+        client:['satan'],
+        industry:'profit',
+        services:['concept', 'design'],
+        year:'2018'
+    },
+    {
+        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
+        title:'nummer 3',
+        intro: 'nummer 3 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        extraInfo:'nummer 3 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+        client:['burger king'],
+        industry:'profit',
+        services:['concept'],
+        year:'2019'
+    },
+    {
+        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
+        title:'nummer 4',
+        intro: 'nummer 4 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        extraInfo:'nummer 4Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+        client:['KFC'],
+        industry:'non-profit',
+        services:[ 'art direction', 'photography'],
+        year:'2020'
+    },
+    {
+        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg'],
+        title:'nummer 5',
+        intro: 'nummer 5 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        extraInfo:'nummer 5 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+        client:['mcDonalds'],
+        industry:'profit',
+        services:['concept', 'photography'],
+        year:'2018 - 2019 at Dailymilk'
+    },
+    {
+        img: ['img/test1.jpg','img/test2.jpg','img/test3.jpg','img/test1.jpg'],
+        title:'nummer 6',
+        intro: 'nummer 6 Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+        extraInfo:'nummer 6 Sjaak magazine is a magazine for rotterdam citizens with a small budget. The idea of this magazine is to be a source of information and inspiration for people with a low income. Through inspiring interviews, stories and events, as well as useful tips, Sjaak shows that there are opportunities to lead a beautiful and healthy life even with a limited budget.The magazine is published four times a year and is distributed through social organizations in Rotterdam, including the Salvation Army and the Food Bank Foundation.',
+        client:['pizza hut'],
+        industry:'tralala',
+        services:['art direction', 'photography'],
+        year:'2020'
+    }
+];
+
+
+
+
+
+
 //--------------------------------------------------//
 //-----HIDE AND SHOW CONTENT IN .MAIN-CONTAINER-----//
 //--------------------------------------------------//
@@ -321,7 +402,7 @@ mq810.addListener(listenForMq);
 //const logo= document.querySelector('.logo');
 
 logo.addEventListener('click',()=>{
-  changeContent('flex','flex','none','none');
+  changeContent('flex','flex','none','none','none');
   styleElements(lightGrey, purple);
 
 });
@@ -329,10 +410,9 @@ logo.addEventListener('click',()=>{
 
 
 
-
-
-const projectBtn= document.querySelector('.show-more-btn');
-const showMore= document.querySelector('.show-more');
+//--------------------------------------------------//
+//----HIDE AND SHOW MORE INFO WITH PROJECT BUTTON---//
+//--------------------------------------------------//
 
 projectBtn.addEventListener('click',()=>{
 
@@ -343,5 +423,55 @@ projectBtn.addEventListener('click',()=>{
     showMore.style.display= 'none';
     projectBtn.innerHTML='show more';
   }
- 
+})
+
+
+
+//--------------------------------------------------//
+//-------GENERATE TITLES AND TEXT AND IMAGES--------//
+//--------------------------------------------------//
+
+const projectTitle= document.querySelector('.project-info--title');
+const projectText= document.querySelector('.project-info--text');
+
+workGallery.addEventListener('click',(e)=>{
+
+  for(let i=0;i<workGallery.children.length;i++){
+    if(e.target.parentNode.children[1] === workGallery.children[i].children[1]){
+      changeContent('none','none','none','none','flex');
+      projectTitle.textContent= workData[i].title;
+      projectText.textContent= workData[i].intro;
+      showMore.textContent= workData[i].extraInfo;
+    }
+  }
+
+  // if(e.target.parentNode.children[1] === workGallery.children[0].children[1]){
+  //   changeContent('none','none','none','none','flex');
+  //   projectTitle.textContent= workData[0].title;
+  // }
+  // else if(e.target.parentNode.children[1] === workGallery.children[1].children[1]){
+  //   changeContent('none','none','none','none','flex');
+  //   projectTitle.textContent= workData[1].title;
+  // }else if(e.target.parentNode.children[1] === workGallery.children[2].children[1]){
+  //   changeContent('none','none','none','none','flex');
+  // }else if(e.target.parentNode.children[1] === workGallery.children[3].children[1]){
+  //   changeContent('none','none','none','none','flex');
+  // }else if(e.target.parentNode.children[1] === workGallery.children[4].children[1]){
+  //   changeContent('none','none','none','none','flex');
+  // }else if(e.target.parentNode.children[1] === workGallery.children[5].children[1]){
+  //   changeContent('none','none','none','none','flex');
+  // }else if(e.target.parentNode.children[1] === workGallery.children[6].children[1]){
+  //   changeContent('none','none','none','none','flex');
+  // }else if(e.target.parentNode.children[1] === workGallery.children[7].children[1]){
+  //   changeContent('none','none','none','none','flex');
+  // }else if(e.target.parentNode.children[1] === workGallery.children[8].children[1]){
+  //   changeContent('none','none','none','none','flex');
+  // }else if(e.target.parentNode.children[1] === workGallery.children[9].children[1]){
+  //   changeContent('none','none','none','none','flex');
+  // }
+
+  // console.log(e.target.src);
+  // console.log(e.target);
+  // console.log(e.target.parentNode.children[1]);
+  // console.log(workGallery.children[0].children[1]);
 })
