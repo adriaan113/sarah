@@ -188,14 +188,7 @@ navMenu.addEventListener('click',(e)=>{
 });
 
 ctaWork.addEventListener('click',()=>{
-  console.log('lalalal');
 
-  // if(introGallery.style.display === 'flex'){
-  //   changeContent('none','none','none','flex','none');
-  //   styleElements(lightGrey, purple);
-  // }
-
-  //HIER MOET EEN IF STATEMENT KOMEN. ALS JE VANAF HOME KOMT,DAN DIT. ANDERS: ALS JE VAN WERK KOMT DAN EEN LOAD NAAR MEER WERK.
   changeContent('none','none','none','flex','none');
   styleElements(lightGrey, purple);
   ctaContainer.style.display='flex';
@@ -210,19 +203,12 @@ ctaAbout.addEventListener('click',()=>{
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 })
 
-//DE CTA BUTTONS WERKEN NOG NIET CONSISTENT. NOG AFHANKELIJK VAN CONTEXT.
+
 
 
 
 
 //BONJOUR ON LOAD AT 810PX
-
-
-// if(){
-//   mainWrapper
-// }
-
-
 
 
 //-------------------------------------------//
@@ -452,7 +438,22 @@ const industry=document.querySelector('.industry');
 const services=document.querySelector('.services');
 const year=document.querySelector('.year');
 
+function nextItem(x){
+  x = x + 1; 
+  x = x % workData.length; // if we've gone too high, start from `0` again
+  return workData[x].title; 
+}
+
+function prevItem(x) {
+  if (x === 0) { // i would become 0
+      x = workData.length; // so put it at the other end of the array
+  }
+  x = x - 1; // decrease by one
+  return workData[x].title; // give us back the item of where we are now
+}
+
 workGallery.addEventListener('click',(e)=>{
+
 
   for(let i=0;i<workGallery.children.length;i++){
 
@@ -482,7 +483,17 @@ workGallery.addEventListener('click',(e)=>{
       projectImage.appendChild(projectImageItems);
 
       //ctaWork.children[0].innerHTML='hahahah';
-      ctaAbout.children[0].textContent.replace("about me","hahahah");
+      //ctaAbout.children[0].textContent.replace("about me","hahahah");
+      ctaContainer.children[0].style.display='flex';
+      ctaWork.children[0].style.color= 'red';
+      //ctaWork.children[0].textContent= 'next project';
+      //ctaWork.children[0].textContent= workData[i].title;
+      ctaWork.children[0].textContent= nextItem(i);
+    
+      ctaContainer.children[1].style.display='flex';
+      ctaAbout.children[0].style.color='blue';
+      //ctaAbout.children[0].textContent='previous project';
+      ctaAbout.children[0].textContent= prevItem(i);
       
     }
   }
