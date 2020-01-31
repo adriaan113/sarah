@@ -156,6 +156,8 @@ navMenu.addEventListener('click',(e)=>{
     //CHANGE CONTENT IN .MAIN-CONTAINER
     changeContent('none', 'none', 'flex','none','none');
 
+    ctaContainer.children[0].style.display='none';
+    ctaContainer.children[1].style.display='none';
 
     //STYLE HTML ELEMENTS 
     styleElements(purple, lightGrey);
@@ -169,7 +171,8 @@ navMenu.addEventListener('click',(e)=>{
     changeContent('flex', 'flex','none','none','none');
 
     styleElements(lightGrey, purple);
-
+    ctaContainer.children[0].style.display='flex';
+    ctaContainer.children[1].style.display='flex';
     closeOnClick();
 
   }else if(e.target === menuBtn[1]){
@@ -177,6 +180,7 @@ navMenu.addEventListener('click',(e)=>{
     ctaContainer.children[0].style.display='none';
     ctaContainer.children[1].style.color=purple;
     ctaContainer.children[1].children[1].style.stroke=purple;//THIS DOES NOT WORK YET. ALSO NOT IN ABOUT SECTION
+    
     styleElements(lightGrey, purple);
     closeOnClick();
   }
@@ -184,12 +188,17 @@ navMenu.addEventListener('click',(e)=>{
 });
 
 ctaWork.addEventListener('click',()=>{
-  //console.log('lalalal');
+  console.log('lalalal');
+
+  // if(introGallery.style.display === 'flex'){
+  //   changeContent('none','none','none','flex','none');
+  //   styleElements(lightGrey, purple);
+  // }
 
   //HIER MOET EEN IF STATEMENT KOMEN. ALS JE VANAF HOME KOMT,DAN DIT. ANDERS: ALS JE VAN WERK KOMT DAN EEN LOAD NAAR MEER WERK.
   changeContent('none','none','none','flex','none');
   styleElements(lightGrey, purple);
-  //ctaContainer.style.display='flex';
+  ctaContainer.style.display='flex';
 
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -405,6 +414,8 @@ const workData=[
 logo.addEventListener('click',()=>{
   changeContent('flex','flex','none','none','none');
   styleElements(lightGrey, purple);
+  ctaContainer.children[0].style.display='flex';
+  ctaContainer.children[1].style.display='flex';
 });
 
 
