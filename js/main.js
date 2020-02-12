@@ -377,9 +377,88 @@ const heroImg= document.querySelector('.hero');
 
 workGallery.addEventListener('click',(e)=>{
 
+
+  while( projectImage.firstChild ){
+    projectImage.removeChild( projectImage.firstChild );
+  }
+
   for(let i=0;i<workGallery.children.length;i++){
 
     if(e.target.parentNode.children[1] === workGallery.children[i].children[1]){
+      changeContent('none','none','none','none','flex');
+      projectTitle.textContent= workData[i].title;
+      projectText.textContent= workData[i].intro;
+      showMore.textContent= workData[i].extraInfo;
+
+      client.children[1].textContent= workData[i].client;
+      industry.children[1].textContent= workData[i].industry;
+      services.children[1].textContent= workData[i].services;
+      year.children[1].textContent= workData[i].year;
+
+      // const projectImageItems= document.createElement('li');
+      // projectImageItems.classList.add('project-image--item');
+      
+      //ATTACH IMAGES TO THE SELECTED PROJECT
+      for(let j=0;j<workData[i].img.length;j++){
+
+        const projectImageItems= document.createElement('li');
+        projectImageItems.classList.add('project-image--item');
+
+        if(projectImage.children.length<=workData[i].img.length){
+          
+          const img= document.createElement('img');
+          img.classList.add('project-image--item--content');
+          img.src=workData[i].img[j];
+          projectImageItems.appendChild(img);
+          projectImage.appendChild(projectImageItems);
+        }else if(projectImage.children.length>workData[i].img.length){
+          projectImage.removeChild(projectImageItems);
+          console.log('hahah');
+          //HOE KRIJG IK DIE OUDE LI ERUIT EN DIE NIEUWE ERIN???
+        }
+
+      //   const img= document.createElement('img');
+      //   img.classList.add('project-image--item--content');
+      //   img.src=workData[i].img[j];
+      //   projectImageItems.appendChild(img);
+      //  // projectImage.appendChild(projectImageItems);
+      }
+
+      // if(projectImage.children.length<=1){
+      //   projectImage.appendChild(projectImageItems);
+      // }else if(projectImage.children.length>1){
+      //   projectImage.removeChild(projectImageItems);
+      // }
+
+      
+      ctaContainer.children[0].style.display='flex';
+      ctaWork.children[0].style.color= 'red';
+      ctaWork.children[0].textContent= nextItem(i);
+      ctaContainer.children[1].style.display='flex';
+      ctaAbout.children[0].style.color='blue';
+      ctaAbout.children[0].textContent= prevItem(i);
+      heroImg.children[0].src=workData[i].hero;
+    }
+  }
+})
+
+// introGallery.addEventListener('click',(e)=>{
+  
+//   //for(let i=0;i<introGallery.children.length;i++){
+
+//     if(e.target.parentNode===introGallery.children[0] || e.target===introGallery.children[0]){
+//       console.log('hahaha');
+     
+//     }
+//   //}
+// });
+
+
+introGallery.addEventListener('click',(e)=>{
+
+  for(let i=0;i<introGallery.children.length;i++){
+
+    if(e.target.parentNode.children[1] === introGallery.children[i].children[1]){
       changeContent('none','none','none','none','flex');
       projectTitle.textContent= workData[i].title;
       projectText.textContent= workData[i].intro;
@@ -400,14 +479,8 @@ workGallery.addEventListener('click',(e)=>{
         img.classList.add('project-image--item--content');
         img.src=workData[i].img[j];
         projectImageItems.appendChild(img);
-      }
-
-      if(projectImage.children.length<=1){
         projectImage.appendChild(projectImageItems);
-      }else if(projectImage.children.length>1){
-        projectImage.removeChild(projectImageItems);
       }
-      //HIER WAS IK GEBLEVEN<<<<
       
       ctaContainer.children[0].style.display='flex';
       ctaWork.children[0].style.color= 'red';
@@ -433,10 +506,10 @@ const workData=[
             '../img/work/01_sjaak_magazine/02_sjaak_magazine_visuals_website_1200px.png',
             '../img/work/01_sjaak_magazine/03_sjaak_magazine_visuals_website_590px.png',
             '../img/work/01_sjaak_magazine/04_sjaak_magazine_visuals_website_590px.png',
-            '../img/work/01_sjaak_magazine/05_sjaak_magazine_visuals_website_1200px.png',
+            '../img/work/01_sjaak_magazine/05_sjaak_magazine_visuals_website_590px.png',
             '../img/work/01_sjaak_magazine/06_sjaak_magazine_visuals_website_590px.png',
             '../img/work/01_sjaak_magazine/07_sjaak_magazine_visuals_website_590px.png',
-            '../img/work/01_sjaak_magazine/08_sjaak_magazine_visuals_website_1200px.png',
+            '../img/work/01_sjaak_magazine/08_sjaak_magazine_visuals_website_590px.png',
             '../img/work/01_sjaak_magazine/09_sjaak_magazine_visuals_website_590px.png',
             '../img/work/01_sjaak_magazine/10_sjaak_magazine_visuals_website_590px.png',
             '../img/work/01_sjaak_magazine/11_sjaak_magazine_visuals_website_1200px.png',
