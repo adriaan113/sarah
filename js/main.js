@@ -415,20 +415,10 @@ workGallery.addEventListener('click',(e)=>{
       ctaAbout.children[0].style.color='blue';
       ctaAbout.children[0].textContent= prevItem(i);
       heroImg.children[0].src=workData[i].hero;
+      
     }
   }
 })
-
-// introGallery.addEventListener('click',(e)=>{
-  
-//   //for(let i=0;i<introGallery.children.length;i++){
-
-//     if(e.target.parentNode===introGallery.children[0] || e.target===introGallery.children[0]){
-//       console.log('hahaha');
-     
-//     }
-//   //}
-// });
 
 
 introGallery.addEventListener('click',(e)=>{
@@ -483,65 +473,61 @@ arrowNext.addEventListener('click',(e)=>{
 
   e.preventDefault();
 
-  console.log(e.target.parentNode.children[1] === workGallery.children[i].children[1]);
-
-  // for(let i=0;i<workGallery.children.length;i++){
-  //   console.log(e.target.nextElementSibling);
-  //   console.log(e.target.parentNode);
-  //   console.log(e.target.parentNode.parentNode);
-  //   console.log(e.target.parentNode.parentNode.parentNode);
-  //   console.log(e.target.parentNode.parentNode.parentNode.parentNode);
-  //   console.log(e.target.parentNode.parentNode.parentNode.parentNode.children[2]);
-  //   console.log(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i]);
-  // }
- 
-  // for(let i=0;i<workGallery.children.length;i++){
-    
-  //   const index = workGallery.indexOf(i);
-  //   if(index >= 0 && index < array.length - 1){
-  //   const nextItem = array[index + 1];
-  //   }
-    
+  // while( projectImage.firstChild ){
+  //   projectImage.removeChild( projectImage.firstChild );
   // }
 
+  for(let i=0;i<workData.length;i++){
 
-  // for(let i=0;i<workGallery.children.length;i++){
+    // console.log(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase());
+    // console.log(e.target.parentNode.parentNode.parentNode.children[1].children[0]);
+  
+    if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
+      console.log('hahaha');
+    }
 
-  //   if(e.target.parentNode.children[1] === workGallery.children[i].children[1]){
-  //     changeContent('none','none','none','none','flex');
-  //     projectTitle.textContent= workData[i + 1].title;
-  //     projectText.textContent= workData[i + 1].intro;
-  //     showMore.textContent= workData[i + 1].extraInfo;
+    //   changeContent('none','none','none','none','flex');
+    //   projectTitle.textContent= workData[i + 1].title;
+    //   projectText.textContent= workData[i + 1].intro;
+    //   showMore.textContent= workData[i + 1].extraInfo;
 
-  //     client.children[1].textContent= workData[i + 1].client;
-  //     industry.children[1].textContent= workData[i + 1].industry;
-  //     services.children[1].textContent= workData[i + 1].services;
-  //     year.children[1].textContent= workData[i + 1].year;
+    //   client.children[1].textContent= workData[i + 1].client;
+    //   industry.children[1].textContent= workData[i + 1].industry;
+    //   services.children[1].textContent= workData[i + 1].services;
+    //   year.children[1].textContent= workData[i + 1].year;
       
-  //     //ATTACH IMAGES TO THE SELECTED PROJECT
-  //     for(let j=0;j<workData[i].img.length;j++){
+    //   //ATTACH IMAGES TO THE SELECTED PROJECT
+    //   for(let j=0;j<workData[i].img.length;j++){
 
-  //       const projectImageItems= document.createElement('li');
-  //       projectImageItems.classList.add('project-image--item');
+    //     const projectImageItems= document.createElement('li');
+    //     projectImageItems.classList.add('project-image--item');
  
-  //       const img= document.createElement('img');
-  //       img.classList.add('project-image--item--content');
-  //       img.src=workData[i].img[j];
-  //       projectImageItems.appendChild(img);
-  //       projectImage.appendChild(projectImageItems);
-  //     }
+    //     const img= document.createElement('img');
+    //     img.classList.add('project-image--item--content');
+    //     img.src=workData[i + 1].img[j];
+    //     projectImageItems.appendChild(img);
+    //     projectImage.appendChild(projectImageItems);
+    //   }
 
-      
-  //     ctaContainer.children[0].style.display='flex';
-  //     ctaWork.children[0].style.color= 'red';
-  //     ctaWork.children[0].textContent= nextItem(i);
-  //     ctaContainer.children[1].style.display='flex';
-  //     ctaAbout.children[0].style.color='blue';
-  //     ctaAbout.children[0].textContent= prevItem(i);
-  //     heroImg.children[0].src=workData[i].hero;
-  //   }
-  // }
-
+    //   ctaContainer.children[0].style.display='flex';
+    //   ctaWork.children[0].style.color= 'red';
+    //   ctaWork.children[0].textContent= nextItem(i + 1);
+    //   ctaContainer.children[1].style.display='flex';
+    //   ctaAbout.children[0].style.color='blue';
+    //   ctaAbout.children[0].textContent= prevItem(i + 1);
+    //   heroImg.children[0].src=workData[i + 1].hero;
+    // }
+   }
+ 
+  //  for(let i=0;i<workData.length;i++){
+    
+  //   const index = workData.indexOf(i);
+  //   console.log(workData[index + 1]);
+  //   // if(index >= 0 && index < workData.length - 1){
+  //   //   console.log(workData[index + 1]);
+  //   // }
+    
+  //  }
 });
 
 
@@ -588,9 +574,7 @@ const workData=[
             '../img/work/02_kathedraal/12_cathedral_visuals_website_590px.png',
             '../img/work/02_kathedraal/13_cathedral_visuals_website_590px.png',
             '../img/work/02_kathedraal/14_cathedral_visuals_website_590px.png',
-            '../img/work/02_kathedraal/15_cathedral_visuals_website_590px.png',
-            
-    ],
+            '../img/work/02_kathedraal/15_cathedral_visuals_website_590px.png',],
       title:'ROTTERDAM CATHEDRAL GUIDE',
       intro: 'A guided tour through the cathedral of Rotterdam.',
       extraInfo:'The design is based on the actual architectural drawings of the cathedral. The three Pantone colours used are the most used colours inside the cathedral: gold, blue and green. The colour system of the book helps the visitor to understand where he is in the cathedral (west, center or east side of the building). The book is available at the entrance of the cathedral.',
