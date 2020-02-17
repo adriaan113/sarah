@@ -473,51 +473,43 @@ arrowNext.addEventListener('click',(e)=>{
 
   e.preventDefault();
 
-  // while( projectImage.firstChild ){
-  //   projectImage.removeChild( projectImage.firstChild );
-  // }
-
   for(let i=0;i<workData.length;i++){
 
     // console.log(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase());
     // console.log(e.target.parentNode.parentNode.parentNode.children[1].children[0]);
+
+    while( projectImage.firstChild ){
+      projectImage.removeChild( projectImage.firstChild );
+    }
   
     if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
-      console.log('hahaha');
-    }
+      //console.log(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i + 1].children[1].textContent.toLowerCase());
 
-    //   changeContent('none','none','none','none','flex');
-    //   projectTitle.textContent= workData[i + 1].title;
-    //   projectText.textContent= workData[i + 1].intro;
-    //   showMore.textContent= workData[i + 1].extraInfo;
-
-    //   client.children[1].textContent= workData[i + 1].client;
-    //   industry.children[1].textContent= workData[i + 1].industry;
-    //   services.children[1].textContent= workData[i + 1].services;
-    //   year.children[1].textContent= workData[i + 1].year;
-      
-    //   //ATTACH IMAGES TO THE SELECTED PROJECT
-    //   for(let j=0;j<workData[i].img.length;j++){
-
-    //     const projectImageItems= document.createElement('li');
-    //     projectImageItems.classList.add('project-image--item');
+       projectTitle.textContent= e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i + 1].children[1].textContent.toLowerCase();
+       projectText.textContent= workData[i + 1].intro;
+       showMore.textContent= workData[i + 1].extraInfo;
  
-    //     const img= document.createElement('img');
-    //     img.classList.add('project-image--item--content');
-    //     img.src=workData[i + 1].img[j];
-    //     projectImageItems.appendChild(img);
-    //     projectImage.appendChild(projectImageItems);
-    //   }
+       client.children[1].textContent= workData[i + 1].client;
+       industry.children[1].textContent= workData[i + 1].industry;
+       services.children[1].textContent= workData[i + 1].services;
+       year.children[1].textContent= workData[i + 1].year;
 
-    //   ctaContainer.children[0].style.display='flex';
-    //   ctaWork.children[0].style.color= 'red';
-    //   ctaWork.children[0].textContent= nextItem(i + 1);
-    //   ctaContainer.children[1].style.display='flex';
-    //   ctaAbout.children[0].style.color='blue';
-    //   ctaAbout.children[0].textContent= prevItem(i + 1);
-    //   heroImg.children[0].src=workData[i + 1].hero;
-    // }
-   }
+       const projectImageItems= document.createElement('li');
+       projectImageItems.classList.add('project-image--item');
+
+       for(let j=0;j<workData[i].img.length;j++){
+
+        const img= document.createElement('img');
+        img.classList.add('project-image--item--content');
+        img.src=workData[i + 1].img[j]; //HIER GAAT IETS FOUT 
+        projectImageItems.appendChild(img);
+        projectImage.appendChild(projectImageItems);
+      }
+
+       break;
+     }
+  }
+      
  
   //  for(let i=0;i<workData.length;i++){
     
