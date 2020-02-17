@@ -75,6 +75,8 @@ function styleElements(color1, color2){
 }
 
 
+
+
 //-------------------------------------------//
 //-----------------NAV MENU------------------//
 //-------------------------------------------//
@@ -375,11 +377,17 @@ function prevItem(x) {
 const heroImg= document.querySelector('.hero');
 
 
-workGallery.addEventListener('click',(e)=>{
 
+function cleanItems(){
   while( projectImage.firstChild ){
     projectImage.removeChild( projectImage.firstChild );
   }
+}
+
+
+workGallery.addEventListener('click',(e)=>{
+
+  cleanItems();
 
   for(let i=0;i<workGallery.children.length;i++){
 
@@ -423,9 +431,7 @@ workGallery.addEventListener('click',(e)=>{
 
 introGallery.addEventListener('click',(e)=>{
 
-  while( projectImage.firstChild ){
-    projectImage.removeChild( projectImage.firstChild );
-  }
+  cleanItems();
 
   for(let i=0;i<introGallery.children.length;i++){
 
@@ -440,11 +446,14 @@ introGallery.addEventListener('click',(e)=>{
       services.children[1].textContent= workData[i].services;
       year.children[1].textContent= workData[i].year;
 
-      const projectImageItems= document.createElement('li');
-      projectImageItems.classList.add('project-image--item');
+      // const projectImageItems= document.createElement('li');
+      // projectImageItems.classList.add('project-image--item');
       
       //ATTACH IMAGES TO THE SELECTED PROJECT
       for(let j=0;j<workData[i].img.length;j++){
+
+        const projectImageItems= document.createElement('li');
+        projectImageItems.classList.add('project-image--item');
 
         const img= document.createElement('img');
         img.classList.add('project-image--item--content');
@@ -478,14 +487,13 @@ arrowNext.addEventListener('click',(e)=>{
     // console.log(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase());
     // console.log(e.target.parentNode.parentNode.parentNode.children[1].children[0]);
 
-    while( projectImage.firstChild ){
-      projectImage.removeChild( projectImage.firstChild );
-    }
+    cleanItems();
   
     if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
       //console.log(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i + 1].children[1].textContent.toLowerCase());
 
-       projectTitle.textContent= e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i + 1].children[1].textContent.toLowerCase();
+      //  projectTitle.textContent= e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i + 1].children[1].textContent.toLowerCase();
+       projectTitle.textContent= workData[i + 1].title;
        projectText.textContent= workData[i + 1].intro;
        showMore.textContent= workData[i + 1].extraInfo;
  
@@ -494,14 +502,17 @@ arrowNext.addEventListener('click',(e)=>{
        services.children[1].textContent= workData[i + 1].services;
        year.children[1].textContent= workData[i + 1].year;
 
-       const projectImageItems= document.createElement('li');
-       projectImageItems.classList.add('project-image--item');
+      //  const projectImageItems= document.createElement('li');
+      //  projectImageItems.classList.add('project-image--item');
 
-       for(let j=0;j<workData[i].img.length;j++){
+       for(let j=0;j<workData[i + 1].img.length;j++){
+
+        const projectImageItems= document.createElement('li');
+        projectImageItems.classList.add('project-image--item');
 
         const img= document.createElement('img');
         img.classList.add('project-image--item--content');
-        img.src=workData[i + 1].img[j]; //HIER GAAT IETS FOUT 
+        img.src=workData[i + 1].img[j];  
         projectImageItems.appendChild(img);
         projectImage.appendChild(projectImageItems);
       }
@@ -509,17 +520,6 @@ arrowNext.addEventListener('click',(e)=>{
        break;
      }
   }
-      
- 
-  //  for(let i=0;i<workData.length;i++){
-    
-  //   const index = workData.indexOf(i);
-  //   console.log(workData[index + 1]);
-  //   // if(index >= 0 && index < workData.length - 1){
-  //   //   console.log(workData[index + 1]);
-  //   // }
-    
-  //  }
 });
 
 
