@@ -415,7 +415,6 @@ workGallery.addEventListener('click',(e)=>{
         projectImage.appendChild(projectImageItems);
       }
 
-      
       ctaContainer.children[0].style.display='flex';
       ctaWork.children[0].style.color= 'red';
       ctaWork.children[0].textContent= nextItem(i);
@@ -446,10 +445,6 @@ introGallery.addEventListener('click',(e)=>{
       services.children[1].textContent= workData[i].services;
       year.children[1].textContent= workData[i].year;
 
-      // const projectImageItems= document.createElement('li');
-      // projectImageItems.classList.add('project-image--item');
-      
-      //ATTACH IMAGES TO THE SELECTED PROJECT
       for(let j=0;j<workData[i].img.length;j++){
 
         const projectImageItems= document.createElement('li');
@@ -485,31 +480,52 @@ arrowNext.addEventListener('click',(e)=>{
 
   e.preventDefault();
 
-  for(let i=0;i<workData.length;i++){
-
-    // console.log(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase());
-    // console.log(e.target.parentNode.parentNode.parentNode.children[1].children[0]);
-
+  if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[10].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
+    
     cleanItems();
+
+    projectTitle.textContent= workData[0].title;
+    projectText.textContent= workData[0].intro;
+    showMore.textContent= workData[0].extraInfo;
+
+    client.children[1].textContent= workData[0].client;
+    industry.children[1].textContent= workData[0].industry;
+    services.children[1].textContent= workData[0].services;
+    year.children[1].textContent= workData[0].year;
+    heroImg.children[0].src=workData[0].hero;
+
+
+    for(let j=0;j<workData[0].img.length;j++){
+      const projectImageItems= document.createElement('li');
+      projectImageItems.classList.add('project-image--item');
+
+      const img= document.createElement('img');
+      img.classList.add('project-image--item--content');
+      img.src=workData[0].img[j];  
+      projectImageItems.appendChild(img);
+      projectImage.appendChild(projectImageItems);
+    }
+
+  }else{
+
+    for(let i=0;i<workData.length;i++){
+
+      cleanItems();
+    
+      if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
+
+        projectTitle.textContent= workData[i + 1].title;
+        projectText.textContent= workData[i + 1].intro;
+        showMore.textContent= workData[i + 1].extraInfo;
   
-    if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
-      //console.log(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i + 1].children[1].textContent.toLowerCase());
+        client.children[1].textContent= workData[i + 1].client;
+        industry.children[1].textContent= workData[i + 1].industry;
+        services.children[1].textContent= workData[i + 1].services;
+        year.children[1].textContent= workData[i + 1].year;
+        heroImg.children[0].src=workData[i + 1].hero;
 
-      //  projectTitle.textContent= e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i + 1].children[1].textContent.toLowerCase();
-       projectTitle.textContent= workData[i + 1].title;
-       projectText.textContent= workData[i + 1].intro;
-       showMore.textContent= workData[i + 1].extraInfo;
- 
-       client.children[1].textContent= workData[i + 1].client;
-       industry.children[1].textContent= workData[i + 1].industry;
-       services.children[1].textContent= workData[i + 1].services;
-       year.children[1].textContent= workData[i + 1].year;
-       heroImg.children[0].src=workData[i + 1].hero;
 
-      //  const projectImageItems= document.createElement('li');
-      //  projectImageItems.classList.add('project-image--item');
-
-       for(let j=0;j<workData[i + 1].img.length;j++){
+        for(let j=0;j<workData[i + 1].img.length;j++){
 
         const projectImageItems= document.createElement('li');
         projectImageItems.classList.add('project-image--item');
@@ -520,34 +536,65 @@ arrowNext.addEventListener('click',(e)=>{
         projectImageItems.appendChild(img);
         projectImage.appendChild(projectImageItems);
       }
+  
+        break;
+      }
+    }
 
-       break;
-     }
   }
+
 });
 
 arrowPrev.addEventListener('click',(e)=>{
 
   e.preventDefault();
 
-  for(let i=0;i<workData.length;i++){
+  if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[0].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
 
     cleanItems();
+
+    projectTitle.textContent= workData[10].title;
+    projectText.textContent= workData[10].intro;
+    showMore.textContent= workData[10].extraInfo;
+
+    client.children[1].textContent= workData[10].client;
+    industry.children[1].textContent= workData[10].industry;
+    services.children[1].textContent= workData[10].services;
+    year.children[1].textContent= workData[10].year;
+    heroImg.children[0].src=workData[10].hero;
+
+
+    for(let j=0;j<workData[10].img.length;j++){
+      const projectImageItems= document.createElement('li');
+      projectImageItems.classList.add('project-image--item');
+
+      const img= document.createElement('img');
+      img.classList.add('project-image--item--content');
+      img.src=workData[10].img[j];  
+      projectImageItems.appendChild(img);
+      projectImage.appendChild(projectImageItems);
+    }
+
+  }else{
+
+    for(let i=0;i<workData.length;i++){
+
+      cleanItems();
+    
+      if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
   
-    if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
-
-       projectTitle.textContent= workData[i - 1].title;
-       projectText.textContent= workData[i - 1].intro;
-       showMore.textContent= workData[i - 1].extraInfo;
- 
-       client.children[1].textContent= workData[i - 1].client;
-       industry.children[1].textContent= workData[i - 1].industry;
-       services.children[1].textContent= workData[i - 1].services;
-       year.children[1].textContent= workData[i - 1].year;
-       heroImg.children[0].src=workData[i - 1].hero;
+        projectTitle.textContent= workData[i - 1].title;
+        projectText.textContent= workData[i - 1].intro;
+        showMore.textContent= workData[i - 1].extraInfo;
+  
+        client.children[1].textContent= workData[i - 1].client;
+        industry.children[1].textContent= workData[i - 1].industry;
+        services.children[1].textContent= workData[i - 1].services;
+        year.children[1].textContent= workData[i - 1].year;
+        heroImg.children[0].src=workData[i - 1].hero;
 
 
-       for(let j=0;j<workData[i - 1].img.length;j++){
+        for(let j=0;j<workData[i - 1].img.length;j++){
 
         const projectImageItems= document.createElement('li');
         projectImageItems.classList.add('project-image--item');
@@ -558,8 +605,9 @@ arrowPrev.addEventListener('click',(e)=>{
         projectImageItems.appendChild(img);
         projectImage.appendChild(projectImageItems);
       }
-       break;
-     }
+        break;
+      }
+    }
   }
 });
 
