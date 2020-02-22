@@ -205,88 +205,52 @@ ctaWork.addEventListener('click',(e)=>{
 
      for(let i=0;i<workData.length;i++){
 
-      //cleanItems();
-
       if(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent===workData[10].title){
     
         cleanItems();
-
-        projectTitle.textContent= workData[0].title;
-        projectText.textContent= workData[0].intro;
-        showMore.textContent= workData[0].extraInfo;
-
-        client.children[1].textContent= workData[0].client;
-        industry.children[1].textContent= workData[0].industry;
-        services.children[1].textContent= workData[0].services;
-        year.children[1].textContent= workData[0].year;
-        heroImg.children[0].src=workData[0].hero;
-
-
-        for(let j=0;j<workData[0].img.length;j++){
-          const projectImageItems= document.createElement('li');
-          projectImageItems.classList.add('project-image--item');
-
-          const img= document.createElement('img');
-          img.classList.add('project-image--item--content');
-          img.src=workData[0].img[j];  
-          projectImageItems.appendChild(img);
-          projectImage.appendChild(projectImageItems);
-          }
-
+        lastToFirstProject();
 
       }else if(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent===workData[i].title){
 
         cleanItems();
-        
-        projectTitle.textContent= workData[i + 1].title;
-        projectText.textContent= workData[i + 1].intro;
-        showMore.textContent= workData[i + 1].extraInfo;
-
-        client.children[1].textContent= workData[i + 1].client;
-        industry.children[1].textContent= workData[i + 1].industry;
-        services.children[1].textContent= workData[i + 1].services;
-        year.children[1].textContent= workData[i + 1].year;
-        heroImg.children[0].src=workData[i + 1].hero;
-
-
-        for(let j=0;j<workData[i + 1].img.length;j++){
-
-        const projectImageItems= document.createElement('li');
-        projectImageItems.classList.add('project-image--item');
-
-        const img= document.createElement('img');
-        img.classList.add('project-image--item--content');
-        img.src=workData[i + 1].img[j];  
-        projectImageItems.appendChild(img);
-        projectImage.appendChild(projectImageItems);
-      }
-        break;
-        
+        nextProject(i);
+        break;   
     }
   }
   }
 })
 
-// ctaWork.addEventListener('click',()=>{
-
-//     changeContent('none','none','none','flex','none');
-//     styleElements(lightGrey, purple);
-//     ctaContainer.style.display='flex';
-  
-//     document.body.scrollTop = 0; // For Safari
-//     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-// });
 
 
 
-ctaAbout.addEventListener('click',()=>{
-  changeContent('none', 'none', 'flex','none','none');
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+ctaAbout.addEventListener('click',(e)=>{
+
+  if(ctaAbout.children[0].textContent==='about me'){
+
+    changeContent('none', 'none', 'flex','none','none');
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+  }else if(ctaAbout.children[0].textContent=== 'previous project'){
+   
+   
+    for(let i=0;i<workData.length;i++){
+
+      if(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent===workData[0].title){
+    
+        cleanItems();
+        firstToLastProject();
+
+      }else if(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent===workData[i].title){
+
+        cleanItems();
+        prevProject(i);
+        break;  
+    }
+  }
+  }
+    
 })
-
-
-
 
 
 
@@ -468,8 +432,6 @@ function cleanItems(){
 
 workGallery.addEventListener('click',(e)=>{
 
-  //console.log(workGallery.children[0].children[1]);
-
   cleanItems();
 
   for(let i=0;i<workGallery.children.length;i++){
@@ -554,47 +516,8 @@ introGallery.addEventListener('click',(e)=>{
 const arrowNext=document.querySelector('.arrow-next');
 const arrowPrev=document.querySelector('.arrow-prev');
 
-//TO DO: MAKE FUNCTIONS OUT OF MOST OF THIS. 
-//       MAKE AN IF FUNCTION FOR BEGINNING AND END OF THE WORKDATA SO THAT IT CAN LOOP
 
-
-arrowNext.addEventListener('click',(e)=>{
-
-  e.preventDefault();
-
-  if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[10].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
-    
-    cleanItems();
-
-    projectTitle.textContent= workData[0].title;
-    projectText.textContent= workData[0].intro;
-    showMore.textContent= workData[0].extraInfo;
-
-    client.children[1].textContent= workData[0].client;
-    industry.children[1].textContent= workData[0].industry;
-    services.children[1].textContent= workData[0].services;
-    year.children[1].textContent= workData[0].year;
-    heroImg.children[0].src=workData[0].hero;
-
-
-    for(let j=0;j<workData[0].img.length;j++){
-      const projectImageItems= document.createElement('li');
-      projectImageItems.classList.add('project-image--item');
-
-      const img= document.createElement('img');
-      img.classList.add('project-image--item--content');
-      img.src=workData[0].img[j];  
-      projectImageItems.appendChild(img);
-      projectImage.appendChild(projectImageItems);
-    }
-
-  }else{
-
-    for(let i=0;i<workData.length;i++){
-
-      cleanItems();
-    
-      if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
+function nextProject(i){
 
         projectTitle.textContent= workData[i + 1].title;
         projectText.textContent= workData[i + 1].intro;
@@ -618,23 +541,78 @@ arrowNext.addEventListener('click',(e)=>{
         projectImageItems.appendChild(img);
         projectImage.appendChild(projectImageItems);
       }
-  
+}
+
+
+function lastToFirstProject(){
+  // cleanItems();
+  projectTitle.textContent= workData[0].title;
+  projectText.textContent= workData[0].intro;
+  showMore.textContent= workData[0].extraInfo;
+
+  client.children[1].textContent= workData[0].client;
+  industry.children[1].textContent= workData[0].industry;
+  services.children[1].textContent= workData[0].services;
+  year.children[1].textContent= workData[0].year;
+  heroImg.children[0].src=workData[0].hero;
+
+  for(let j=0;j<workData[0].img.length;j++){
+    const projectImageItems= document.createElement('li');
+    projectImageItems.classList.add('project-image--item');
+
+    const img= document.createElement('img');
+    img.classList.add('project-image--item--content');
+    img.src=workData[0].img[j];  
+    projectImageItems.appendChild(img);
+    projectImage.appendChild(projectImageItems);
+  }
+}
+
+
+arrowNext.addEventListener('click',(e)=>{
+  e.preventDefault();
+  if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[10].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
+    cleanItems();
+    lastToFirstProject();
+  }else{
+    for(let i=0;i<workData.length;i++){
+      cleanItems();
+      if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
+        nextProject(i);
         break;
       }
     }
-
   }
-
 });
 
-arrowPrev.addEventListener('click',(e)=>{
+function prevProject(i){
 
-  e.preventDefault();
+  projectTitle.textContent= workData[i - 1].title;
+  projectText.textContent= workData[i - 1].intro;
+  showMore.textContent= workData[i - 1].extraInfo;
 
-  if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[0].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
+  client.children[1].textContent= workData[i - 1].client;
+  industry.children[1].textContent= workData[i - 1].industry;
+  services.children[1].textContent= workData[i - 1].services;
+  year.children[1].textContent= workData[i - 1].year;
+  heroImg.children[0].src=workData[i - 1].hero;
 
-    cleanItems();
 
+  for(let j=0;j<workData[i - 1].img.length;j++){
+
+    const projectImageItems= document.createElement('li');
+    projectImageItems.classList.add('project-image--item');
+
+    const img= document.createElement('img');
+    img.classList.add('project-image--item--content');
+    img.src=workData[i - 1].img[j];  
+    projectImageItems.appendChild(img);
+    projectImage.appendChild(projectImageItems);
+  }
+}
+
+function firstToLastProject(){
+  // cleanItems();
     projectTitle.textContent= workData[10].title;
     projectText.textContent= workData[10].intro;
     showMore.textContent= workData[10].extraInfo;
@@ -657,36 +635,18 @@ arrowPrev.addEventListener('click',(e)=>{
       projectImage.appendChild(projectImageItems);
     }
 
+}
+
+arrowPrev.addEventListener('click',(e)=>{
+  e.preventDefault();
+  if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[0].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
+    cleanItems();
+    firstToLastProject();
   }else{
-
     for(let i=0;i<workData.length;i++){
-
       cleanItems();
-    
       if(e.target.parentNode.parentNode.parentNode.parentNode.children[2].children[i].children[1].textContent.toLowerCase()===e.target.parentNode.parentNode.parentNode.children[1].children[0].textContent.toLowerCase()){
-  
-        projectTitle.textContent= workData[i - 1].title;
-        projectText.textContent= workData[i - 1].intro;
-        showMore.textContent= workData[i - 1].extraInfo;
-  
-        client.children[1].textContent= workData[i - 1].client;
-        industry.children[1].textContent= workData[i - 1].industry;
-        services.children[1].textContent= workData[i - 1].services;
-        year.children[1].textContent= workData[i - 1].year;
-        heroImg.children[0].src=workData[i - 1].hero;
-
-
-        for(let j=0;j<workData[i - 1].img.length;j++){
-
-        const projectImageItems= document.createElement('li');
-        projectImageItems.classList.add('project-image--item');
-
-        const img= document.createElement('img');
-        img.classList.add('project-image--item--content');
-        img.src=workData[i - 1].img[j];  
-        projectImageItems.appendChild(img);
-        projectImage.appendChild(projectImageItems);
-      }
+        prevProject(i);
         break;
       }
     }
