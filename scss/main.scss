@@ -438,7 +438,7 @@ button:focus{
 
   .sticky-wrapper{ //IS DIT HET BESTE?
     width: 100%;
-    max-width: calc(600px + 4rem);
+    //max-width: calc(600px + 4rem);
     margin: 0 auto;
   }
 
@@ -446,10 +446,11 @@ button:focus{
     flex-direction: row;
     justify-content: space-between;
     //padding: 0 3rem;
-    max-width: calc(600px + 4rem);
+    //max-width: calc(600px + 4rem);
     margin: 0 auto;
     a{
       text-decoration: none;
+      padding-left: calc(3rem + 10px);
       .logo{
         font-size: 1rem;
         color: $text-color-black;
@@ -477,7 +478,7 @@ button:focus{
     //z-index:5;
     visibility:visible;
     list-style: none;
-    padding:0;
+    padding:0 calc(3rem + 10px) 0 0;
     &__item{
      display: inline-block;
     }
@@ -521,10 +522,13 @@ button:focus{
       padding: 0 3rem;
 
       .intro-gallery{
-        justify-content: flex-start;
+        justify-content: center;
+        flex-flow: row wrap;
+        margin-bottom: 2rem;
         &--item{
           display: flex;
           flex-direction: column;
+          padding: 10px;
           p{
             display: inline-block;
           }
