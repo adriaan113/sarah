@@ -188,15 +188,169 @@ navMenu.addEventListener('click',(e)=>{
 
 });
 
-ctaWork.addEventListener('click',()=>{
+// ctaWork.addEventListener('click',(e)=>{
 
-  changeContent('none','none','none','flex','none');
-  styleElements(lightGrey, purple);
-  ctaContainer.style.display='flex';
+//   if(ctaWork.children[0].textContent==='view more projects'){
+    
+//     changeContent('none','none','none','flex','none');
+//     styleElements(lightGrey, purple);
+//     ctaContainer.style.display='flex';
+  
+//     document.body.scrollTop = 0; // For Safari
+//     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+//   }else if(ctaWork.children[0].textContent=== 'next project'){
+
+//     // console.log(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent);
+//     // console.log(workData[0].title);
+
+//      for(let i=0;i<workData.length;i++){
+
+//       cleanItems();
+
+//       if(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent===workData[i].title){
+//         projectTitle.textContent= workData[i + 1].title;
+//         projectText.textContent= workData[i + 1].intro;
+//         showMore.textContent= workData[i + 1].extraInfo;
+
+//         client.children[1].textContent= workData[i + 1].client;
+//         industry.children[1].textContent= workData[i + 1].industry;
+//         services.children[1].textContent= workData[i + 1].services;
+//         year.children[1].textContent= workData[i + 1].year;
+//         heroImg.children[0].src=workData[i + 1].hero;
+
+
+//         for(let j=0;j<workData[i + 1].img.length;j++){
+
+//         const projectImageItems= document.createElement('li');
+//         projectImageItems.classList.add('project-image--item');
+
+//         const img= document.createElement('img');
+//         img.classList.add('project-image--item--content');
+//         img.src=workData[i + 1].img[j];  
+//         projectImageItems.appendChild(img);
+//         projectImage.appendChild(projectImageItems);
+//       }
+//         break;
+//       }else if(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent===workData[10].title){
+        
+//         cleanItems();
+
+//         projectTitle.textContent= workData[0].title;
+//         projectText.textContent= workData[0].intro;
+//         showMore.textContent= workData[0].extraInfo;
+
+//         client.children[1].textContent= workData[0].client;
+//         industry.children[1].textContent= workData[0].industry;
+//         services.children[1].textContent= workData[0].services;
+//         year.children[1].textContent= workData[0].year;
+//         heroImg.children[0].src=workData[0].hero;
+
+
+//         for(let j=0;j<workData[0].img.length;j++){
+//           const projectImageItems= document.createElement('li');
+//           projectImageItems.classList.add('project-image--item');
+
+//           const img= document.createElement('img');
+//           img.classList.add('project-image--item--content');
+//           img.src=workData[0].img[j];  
+//           projectImageItems.appendChild(img);
+//           projectImage.appendChild(projectImageItems);
+//           }
+//     }
+//   }
+//   }
+// })
+
+ctaWork.addEventListener('click',(e)=>{
+
+  if(ctaWork.children[0].textContent==='view more projects'){
+    
+    changeContent('none','none','none','flex','none');
+    styleElements(lightGrey, purple);
+    ctaContainer.style.display='flex';
+  
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+  }else if(ctaWork.children[0].textContent=== 'next project'){
+
+    // console.log(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent);
+    // console.log(workData[0].title);
+
+     for(let i=0;i<workData.length;i++){
+
+      cleanItems();
+
+      if(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent===workData[10].title){
+    
+        cleanItems();
+
+        projectTitle.textContent= workData[0].title;
+        projectText.textContent= workData[0].intro;
+        showMore.textContent= workData[0].extraInfo;
+
+        client.children[1].textContent= workData[0].client;
+        industry.children[1].textContent= workData[0].industry;
+        services.children[1].textContent= workData[0].services;
+        year.children[1].textContent= workData[0].year;
+        heroImg.children[0].src=workData[0].hero;
+
+
+        for(let j=0;j<workData[0].img.length;j++){
+          const projectImageItems= document.createElement('li');
+          projectImageItems.classList.add('project-image--item');
+
+          const img= document.createElement('img');
+          img.classList.add('project-image--item--content');
+          img.src=workData[0].img[j];  
+          projectImageItems.appendChild(img);
+          projectImage.appendChild(projectImageItems);
+          }
+
+
+      }else if(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent===workData[i].title){
+        
+        projectTitle.textContent= workData[i + 1].title;
+        projectText.textContent= workData[i + 1].intro;
+        showMore.textContent= workData[i + 1].extraInfo;
+
+        client.children[1].textContent= workData[i + 1].client;
+        industry.children[1].textContent= workData[i + 1].industry;
+        services.children[1].textContent= workData[i + 1].services;
+        year.children[1].textContent= workData[i + 1].year;
+        heroImg.children[0].src=workData[i + 1].hero;
+
+
+        for(let j=0;j<workData[i + 1].img.length;j++){
+
+        const projectImageItems= document.createElement('li');
+        projectImageItems.classList.add('project-image--item');
+
+        const img= document.createElement('img');
+        img.classList.add('project-image--item--content');
+        img.src=workData[i + 1].img[j];  
+        projectImageItems.appendChild(img);
+        projectImage.appendChild(projectImageItems);
+      }
+        break;
+        
+    }
+  }
+  }
 })
+
+// ctaWork.addEventListener('click',()=>{
+
+//     changeContent('none','none','none','flex','none');
+//     styleElements(lightGrey, purple);
+//     ctaContainer.style.display='flex';
+  
+//     document.body.scrollTop = 0; // For Safari
+//     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+// });
+
+
 
 ctaAbout.addEventListener('click',()=>{
   changeContent('none', 'none', 'flex','none','none');
@@ -362,19 +516,19 @@ const industry=document.querySelector('.industry');
 const services=document.querySelector('.services');
 const year=document.querySelector('.year');
 
-function nextItem(x){
-  x = x + 1; 
-  x = x % workData.length; // if we've gone too high, start from `0` again
-  return workData[x].title; 
-}
+// function nextItem(x){
+//   x = x + 1; 
+//   x = x % workData.length; // if we've gone too high, start from `0` again
+//   return workData[x].title; 
+// }
 
-function prevItem(x) {
-  if (x === 0) { // i would become 0
-      x = workData.length; // so put it at the other end of the array
-  }
-  x = x - 1; // decrease by one
-  return workData[x].title; // give us back the item of where we are now
-}
+// function prevItem(x) {
+//   if (x === 0) { // i would become 0
+//       x = workData.length; // so put it at the other end of the array
+//   }
+//   x = x - 1; // decrease by one
+//   return workData[x].title; // give us back the item of where we are now
+// }
 
 
 
@@ -386,6 +540,8 @@ function cleanItems(){
 
 
 workGallery.addEventListener('click',(e)=>{
+
+  //console.log(workGallery.children[0].children[1]);
 
   cleanItems();
 
@@ -417,12 +573,11 @@ workGallery.addEventListener('click',(e)=>{
 
       ctaContainer.children[0].style.display='flex';
       ctaWork.children[0].style.color= 'red';
-      ctaWork.children[0].textContent= nextItem(i);
+      ctaWork.children[0].textContent= 'next project';
       ctaContainer.children[1].style.display='flex';
       ctaAbout.children[0].style.color='blue';
-      ctaAbout.children[0].textContent= prevItem(i);
-      heroImg.children[0].src=workData[i].hero;
-      
+      ctaAbout.children[0].textContent= 'previous project';
+      heroImg.children[0].src=workData[i].hero; 
     }
   }
 })
