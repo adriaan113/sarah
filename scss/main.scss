@@ -23,12 +23,17 @@ $border-line: solid 2px;
 
 @font-face {
   font-family: 'ginto';
-  src: url('../fonts/ginto/GintoNord-BlackIta.otf') format('otf');
+  src: url('../fonts/ginto/GintoNord-BlackIta.otf');
 }
 
 @font-face {
   font-family: 'basis-grotesque';
-  src: url('../fonts/bgp/basis-grotesque-bold-pro.otf') format('otf');
+  src: url('../fonts/bgp/basis-grotesque-bold-pro.otf');
+}
+
+@font-face {//DIT MOET GEWOON IN DIE ANDERE BASIS-GROTESQUE KUNNEN
+  font-family: 'basis-grotesque-ow';
+  src: url('../fonts/bgp/basis-grotesque-off-white-pro.otf');
 }
 
 // @mixin gallery{
@@ -83,12 +88,18 @@ body{
   height: 100vh;
 }
 
-h1,h2,h3,h4{
-  font-family: 'ginto',sans-serif;
+h1,h2{
+  font-family: 'ginto';
 }
 
-p,body{
-  font-family: 'basis-grotesque',sans-serif;
+h3,h4{
+  font-family: 'basis-grotesque';
+  letter-spacing: 1px;
+}
+
+p, body{
+  font-family: 'basis-grotesque-ow';
+  letter-spacing: 1px;
 }
 
 
@@ -144,12 +155,14 @@ p,body{
   height: 100vh;
   .bonjour{
     color: $text-color-purple;
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   }
   h3{
-    font-size: .9rem;
+    font-family: 'basis-grotesque-ow';
+    font-size: 1.5rem;
     margin: 0 3rem 1.5rem;
+    line-height: 1.3;
   }
 
 
@@ -175,6 +188,8 @@ p,body{
       p{
         text-align: center;
         cursor: pointer;
+        //text-transform: lowercase;
+        //text-transform: capitalize;
       }
     }
   }
@@ -251,7 +266,7 @@ p,body{
     align-items: center;
     margin: 0 3rem;
     &--title{
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     &--text{
       font-size: 1.3rem;
@@ -288,6 +303,8 @@ p,body{
         flex-basis: 50%;
         margin: 0.7rem 0;
         h3{
+          font-family:'ginto';
+          font-size: .9rem;
           display: inline-block;
           text-align: left;
           margin: 0;
@@ -333,12 +350,22 @@ p,body{
     flex-direction: column;
 
     h1{
-      font-size: 4rem;
+      font-size: 2.5rem;
+    }
+
+    p{
+      font-size: 1.2rem;
+      padding: 0 1.3rem;
+      span{
+        display: block;
+        margin-top: 1rem;
+      }
     }
 
     img{
-      width: 100%;
+      width: 90%;
       height: auto;
+      margin:  0 auto;
     }
     a{
       margin: 2rem auto;
@@ -412,10 +439,11 @@ footer{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin: 1rem 0 2rem;
   }
   span{
     font-family:'ginto',sans-serif ;
+    font-size: .6rem;
     //color:red;
   }
 }
@@ -439,12 +467,15 @@ button:focus{
   .sticky-wrapper{ //IS DIT HET BESTE?
     width: 100%;
     //max-width: calc(600px + 4rem);
+    max-width: 830px;
     margin: 0 auto;
   }
 
   .header-container{
     flex-direction: row;
     justify-content: space-between;
+    max-width: 830px;
+    align-items: center;
     //padding: 0 3rem;
     //max-width: calc(600px + 4rem);
     margin: 0 auto;
@@ -454,7 +485,8 @@ button:focus{
       .logo{
         font-size: 1rem;
         color: $text-color-black;
-        padding: 1rem 1rem 0;
+        //padding: 1rem 1rem 0;
+        padding: .5rem 1.8rem;
         //margin: 0 auto;
       }
     }
@@ -478,7 +510,7 @@ button:focus{
     //z-index:5;
     visibility:visible;
     list-style: none;
-    padding:0 calc(3rem + 10px) 0 0;
+    padding:0 calc(3.8rem + 10px) 0 0;
     &__item{
      display: inline-block;
     }
@@ -542,22 +574,35 @@ button:focus{
       justify-content: space-around;
       align-items: flex-start;
       height: auto;
+      max-width: 830px;
+      //max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 3rem;
       .bonjour{
         color: $text-color-lightgrey;
-        font-size: 3.5rem;
-        margin: 2rem 1rem 2rem 0;
+        flex-basis: 30%;
+        //font-size: 3.5rem;
+        margin: 2rem 1rem;
+        padding-left: 1rem;
+        .bon,
+        .jour{
+          font-size: 4rem;
+        }
       }
       h3{
-        font-size: .9rem;
-        margin: 2rem 0;
-        max-width: 200px;
+        flex-basis: 30%;
+        font-size: 1.5rem;
+        margin: 2rem 0 0 2rem;
+        max-width: 300px;
+        font-weight: 500;
+        padding: 0 1rem 1.8rem 0;
       }
       // h3::after{
       //   content:'';
       //   width: 100%;
       // }
       .arrow{
-        margin: 0 100% 2rem;
+        margin: 2rem 100%;
       }
     }
 
@@ -658,6 +703,11 @@ button:focus{
         //   display:block;
         // }
       }
+    }
+    .cta-container{
+      //background-color: pink;
+      max-width: 683px;
+      margin: 0 auto 2rem;
     }
     
 }

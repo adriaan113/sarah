@@ -45,10 +45,15 @@
     }
 
     
-    // &__item {
+     &__item:nth-child(1){
+       a{
+         font-family: 'basis-grotesque';
+         font-size: 1.5rem;
+         line-height: 1.5;
+       }
     //   opacity:0;
     //   transition: all .3s cubic-bezier(0.000, 0.995, 0.990, 1.000) .3s;
-    // }
+     }
     // @for $i from 1 through 3 {
     //   &__item:nth-child(#{$i}){
     //     transform:translateY(-40px * $i);

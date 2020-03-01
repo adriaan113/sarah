@@ -292,7 +292,7 @@ navMenu.addEventListener('click',(e)=>{
     changeContent('none','none','none','flex','none');
     ctaContainer.children[0].style.display='none';
     ctaContainer.children[1].style.color=purple;
-    ctaContainer.children[1].children[1].style.stroke=purple;//THIS DOES NOT WORK YET. ALSO NOT IN ABOUT SECTION
+   // ctaContainer.children[1].children[1].style.stroke=purple;//THIS DOES NOT WORK YET. ALSO NOT IN ABOUT SECTION
     
     styleElements(lightGrey, purple);
     closeOnClick();
@@ -305,6 +305,8 @@ ctaWork.addEventListener('click',(e)=>{
     changeContent('none','none','none','flex','none');
     styleElements(lightGrey, purple);
     ctaContainer.style.display='flex';
+    ctaContainer.children[0].style.display='none';
+    ctaContainer.children[1].style.color=purple;
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }else if(ctaWork.children[0].textContent=== 'next project'){
@@ -367,8 +369,9 @@ function listenForMq(mq) {
     ctaContainer.style.display='none';
     introGallery.style.display='none';
     
+    
     window.onload= function(){
-      aside.css('margin', '0 auto');
+      aside.css('margin', '-12rem auto');
       bon.addClass('animated').addClass('bounceIn');
       bon.css({
         'font-size':'40vh',
@@ -388,13 +391,15 @@ function listenForMq(mq) {
       test.fadeIn();
       document.body.style.backgroundColor= lightGrey;
       introGallery.style.display='flex';
+      ctaContainer.style.display='flex';
+      aside.css('margin', '0 auto');
       bon.css({
-        'font-size':'3.5rem',
+        'font-size':'4.5rem',
         'display':'inline',
         'color': purple,
       })
       jour.css({
-        'font-size':'3.5rem',
+        'font-size':'4.5rem',
         'display':'inline',
         'color': purple,
       })
@@ -475,10 +480,10 @@ workGallery.addEventListener('click',(e)=>{
       }
 
       ctaContainer.children[0].style.display='flex';
-      ctaWork.children[0].style.color= 'red';
+      ctaWork.children[0].style.color= black;
       ctaWork.children[0].textContent= 'next project';
       ctaContainer.children[1].style.display='flex';
-      ctaAbout.children[0].style.color='blue';
+      ctaAbout.children[0].style.color= black;
       ctaAbout.children[0].textContent= 'previous project';
       heroImg.children[0].src=workData[i].hero; 
     }
@@ -513,10 +518,10 @@ introGallery.addEventListener('click',(e)=>{
       }
       
       ctaContainer.children[0].style.display='flex';
-      ctaWork.children[0].style.color= 'red';
+      ctaWork.children[0].style.color= black;
       ctaWork.children[0].textContent= nextItem(i);
       ctaContainer.children[1].style.display='flex';
-      ctaAbout.children[0].style.color='blue';
+      ctaAbout.children[0].style.color= black;
       ctaAbout.children[0].textContent= prevItem(i);
       heroImg.children[0].src=workData[i].hero;
     }
@@ -554,6 +559,8 @@ arrowPrev.addEventListener('click',(e)=>{
     }
   }
 });
+
+
 
 
 //-------------------------------------------//
@@ -790,3 +797,4 @@ const workData=[
       year:'2012'
   }
 ];
+
