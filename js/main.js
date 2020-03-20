@@ -404,64 +404,34 @@ function listenForMq(mq) {
       })
     }, 2000);  
     }
-    // workGallery.children WAT IS DIT NOU WEER?
+  
+    // workGallery.addEventListener('mouseover',(e)=>{
+    //   if(e.target.tagName === 'IMG'){
     
+    //         e.target.style.filter= 'brightness(20%)'; 
+          
+    //         e.target.parentNode.children[2].style.display='flex'; 
 
-    // console.log(workGallery.children[0]);
-
-    // $(workGallery.children).hover(function(){
-    //   $(this).css("background-color", "yellow");
-    //   });
-
-    // $(document).ready(function(){
-    //   $(workGallery.children).hover(function(){
-    //     $(this).children('img').css("border", "5px solid red");
-    //     }, function(){
-    //     $(this).css("background-color", lightGrey);
-    //   });
+    //   }
+    
     // });
-    
-//e.target.tagName === 'LI' || 
-
-    workGallery.addEventListener('mouseover',(e)=>{
-      if(e.target.tagName === 'IMG'){
-        for(let i=0;i<workData.length;i++){
-
-          if(e.target.parentNode.children[1].textContent === workData[i].title){
-
-           
-            //e.target.style.filter= 'brightness(15%)';
-
-            const hoverTextContainer = document.createElement('div');
-            const hoverText = document.createElement('p');
-
-            hoverTextContainer.classList.add('hover-text-container');
-            hoverText.classList.add('hover-text');
 
 
-            hoverText.textContent='satan satan satan';
-    
-            hoverTextContainer.appendChild(hoverText);
-            e.target.parentNode.appendChild(hoverTextContainer);
-            
-          }
-        }
-      }
-    });
+    // workGallery.addEventListener('mouseout',(e)=>{
+    //   if(e.target.tagName === 'IMG'){
 
-    workGallery.addEventListener('mouseout',(e)=>{
-      if(e.target.tagName === 'IMG'){
-        for(let i=0;i<workData.length;i++){
 
-          if(e.target.parentNode.children[1].textContent === workData[i].title){
+    //         e.target.style.filter= 'brightness(100%)';
 
-            //e.target.style.filter= 'brightness(100%)';
-        
-          }
-        }      
-      }
-    });
+    //         e.target.parentNode.children[2].style.display='none';
 
+    //   }else if(e.target.tagName==='P'){
+    //           //e.target.textContent='koeka koeka nee joh doe even nofmaaal';
+    //           e.target.parentNode.filter='brightness(100%)';
+    //           e.target.parentNode.children[2].style.display='none';
+    //         }
+      
+    // });
 
   }else{
 
@@ -618,6 +588,9 @@ arrowPrev.addEventListener('click',(e)=>{
   }
 });
 
+
+workGallery.addEventListener()//    HIER WAS IK GEBLEVEN. DE BEDOELING IS OM DE HOVER TEXTJES VIA JS IN TE
+//LADEN EN DUS TE VERVANGEN. 
 
 
 
