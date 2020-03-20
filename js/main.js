@@ -58,6 +58,8 @@ let isMenuOpen = false;
 
 
 
+
+
 //-------------------------------------------//
 //-----------------FUNCTIONS-----------------//
 //-------------------------------------------//
@@ -360,16 +362,13 @@ const test= $('.header-container,.menuicon,.intro-text-p,svg, .home-work,footer'
 
 const mq810 = window.matchMedia("(min-width: 810px)");
 
-//HIER WAS IK. DE HELE BONJOUR HANDEL MOET HIERIN. DE BONJOUR TEXT OPDELEN
-//VOOR DE MQ810 EN ANIMEREN
 
 function listenForMq(mq) {
   if (mq.matches){ 
     document.body.style.backgroundColor= purple;
     ctaContainer.style.display='none';
     introGallery.style.display='none';
-    
-    
+     
     window.onload= function(){
       aside.css('margin', '-12rem auto');
       bon.addClass('animated').addClass('bounceIn');
@@ -405,6 +404,65 @@ function listenForMq(mq) {
       })
     }, 2000);  
     }
+    // workGallery.children WAT IS DIT NOU WEER?
+    
+
+    // console.log(workGallery.children[0]);
+
+    // $(workGallery.children).hover(function(){
+    //   $(this).css("background-color", "yellow");
+    //   });
+
+    // $(document).ready(function(){
+    //   $(workGallery.children).hover(function(){
+    //     $(this).children('img').css("border", "5px solid red");
+    //     }, function(){
+    //     $(this).css("background-color", lightGrey);
+    //   });
+    // });
+    
+//e.target.tagName === 'LI' || 
+
+    workGallery.addEventListener('mouseover',(e)=>{
+      if(e.target.tagName === 'IMG'){
+        for(let i=0;i<workData.length;i++){
+
+          if(e.target.parentNode.children[1].textContent === workData[i].title){
+
+           
+            //e.target.style.filter= 'brightness(15%)';
+
+            const hoverTextContainer = document.createElement('div');
+            const hoverText = document.createElement('p');
+
+            hoverTextContainer.classList.add('hover-text-container');
+            hoverText.classList.add('hover-text');
+
+
+            hoverText.textContent='satan satan satan';
+    
+            hoverTextContainer.appendChild(hoverText);
+            e.target.parentNode.appendChild(hoverTextContainer);
+            
+          }
+        }
+      }
+    });
+
+    workGallery.addEventListener('mouseout',(e)=>{
+      if(e.target.tagName === 'IMG'){
+        for(let i=0;i<workData.length;i++){
+
+          if(e.target.parentNode.children[1].textContent === workData[i].title){
+
+            //e.target.style.filter= 'brightness(100%)';
+        
+          }
+        }      
+      }
+    });
+
+
   }else{
 
     document.body.style.backgroundColor= lightGrey;
