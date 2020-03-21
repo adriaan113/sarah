@@ -566,7 +566,7 @@ hoverChange(introGallery);
 window.addEventListener('resize', ()=>{
 
   document.body.style.backgroundColor= lightGrey;
-
+  introGallery.style.display= 'flex';
 
 });
 
