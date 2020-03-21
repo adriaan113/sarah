@@ -589,8 +589,7 @@ arrowPrev.addEventListener('click',(e)=>{
 });
 
 
-workGallery.addEventListener()//    HIER WAS IK GEBLEVEN. DE BEDOELING IS OM DE HOVER TEXTJES VIA JS IN TE
-//LADEN EN DUS TE VERVANGEN. 
+
 
 
 
@@ -829,3 +828,11 @@ const workData=[
   }
 ];
 
+function hoverChange(){
+  for(let i=0;i<workData.length;i++){
+    
+    workGallery.children[i].children[2].textContent= workData[i].intro;
+  }
+}
+
+hoverChange();
