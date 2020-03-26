@@ -233,8 +233,17 @@ p, body{
     &--title{
       font-size: 1.2rem;
     }
+<<<<<<< HEAD
     &--text{
       font-size: 1.3rem;
+=======
+    .show-more{
+      display: none;
+      //text-align: left;
+      p{
+        text-align: left;
+      }
+>>>>>>> 2460917d5d52fc3d983a219b93da8a699c839c6b
     }
     .show-more-btn{
       display: inline-block;
@@ -333,13 +342,31 @@ p, body{
       margin:  0 auto;
     }
     a{
+<<<<<<< HEAD
       margin: 2rem auto 0;
+=======
+      margin: 2rem auto;
+>>>>>>> 2460917d5d52fc3d983a219b93da8a699c839c6b
       img{
         width: 70px;
         height: auto;
       }
     }
   }
+<<<<<<< HEAD
+=======
+  // .whatido{
+  //   display:flex;
+  //   flex-direction: column;
+  //   a{
+  //     margin: 2rem auto;
+  //     img{
+  //       width: 70px;
+  //       height: auto;
+  //     }
+  //   }
+  // }
+>>>>>>> 2460917d5d52fc3d983a219b93da8a699c839c6b
   .contact{
     span{
       display:block;
@@ -353,11 +380,24 @@ p, body{
 
 .more-info-container{
   display: flex;
+<<<<<<< HEAD
   flex-direction: column;
   width: 100%;
   .whatido{
    display:flex;
    flex-direction: column;
+=======
+  //justify-content: space-between;
+  flex-direction: column;
+  //margin-top: 4rem;
+  width: 100%;
+  //flex-flow: wrap;
+  .whatido{
+   display:flex;
+   flex-direction: column;
+   //flex-basis: 40%;
+   //margin-left: 4rem;
+>>>>>>> 2460917d5d52fc3d983a219b93da8a699c839c6b
    a{
      margin: 2rem auto;
      img{
@@ -372,6 +412,11 @@ p, body{
    h2{
      margin-top: 0;
    }
+<<<<<<< HEAD
+=======
+   //flex-basis: 40%;
+   //margin-right: 10%;
+>>>>>>> 2460917d5d52fc3d983a219b93da8a699c839c6b
  }
  a{
    margin: 3rem auto;
@@ -580,9 +625,19 @@ button:focus{
 
 
     .info{
+<<<<<<< HEAD
       justify-content: flex-start;
       max-width: calc(600px + 2rem);
       margin: 2rem auto;
+=======
+      //display: flex;
+      //flex-direction: column;
+      //align-items: center;
+      justify-content: flex-start;
+      max-width: calc(600px + 2rem);
+      margin: 2rem auto;
+      //padding: 0 1rem;
+>>>>>>> 2460917d5d52fc3d983a219b93da8a699c839c6b
       background-color: $bg-color-purple;
       color: $text-color-lightgrey;
       .about-me{
@@ -607,7 +662,13 @@ button:focus{
         }
     
         img{
+<<<<<<< HEAD
           max-width: 300px;
+=======
+          //width: 100%;
+          max-width: 300px;
+          //height: auto;
+>>>>>>> 2460917d5d52fc3d983a219b93da8a699c839c6b
           order: 2;
           margin-left: 1rem;
         }
@@ -632,6 +693,10 @@ button:focus{
         display:flex;
         flex-direction: column;
         flex-basis: 40%;
+<<<<<<< HEAD
+=======
+        //margin-left: 4rem;
+>>>>>>> 2460917d5d52fc3d983a219b93da8a699c839c6b
         a{
           margin: 2rem auto;
           img{
@@ -663,12 +728,20 @@ button:focus{
         .contact-details{
           margin: 3rem 0;
         }
+<<<<<<< HEAD
       }
     }
     .cta-container{
       max-width: 683px;
       margin: 0 auto 2rem;
     }
+=======
+        // span{
+        //   display:block;
+        // }
+      }
+    }
+>>>>>>> 2460917d5d52fc3d983a219b93da8a699c839c6b
     
 }
 
