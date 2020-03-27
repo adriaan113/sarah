@@ -416,14 +416,16 @@ button:focus{
 
   .sticky-wrapper{ //IS DIT HET BESTE?
     width: 100%;
-    max-width: 830px;
+    // max-width: 830px;
+    max-width: 904px;
     margin: 0 auto;
   }
 
   .header-container{
     flex-direction: row;
     justify-content: space-between;
-    max-width: 830px;
+    // max-width: 830px;
+    max-width: 904px;
     padding: 0 2rem;
     align-items: center;
     margin: 0 auto;
