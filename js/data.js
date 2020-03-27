@@ -41,7 +41,7 @@ const workData=[
               'img/work/02_kathedraal/11_cathedral_visuals_website_590px.png',
               'img/work/02_kathedraal/12_cathedral_visuals_website_590px.png',
               'img/work/02_kathedraal/13_cathedral_visuals_website_590px.png',
-              '/img/work/02_kathedraal/14_cathedral_visuals_website_590px.png',
+              'img/work/02_kathedraal/14_cathedral_visuals_website_590px.png',
               'img/work/02_kathedraal/15_cathedral_visuals_website_590px.png',],
         title:'ROTTERDAM CATHEDRAL GUIDE',
         intro: 'A guided tour through the cathedral of Rotterdam.',
