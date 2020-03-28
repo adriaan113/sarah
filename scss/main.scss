@@ -348,6 +348,10 @@ p, body{
       font-size: 2.5em;
       margin: 0 0 0.67em 0;
     }
+    .contact-details a{
+      color: $text-color-lightgrey;
+      text-decoration: none;
+    }
   }
 }
 
@@ -417,16 +421,20 @@ button:focus{
   .sticky-wrapper{ //IS DIT HET BESTE?
     width: 100%;
     // max-width: 830px;
-    max-width: 904px;
+    // max-width: 904px;
+    max-width: 1000px;
     margin: 0 auto;
+    // padding: 0 3rem;
   }
 
   .header-container{
     flex-direction: row;
     justify-content: space-between;
     // max-width: 830px;
-    max-width: 904px;
-    padding: 0 2rem;
+    // max-width: 904px;
+    max-width: 1000px;
+    padding: 0 3rem;
+    // padding: 0 2rem;
     align-items: center;
     margin: 0 auto;
     a{
@@ -540,10 +548,10 @@ button:focus{
       }
 
 
-      .work-gallery--item:last-child{
-        margin-right: auto;
-        padding-left: 20px;
-      }
+      // .work-gallery--item:last-child{
+      //   margin-right: auto;
+      //   padding-left: 20px;
+      // }
     }
  
 
@@ -579,44 +587,54 @@ button:focus{
       }
     }
 
-
-
     .info{
-      justify-content: flex-start;
-      max-width: calc(600px + 2rem);
+      justify-content: space-between;
+      max-width: 100%;
       margin: 2rem auto;
       background-color: $bg-color-purple;
       color: $text-color-lightgrey;
       .about-me{
         display:flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
-        max-height: 400px;
+        // max-height: 400px;
         align-items: flex-start;
         justify-content: space-between;
+        padding: 0 1rem;
         h1{
           font-size: 3rem;
           order:1;
           width: 250px;
           margin-top: 0;
+          margin-right: 3rem;
         }
 
-        h4{
-          order: 1;
-          width: 250px;
-          margin-top: 0;
+        p{
+          order: 2;
+          width: 350px;
+          // margin-right: 40%;
+          // margin-top: 12rem;
+          // margin-left: -17rem;
+          margin-top: -100px;
+          padding: 0;
         }
     
         img{
           max-width: 300px;
-          order: 2;
-          margin-left: 1rem;
+          order: 1;
+          margin: 0;
+          width: 40%;
+          // margin-left: 4rem;
         }
         a{
           margin: 2rem auto;
-          order: 1;
-          margin-top: 400px;//DIT KAN BETER. WANT PIJL STAAT NIET IN HET MIDDEN.
+          order: 3;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          // width: 20%;
+          // margin-top: 400px;//DIT KAN BETER. WANT PIJL STAAT NIET IN HET MIDDEN.
           img{
             width: 70px;
             height: auto;
@@ -624,40 +642,41 @@ button:focus{
         }
       }
 
-     .more-info-container{
-       display: flex;
-       justify-content: space-between;
-       margin-top: 4rem;
-       width: 100%;
-       flex-flow: wrap;
-       .whatido{
-        display:flex;
-        flex-direction: column;
-        flex-basis: 40%;
-        a{
-          margin: 2rem auto;
-          img{
-            width: 70px;
-            height: auto;
-          }
-        }
-      }
-      .whoiam{
-        display: flex;
-        flex-direction: column;
-        flex-basis: 40%;
-        margin-right: 10%;
-      }
-      a{
-        margin: 3rem auto;
-      }
-     }
+    //  .more-info-container{
+    //    display: flex;
+    //    justify-content: space-between;
+    //    margin-top: 4rem;
+    //    width: 100%;
+    //    flex-flow: wrap;
+    //    .whatido{
+    //     display:flex;
+    //     flex-direction: column;
+    //     flex-basis: 40%;
+    //     a{
+    //       margin: 2rem auto;
+    //       img{
+    //         width: 70px;
+    //         height: auto;
+    //       }
+    //     }
+    //   }
+    //   .whoiam{
+    //     display: flex;
+    //     flex-direction: column;
+    //     flex-basis: 40%;
+    //     margin-right: 10%;
+    //   }
+    //   a{
+    //     margin: 3rem auto;
+    //   }
+    //  }
   
       .contact{
         display: flex;
         flex-direction: row;
         width: 100%;
         justify-content: space-between;
+        padding: 0 1rem;
         h1{
           font-size: 3rem;
           margin: 3rem 0;
@@ -668,13 +687,28 @@ button:focus{
       }
     }
     .cta-container{
-      max-width: 683px;
+      //max-width: 683px;
       margin: 0 auto 2rem;
+      .cta-work{
+        margin-right: 2.5rem;
+      }
+      .cta-about{
+        margin-left: 2.5rem;
+      }
     }
     
 }
 
 
-@media screen and(min-width: 1600px){
+@media screen and(min-width: 1250px){
   
+  .info .about-me img{
+    width: 50%;
+    max-width: 400px;
+
+  }
+
+  .info .about-me p{
+    margin-top: -230px;
+  }
 }
