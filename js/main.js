@@ -359,7 +359,7 @@ const bon= $('.bon');
 const jour= $('.jour');
 const aside= $('.intro-text');
 
-const test= $('.header-container,.menuicon,.intro-text-p,svg, .home-work,footer').not('.bonjour').css('display', 'none');
+const restOfContent= $('.header-container,.menuicon,.intro-text-p,svg, .home-work,footer').not('.bonjour').css('display', 'none');
 const mq810 = window.matchMedia("(min-width: 810px)");
 
 function listenForMq(mq) {
@@ -369,24 +369,25 @@ function listenForMq(mq) {
     introGallery.style.display='none';
      
     window.onload= function(){
-      aside.css('margin', '-12rem auto');
+      
+      aside.css('margin', '-4rem auto');
       bon.addClass('animated').addClass('bounceIn');
       bon.css({
-        'font-size':'40vh',
+        'font-size':'15rem',
         'display':'block',
-        'margin':'0 auto',
+        'margin':'0 auto'
       });
       bon.show();
       jour.addClass('animated').addClass('fadeInRight');
       jour.css({
-        'font-size':'40vh',
+        'font-size':'15rem',
         'display':'block',
-        'margin':'0 auto',
+        'margin':'0 auto'
       });
       jour.show();
 
       setTimeout(() => {
-      test.fadeIn();
+      restOfContent.fadeIn();
       document.body.style.backgroundColor= lightGrey;
       introGallery.style.display='flex';
       ctaContainer.style.display='flex';
@@ -413,7 +414,7 @@ function listenForMq(mq) {
       hello.addClass('animated').addClass('bounceInLeft');
       hello.show();
       setTimeout(() => {
-      test.fadeIn();
+      restOfContent.fadeIn();
       }, 1500);  
   }
   }
