@@ -317,9 +317,8 @@ navMenu.addEventListener('click',(e)=>{
   }
 });
 
-//HIER MOET IK VOLGENS MIJ EEN IF STATEMENT INVOEGEN DIE CHECKT WAT ER PRECIES IN BEELD IS EN DAN BESLIST OF THE CTA BUTTONS TE ZIEN MOETEN ZIJN.
-ctaWork.addEventListener('click',(e)=>{
 
+ctaWork.addEventListener('click',(e)=>{
 
   if(ctaWork.children[0].textContent==='view more projects'){
     changeContent('none','none','none','flex','none');
@@ -592,8 +591,20 @@ hoverChange(introGallery);
 
 window.addEventListener('resize', ()=>{
 
+
+  //BUGFIX TO CHANGE BACKGROUND COLOR TO LIGHTGREY ON RESIZE TO MQ810
   document.body.style.backgroundColor= lightGrey;
 
+  //BUGFIX TO SHOW BONJOUR ON RESIZE
+  document.querySelector('.bonjour').children[0].style.color= purple;
+  document.querySelector('.bonjour').children[1].style.color= purple;
+
+//BUGFIX TO SHOW CTA BUTTONS ON RESIZE TO MQ810
+  document.querySelector('.cta-container').style.display='flex';
+
+  //ONE MORE BUGFIX TO GO: ON RESIZE ON ABOUT PAGE SKIPS TOP NAV....
+
+  //BUGFIX TO SHOW INTROGALLERY ONLY AT PROPER TIMES 
   if(introText.style.display!== 'none'){
     introGallery.style.display= 'flex';
   }else{
