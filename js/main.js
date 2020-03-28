@@ -61,6 +61,19 @@ let isMenuOpen = false;
 //-----------------FUNCTIONS-----------------//
 //-------------------------------------------//
 
+//CHECK FOR CTA BUTTONS TO ACCIDENTALLY SHOW AT MQ810. 
+// function testTestTest(){
+  
+//     if(info.style.display==='none'){
+//       //ctaContainer.style.display='none';
+//       console.log('satan satan satan');
+//     }else{
+//       console.log('aahahahaha');
+//     }
+// }
+
+// testTestTest();
+
 
 //CLOSE MENU ON CLICK
 function closeOnClick(){
@@ -268,6 +281,9 @@ nav.addEventListener('keydown', e => {
 });
 
 navMenu.addEventListener('click',(e)=>{
+
+  ctaContainer.children[0].style.display='flex';
+  ctaContainer.children[1].style.display='flex';
   
   //ABOUT
   if(e.target === menuBtn[2]){
@@ -301,8 +317,10 @@ navMenu.addEventListener('click',(e)=>{
   }
 });
 
-
+//HIER MOET IK VOLGENS MIJ EEN IF STATEMENT INVOEGEN DIE CHECKT WAT ER PRECIES IN BEELD IS EN DAN BESLIST OF THE CTA BUTTONS TE ZIEN MOETEN ZIJN.
 ctaWork.addEventListener('click',(e)=>{
+
+
   if(ctaWork.children[0].textContent==='view more projects'){
     changeContent('none','none','none','flex','none');
     styleElements(lightGrey, purple);
@@ -311,6 +329,7 @@ ctaWork.addEventListener('click',(e)=>{
     ctaContainer.children[1].style.color=purple;
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
   }else if(ctaWork.children[0].textContent=== 'next project'){
       for(let i=0;i<workData.length;i++){
         if(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent===workData[10].title){
@@ -331,6 +350,11 @@ ctaAbout.addEventListener('click',(e)=>{
     styleElements(purple, lightGrey);
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+    //HIDES CTA BUTTONS IN THE ABOUT PAGE
+    ctaContainer.children[0].style.display='none';
+    ctaContainer.children[1].style.display='none';
+    
   }else if(ctaAbout.children[0].textContent=== 'previous project'){
     for(let i=0;i<workData.length;i++){
       if(e.target.parentNode.parentNode.parentNode.children[3].children[1].children[0].textContent===workData[0].title){
@@ -422,6 +446,8 @@ function listenForMq(mq) {
 
 listenForMq(mq810);
 mq810.addListener(listenForMq);
+
+
 
 //--------------------------------------------------//
 //-----HIDE AND SHOW CONTENT IN .MAIN-CONTAINER-----//
@@ -575,4 +601,6 @@ window.addEventListener('resize', ()=>{
   }
 
 });
+
+
 
