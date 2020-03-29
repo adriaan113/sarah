@@ -698,6 +698,13 @@ button:focus{
       }
     }
     
+    .project-image{
+      flex-flow: row wrap !important;
+      justify-content: center;
+      &--item{
+        width: 40%;
+      }
+    }
 }
 
 
